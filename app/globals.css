@@ -56,10 +56,12 @@ h1, h2, h3, h4 {
   line-height: 1.05;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
-h1 { font-size: clamp(3rem, 8vw, 7rem); }
-h2 { font-size: clamp(1.8rem, 4.5vw, 3.4rem); }
-h3 { font-size: clamp(1.2rem, 2.2vw, 1.6rem); }
+h1 { font-size: clamp(2.2rem, 8vw, 7rem); }
+h2 { font-size: clamp(1.5rem, 4.5vw, 3.4rem); }
+h3 { font-size: clamp(1.1rem, 2.2vw, 1.6rem); }
 p { color: var(--text-secondary); line-height: 1.75; max-width: 60ch; }
 
 .accent-text { color: var(--accent); }
@@ -197,6 +199,13 @@ body.has-hero .site-header:not(.scrolled) .logo span { color: #fff; }
 body.has-hero .site-header:not(.scrolled) .nav-links a:not(.nav-cta) { color: rgba(255,255,255,0.85); }
 body.has-hero .site-header:not(.scrolled) .nav-links a:not(.nav-cta):hover { color: #fff; }
 body.has-hero .site-header:not(.scrolled) .nav-toggle span { background: #fff; }
+
+/* On mobile, when nav is open, force dark text/icon regardless of hero state */
+@media (max-width: 768px) {
+  body.has-hero .site-header:not(.scrolled) .nav-links a:not(.nav-cta) { color: var(--text-primary); }
+  body.has-hero .site-header:not(.scrolled) .nav-links a:not(.nav-cta):hover { color: var(--accent); }
+  body.has-hero .site-header:not(.scrolled) .nav-toggle.active span { background: var(--text-primary); }
+}
 
 .nav-links { display: flex; align-items: center; gap: clamp(20px, 3vw, 44px); }
 .nav-links a {
@@ -790,6 +799,9 @@ body.has-hero .site-header:not(.scrolled) .nav-toggle span { background: #fff; }
 
   .nav-toggle span { background: var(--text-primary); }
 
+  .hero-content { padding-top: 100px; padding-bottom: 60px; }
+  .hero-sub-page { min-height: 40vh; padding-top: 80px; }
+
   .split-section { grid-template-columns: 1fr; gap: 40px; }
   .split-section--reverse { direction: ltr; }
   .img-accent { right: -12px; bottom: -12px; width: 40%; }
@@ -819,10 +831,34 @@ body.has-hero .site-header:not(.scrolled) .nav-toggle span { background: #fff; }
 }
 
 @media (max-width: 480px) {
+  .section-pad { padding: clamp(48px, 10vw, 80px) 0; }
+  .section-header { margin-bottom: clamp(32px, 6vw, 48px); }
+
+  h1 { font-size: clamp(1.8rem, 10vw, 3rem); }
+  h2 { font-size: clamp(1.4rem, 6vw, 2rem); }
+
   .hero-title { font-size: clamp(2.6rem, 13vw, 3.8rem); }
+  .hero-home .hero-content h1 { font-size: clamp(2rem, 11vw, 3.5rem); }
+  .hero-sub-page h1 { font-size: clamp(1.8rem, 9vw, 2.8rem) !important; }
+  .hero-sub { font-size: clamp(14px, 3.5vw, 17px); }
+
   .hero-actions { flex-direction: column; width: 100%; }
   .hero-actions .btn { width: 100%; justify-content: center; }
   .btn-lg { padding: 18px 32px; }
+  .btn { padding: 12px 24px; font-size: 11px; }
+
+  .stat-row { gap: 16px; }
+  .stat-num { font-size: clamp(1rem, 4vw, 1.2rem); }
+
+  .shop-grid { grid-template-columns: 1fr !important; gap: 16px; }
+
+  .email-block__content h2 { font-size: clamp(1.3rem, 5vw, 1.8rem); }
+
+  .parallax-text { font-size: clamp(1.6rem, 8vw, 2.5rem); }
+
+  .story-quote blockquote { font-size: clamp(1.4rem, 6vw, 2rem); }
+
+  .manifesto-inner h2 { font-size: clamp(1.4rem, 6vw, 2.2rem); }
 }
 
 /* ===== REDUCED MOTION ===== */
