@@ -4,7 +4,9 @@ import HeroSubPage from '@/components/HeroSubPage';
 import RevealOnScroll from '@/components/RevealOnScroll';
 import EmailForm from '@/components/EmailForm';
 import ArrowIcon from '@/components/ArrowIcon';
+import ProductImageGallery from '@/components/ProductImageGallery';
 import { unsplash, reviews } from '@/lib/constants';
+import productsData from '@/lib/products-data.json';
 
 export const metadata: Metadata = {
   title: 'Shop the Collection | Gym Era Performance Apparel for Women',
@@ -18,7 +20,16 @@ export const metadata: Metadata = {
   },
 };
 
-const shopProducts = [
+type FolderProduct = {
+  id: string;
+  name: string;
+  price: string;
+  sizes: string;
+  folderName: string;
+  images: { src: string; isMain: boolean }[];
+};
+
+const shopProductsFallback = [
   { name: 'The Foundation Trainer', subtitle: 'Performance Training Top', price: '$68.00', img: unsplash('training', 600), alt: 'The Foundation Trainer', badge: 'Bestseller', href: '#detail-foundation' },
   { name: 'Era Compression Short', subtitle: 'Training Short', price: '$54.00', img: unsplash('workout', 600), alt: 'Era Compression Short', badge: null, href: '#detail-short' },
   { name: 'Grip Flex Legging', subtitle: 'Performance Legging', price: '$72.00', img: unsplash('legging', 600), alt: 'Grip Flex Legging', badge: 'Fan Favorite', href: '#detail-legging' },
@@ -27,19 +38,39 @@ const shopProducts = [
   { name: 'Grip Flex Legging', subtitle: 'Performance Legging — Clay', price: '$72.00', img: unsplash('gymWoman', 600), alt: 'Grip Flex Legging - alternate', badge: 'New', href: '#detail-legging' },
 ];
 
+const folderProducts = (productsData as FolderProduct[]).filter((p) => p.images?.length > 0);
+const useFolderProducts = folderProducts.length > 0;
+
 export default function ShopPage() {
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    name: 'The Gym Era Collection',
-    numberOfItems: 4,
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, item: { '@type': 'Product', name: 'The Foundation Trainer', description: 'Performance training top that moves with you from warm-up to final set.', brand: { '@type': 'Brand', name: 'Gym Era' }, offers: { '@type': 'Offer', priceCurrency: 'USD', price: '68.00', availability: 'https://schema.org/InStock' } } },
-      { '@type': 'ListItem', position: 2, item: { '@type': 'Product', name: 'Era Compression Short', description: 'Zero ride-up compression shorts for full range every rep.', brand: { '@type': 'Brand', name: 'Gym Era' }, offers: { '@type': 'Offer', priceCurrency: 'USD', price: '54.00', availability: 'https://schema.org/InStock' } } },
-      { '@type': 'ListItem', position: 3, item: { '@type': 'Product', name: 'Grip Flex Legging', description: 'Performance legging that stays put so you can move without limits.', brand: { '@type': 'Brand', name: 'Gym Era' }, offers: { '@type': 'Offer', priceCurrency: 'USD', price: '72.00', availability: 'https://schema.org/InStock' } } },
-      { '@type': 'ListItem', position: 4, item: { '@type': 'Product', name: 'The Gym Era Tee', description: 'Earned, not given. The standard-bearer of Gym Era.', brand: { '@type': 'Brand', name: 'Gym Era' }, offers: { '@type': 'Offer', priceCurrency: 'USD', price: '38.00', availability: 'https://schema.org/InStock' } } },
-    ],
-  };
+  const jsonLd = useFolderProducts
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        name: 'The Gym Era Collection',
+        numberOfItems: folderProducts.length,
+        itemListElement: folderProducts.map((p, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          item: {
+            '@type': 'Product',
+            name: p.name,
+            brand: { '@type': 'Brand', name: 'Gym Era' },
+            offers: { '@type': 'Offer', priceCurrency: 'USD', price: (p.price || '').replace(/[^0-9.]/g, '') || '0', availability: 'https://schema.org/InStock' },
+          },
+        })),
+      }
+    : {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        name: 'The Gym Era Collection',
+        numberOfItems: 4,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, item: { '@type': 'Product', name: 'The Foundation Trainer', description: 'Performance training top that moves with you from warm-up to final set.', brand: { '@type': 'Brand', name: 'Gym Era' }, offers: { '@type': 'Offer', priceCurrency: 'USD', price: '68.00', availability: 'https://schema.org/InStock' } } },
+          { '@type': 'ListItem', position: 2, item: { '@type': 'Product', name: 'Era Compression Short', description: 'Zero ride-up compression shorts for full range every rep.', brand: { '@type': 'Brand', name: 'Gym Era' }, offers: { '@type': 'Offer', priceCurrency: 'USD', price: '54.00', availability: 'https://schema.org/InStock' } } },
+          { '@type': 'ListItem', position: 3, item: { '@type': 'Product', name: 'Grip Flex Legging', description: 'Performance legging that stays put so you can move without limits.', brand: { '@type': 'Brand', name: 'Gym Era' }, offers: { '@type': 'Offer', priceCurrency: 'USD', price: '72.00', availability: 'https://schema.org/InStock' } } },
+          { '@type': 'ListItem', position: 4, item: { '@type': 'Product', name: 'The Gym Era Tee', description: 'Earned, not given. The standard-bearer of Gym Era.', brand: { '@type': 'Brand', name: 'Gym Era' }, offers: { '@type': 'Offer', priceCurrency: 'USD', price: '38.00', availability: 'https://schema.org/InStock' } } },
+        ],
+      };
 
   return (
     <>
@@ -55,7 +86,7 @@ export default function ShopPage() {
         <p className="hero-sub reveal">Four essentials. Zero compromises. Built for women who take training seriously.</p>
       </HeroSubPage>
 
-      {/* Product Grid — Nike-Style */}
+      {/* Product Grid — from folder products or fallback */}
       <section id="products" className="section-pad" aria-label="Products">
         <div className="container">
           <RevealOnScroll className="section-header">
@@ -63,24 +94,46 @@ export default function ShopPage() {
             <h2>Performance <span className="accent-text">Essentials</span></h2>
           </RevealOnScroll>
           <RevealOnScroll stagger className="shop-grid">
-            {shopProducts.map((product, i) => (
-              <article className="shop-card" key={i}>
-                <a href={product.href} className="shop-card__link">
-                  <div className="shop-card__img">
-                    <Image src={product.img} alt={product.alt} width={600} height={800} loading="lazy" />
-                    {product.badge && <span className="shop-card__badge">{product.badge}</span>}
-                    <div className="shop-card__quick"><span className="btn">Quick View</span></div>
-                  </div>
-                </a>
-                <div className="shop-card__body">
-                  <h3>{product.name}</h3>
-                  <p className="shop-card__subtitle">{product.subtitle}</p>
-                  <div className="shop-card__price">
-                    <span className="price-current">{product.price}</span>
-                  </div>
-                </div>
-              </article>
-            ))}
+            {useFolderProducts
+              ? folderProducts.map((product) => (
+                  <article className="shop-card" key={product.id}>
+                    <div className="shop-card__img shop-card__img--gallery">
+                      <ProductImageGallery
+                        images={product.images}
+                        productName={product.name}
+                      />
+                    </div>
+                    <div className="shop-card__body">
+                      <h3>{product.name}</h3>
+                      <div className="shop-card__price">
+                        <span className="price-current">{product.price || '—'}</span>
+                      </div>
+                      {product.sizes && (
+                        <p className="shop-card__sizes">
+                          Sizes: <span>{product.sizes}</span>
+                        </p>
+                      )}
+                    </div>
+                  </article>
+                ))
+              : shopProductsFallback.map((product, i) => (
+                  <article className="shop-card" key={i}>
+                    <a href={product.href} className="shop-card__link">
+                      <div className="shop-card__img">
+                        <Image src={product.img} alt={product.alt} width={600} height={800} loading="lazy" />
+                        {product.badge && <span className="shop-card__badge">{product.badge}</span>}
+                        <div className="shop-card__quick"><span className="btn">Quick View</span></div>
+                      </div>
+                    </a>
+                    <div className="shop-card__body">
+                      <h3>{product.name}</h3>
+                      <p className="shop-card__subtitle">{product.subtitle}</p>
+                      <div className="shop-card__price">
+                        <span className="price-current">{product.price}</span>
+                      </div>
+                    </div>
+                  </article>
+                ))}
           </RevealOnScroll>
         </div>
       </section>

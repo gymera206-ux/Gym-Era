@@ -1,0 +1,262 @@
+[
+  {
+    "id": "Baby Blue Luxe Set - $85.00 (L & M)",
+    "name": "Baby Blue Luxe Set",
+    "price": "$85.00",
+    "sizes": "L & M",
+    "folderName": "Baby Blue Luxe Set - $85.00 (L & M)",
+    "images": [
+      {
+        "src": "/products/Baby%20Blue%20Luxe%20Set%20-%20%2485.00%20(L%20%26%20M)/main.png",
+        "isMain": true
+      },
+      {
+        "src": "/products/Baby%20Blue%20Luxe%20Set%20-%20%2485.00%20(L%20%26%20M)/babyblue_set_back%20(1).jpg",
+        "isMain": false
+      },
+      {
+        "src": "/products/Baby%20Blue%20Luxe%20Set%20-%20%2485.00%20(L%20%26%20M)/babyblueset%20(3).jpg",
+        "isMain": false
+      },
+      {
+        "src": "/products/Baby%20Blue%20Luxe%20Set%20-%20%2485.00%20(L%20%26%20M)/detail-shot-of-baby-blue-set.png",
+        "isMain": false
+      },
+      {
+        "src": "/products/Baby%20Blue%20Luxe%20Set%20-%20%2485.00%20(L%20%26%20M)/side-view-of-baby-blue-set%20(1).png",
+        "isMain": false
+      }
+    ]
+  },
+  {
+    "id": "Cloud Comfort Lounge Set - $70.00",
+    "name": "Cloud Comfort Lounge Set",
+    "price": "$70.00",
+    "sizes": "",
+    "folderName": "Cloud Comfort Lounge Set - $70.00",
+    "images": [
+      {
+        "src": "/products/Cloud%20Comfort%20Lounge%20Set%20-%20%2470.00/main.jpg",
+        "isMain": true
+      },
+      {
+        "src": "/products/Cloud%20Comfort%20Lounge%20Set%20-%20%2470.00/light-blue-lounge-set-back-view.png",
+        "isMain": false
+      },
+      {
+        "src": "/products/Cloud%20Comfort%20Lounge%20Set%20-%20%2470.00/light-blue-lounge-set-casual-pose.png",
+        "isMain": false
+      }
+    ]
+  },
+  {
+    "id": "Confidence Set - $50.00 (L & M)",
+    "name": "Confidence Set",
+    "price": "$50.00",
+    "sizes": "L & M",
+    "folderName": "Confidence Set - $50.00 (L & M)",
+    "images": [
+      {
+        "src": "/products/Confidence%20Set%20-%20%2450.00%20(L%20%26%20M)/main.png",
+        "isMain": true
+      },
+      {
+        "src": "/products/Confidence%20Set%20-%20%2450.00%20(L%20%26%20M)/Maroon_leggings_SS_-_2.jpg",
+        "isMain": false
+      },
+      {
+        "src": "/products/Confidence%20Set%20-%20%2450.00%20(L%20%26%20M)/Maroon_top_SS_-_2.jpg",
+        "isMain": false
+      },
+      {
+        "src": "/products/Confidence%20Set%20-%20%2450.00%20(L%20%26%20M)/Maroon_top_SS_-_2_ecf7de17-8e93-4108-948d-fb2bb4d06a75.jpg",
+        "isMain": false
+      },
+      {
+        "src": "/products/Confidence%20Set%20-%20%2450.00%20(L%20%26%20M)/back-view-maroon.png",
+        "isMain": false
+      },
+      {
+        "src": "/products/Confidence%20Set%20-%20%2450.00%20(L%20%26%20M)/blueleggingsSS-1.jpg",
+        "isMain": false
+      },
+      {
+        "src": "/products/Confidence%20Set%20-%20%2450.00%20(L%20%26%20M)/stretch-pose%20(1).png",
+        "isMain": false
+      },
+      {
+        "src": "/products/Confidence%20Set%20-%20%2450.00%20(L%20%26%20M)/stretch-pose-maroon.png",
+        "isMain": false
+      },
+      {
+        "src": "/products/Confidence%20Set%20-%20%2450.00%20(L%20%26%20M)/waistband-detail.png",
+        "isMain": false
+      },
+      {
+        "src": "/products/Confidence%20Set%20-%20%2450.00%20(L%20%26%20M)/yoga-pose.png",
+        "isMain": false
+      }
+    ]
+  },
+  {
+    "id": "Elevate Set - $55.00 (L & M)",
+    "name": "Elevate Set",
+    "price": "$55.00",
+    "sizes": "L & M",
+    "folderName": "Elevate Set - $55.00 (L & M)",
+    "images": [
+      {
+        "src": "/products/Elevate%20Set%20-%20%2455.00%20(L%20%26%20M)/main.png",
+        "isMain": true
+      },
+      {
+        "src": "/products/Elevate%20Set%20-%20%2455.00%20(L%20%26%20M)/back-view-of-black-sculpting-set.png",
+        "isMain": false
+      },
+      {
+        "src": "/products/Elevate%20Set%20-%20%2455.00%20(L%20%26%20M)/black_set_with_butt_lift_set_top_front.jpg",
+        "isMain": false
+      },
+      {
+        "src": "/products/Elevate%20Set%20-%20%2455.00%20(L%20%26%20M)/detail-of-curved-contour-seams%20(1).png",
+        "isMain": false
+      },
+      {
+        "src": "/products/Elevate%20Set%20-%20%2455.00%20(L%20%26%20M)/side-view-of-black-sculpting-set.png",
+        "isMain": false
+      }
+    ]
+  },
+  {
+    "id": "Performance Jacket - $40.00 (M)",
+    "name": "Performance Jacket",
+    "price": "$40.00",
+    "sizes": "M",
+    "folderName": "Performance Jacket - $40.00 (M)",
+    "images": [
+      {
+        "src": "/products/Performance%20Jacket%20-%20%2440.00%20(M)/main.png",
+        "isMain": true
+      },
+      {
+        "src": "/products/Performance%20Jacket%20-%20%2440.00%20(M)/back-view-of-black-jacket.png",
+        "isMain": false
+      },
+      {
+        "src": "/products/Performance%20Jacket%20-%20%2440.00%20(M)/cross_back_set_jacket.jpg",
+        "isMain": false
+      },
+      {
+        "src": "/products/Performance%20Jacket%20-%20%2440.00%20(M)/crossbacksetjacket1.jpg",
+        "isMain": false
+      },
+      {
+        "src": "/products/Performance%20Jacket%20-%20%2440.00%20(M)/detail-shot-of-black-jacket.png",
+        "isMain": false
+      },
+      {
+        "src": "/products/Performance%20Jacket%20-%20%2440.00%20(M)/side-view-of-black-jacket.png",
+        "isMain": false
+      }
+    ]
+  },
+  {
+    "id": "Performance Set - $60.00 (L & M)",
+    "name": "Performance Set",
+    "price": "$60.00",
+    "sizes": "L & M",
+    "folderName": "Performance Set - $60.00 (L & M)",
+    "images": [
+      {
+        "src": "/products/Performance%20Set%20-%20%2460.00%20(L%20%26%20M)/main.png",
+        "isMain": true
+      },
+      {
+        "src": "/products/Performance%20Set%20-%20%2460.00%20(L%20%26%20M)/blck_cross_back_set_back.jpg",
+        "isMain": false
+      },
+      {
+        "src": "/products/Performance%20Set%20-%20%2460.00%20(L%20%26%20M)/blck_cross_back_set_front_top.jpg",
+        "isMain": false
+      },
+      {
+        "src": "/products/Performance%20Set%20-%20%2460.00%20(L%20%26%20M)/charcoal_grey_set_back.jpg",
+        "isMain": false
+      },
+      {
+        "src": "/products/Performance%20Set%20-%20%2460.00%20(L%20%26%20M)/charcoal_grey_set_front.jpg",
+        "isMain": false
+      },
+      {
+        "src": "/products/Performance%20Set%20-%20%2460.00%20(L%20%26%20M)/cross_back_set.jpg",
+        "isMain": false
+      },
+      {
+        "src": "/products/Performance%20Set%20-%20%2460.00%20(L%20%26%20M)/cross_back_set_blk.jpg",
+        "isMain": false
+      },
+      {
+        "src": "/products/Performance%20Set%20-%20%2460.00%20(L%20%26%20M)/detail-shot-of-strappy-back-design.png",
+        "isMain": false
+      }
+    ]
+  },
+  {
+    "id": "power set - mocha - $65.00 (L & M)",
+    "name": "power set - mocha",
+    "price": "$65.00",
+    "sizes": "L & M",
+    "folderName": "power set - mocha - $65.00 (L & M)",
+    "images": [
+      {
+        "src": "/products/power%20set%20-%20mocha%20-%20%2465.00%20(L%20%26%20M)/main.png",
+        "isMain": true
+      },
+      {
+        "src": "/products/power%20set%20-%20mocha%20-%20%2465.00%20(L%20%26%20M)/brown_with_V_back.jpg",
+        "isMain": false
+      },
+      {
+        "src": "/products/power%20set%20-%20mocha%20-%20%2465.00%20(L%20%26%20M)/brownwithVset.jpg",
+        "isMain": false
+      },
+      {
+        "src": "/products/power%20set%20-%20mocha%20-%20%2465.00%20(L%20%26%20M)/detail-shot.png",
+        "isMain": false
+      },
+      {
+        "src": "/products/power%20set%20-%20mocha%20-%20%2465.00%20(L%20%26%20M)/yoga-side-view.png",
+        "isMain": false
+      }
+    ]
+  },
+  {
+    "id": "V-Neck Oversized Hoodie - $50.00",
+    "name": "V-Neck Oversized Hoodie",
+    "price": "$50.00",
+    "sizes": "",
+    "folderName": "V-Neck Oversized Hoodie - $50.00",
+    "images": [
+      {
+        "src": "/products/V-Neck%20Oversized%20Hoodie%20-%20%2450.00/main.png",
+        "isMain": true
+      },
+      {
+        "src": "/products/V-Neck%20Oversized%20Hoodie%20-%20%2450.00/back-view-of-black-hoodie.png",
+        "isMain": false
+      },
+      {
+        "src": "/products/V-Neck%20Oversized%20Hoodie%20-%20%2450.00/detail-shot-of-v-neck-and-hood.png",
+        "isMain": false
+      },
+      {
+        "src": "/products/V-Neck%20Oversized%20Hoodie%20-%20%2450.00/pullover_hoodie.jpg",
+        "isMain": false
+      },
+      {
+        "src": "/products/V-Neck%20Oversized%20Hoodie%20-%20%2450.00/side-view-of-black-hoodie.png",
+        "isMain": false
+      }
+    ]
+  }
+]
