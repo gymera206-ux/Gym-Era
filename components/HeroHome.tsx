@@ -39,7 +39,7 @@ export default function HeroHome() {
         <div className="hero-badge reveal">PERFORMANCE APPAREL</div>
         <h1 className="hero-title reveal">
           <span className="line">Your</span>
-          <span className="line">Foundation.</span>
+          <span className="line line-no-wrap">Foundation.</span>
           <span className="line accent-text">Your Power.</span>
         </h1>
         <p className="hero-sub reveal">

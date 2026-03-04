@@ -5,6 +5,7 @@ import RevealOnScroll from '@/components/RevealOnScroll';
 import EmailForm from '@/components/EmailForm';
 import ArrowIcon from '@/components/ArrowIcon';
 import ProductImageGallery from '@/components/ProductImageGallery';
+import CheckoutOptions from '@/components/CheckoutOptions';
 import { unsplash, reviews } from '@/lib/constants';
 import productsData from '@/lib/products-data.json';
 
@@ -243,6 +244,22 @@ export default function ShopPage() {
                 <span className="review-author">— {review.author}</span>
               </div>
             ))}
+          </RevealOnScroll>
+        </div>
+      </section>
+
+      {/* Payment methods — Stripe & PayPal */}
+      <section id="checkout" className="section-pad" aria-label="Checkout and payment">
+        <div className="container">
+          <RevealOnScroll>
+            <div className="checkout-section">
+              <span className="section-tag">Secure Payment</span>
+              <h2>Check Out with <span className="accent-text">Stripe</span> or <span className="accent-text">PayPal</span></h2>
+              <p className="checkout-section__p">
+                We accept Stripe and PayPal. Choose your preferred method at checkout.
+              </p>
+              <CheckoutOptions />
+            </div>
           </RevealOnScroll>
         </div>
       </section>

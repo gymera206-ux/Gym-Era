@@ -264,6 +264,7 @@ body.has-hero .site-header:not(.scrolled) .nav-toggle span { background: #fff; }
 .hero-sub-page .hero-badge { color: rgba(255,255,255,0.8); }
 .hero-title { margin-bottom: 28px; line-height: 0.95; color: #fff; }
 .hero-title .line { display: block; }
+.hero-title .line-no-wrap { white-space: nowrap; }
 .hero-sub {
   font-size: clamp(16px, 1.4vw, 20px); color: rgba(255,255,255,0.75);
   margin-bottom: 40px; max-width: 480px; line-height: 1.7;
@@ -842,6 +843,28 @@ body.has-hero .site-header:not(.scrolled) .nav-toggle span { background: #fff; }
 }
 
 /* ===== EMAIL BLOCK ===== */
+/* ===== CHECKOUT (Stripe & PayPal) ===== */
+.checkout-section { max-width: 560px; }
+.checkout-section__p { margin-bottom: 24px; color: var(--text-secondary); }
+.checkout-options__label {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text-muted); margin-bottom: 12px;
+}
+.checkout-options__buttons {
+  display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-bottom: 16px;
+}
+.checkout-options__stripe { min-width: 160px; text-align: center; }
+.checkout-options__paypal { min-height: 45px; min-width: 150px; }
+.checkout-options__loading { font-size: 14px; color: var(--text-muted); }
+.checkout-options__trust {
+  font-size: 13px; color: var(--text-muted);
+}
+.checkout-options__setup {
+  font-size: 14px; color: var(--text-muted); padding: 16px; background: var(--bg-secondary);
+  border-radius: var(--radius-sm); border: 1px dashed var(--border-subtle);
+}
+.checkout-options__setup code { font-size: 12px; background: var(--bg-card); padding: 2px 6px; border-radius: 4px; }
+
 .email-block {
   display: grid; grid-template-columns: 1.2fr 1fr;
   gap: clamp(32px, 5vw, 64px); align-items: center;
