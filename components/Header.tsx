@@ -10,7 +10,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [navOpen, setNavOpen] = useState(false);
   const { totalItems } = useCart();
-  const isLightPage = pathname === '/cart';
+  const isLightPage = pathname !== '/' && pathname !== null;
 
   useEffect(() => {
     const handleScroll = () => {

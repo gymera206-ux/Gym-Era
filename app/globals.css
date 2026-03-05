@@ -200,12 +200,13 @@ body.has-hero .site-header:not(.scrolled) .nav-links a:not(.nav-cta) { color: rg
 body.has-hero .site-header:not(.scrolled) .nav-links a:not(.nav-cta):hover { color: #fff; }
 body.has-hero .site-header:not(.scrolled) .nav-toggle span { background: #fff; }
 
-/* On pages with light background (e.g. cart), use dark header text from the start */
-.site-header.header-dark:not(.scrolled) .logo,
-.site-header.header-dark:not(.scrolled) .logo span { color: var(--text-primary); }
-.site-header.header-dark:not(.scrolled) .nav-links a:not(.nav-cta) { color: var(--text-primary); }
-.site-header.header-dark:not(.scrolled) .nav-links a:not(.nav-cta):hover { color: var(--accent); }
-.site-header.header-dark:not(.scrolled) .nav-toggle span { background: var(--text-primary); }
+/* On pages with light background (cart, shop, story, etc.), use dark header text from the start.
+   Higher specificity than body.has-hero so these win. */
+body.has-hero .site-header.header-dark:not(.scrolled) .logo,
+body.has-hero .site-header.header-dark:not(.scrolled) .logo span { color: var(--text-primary) !important; }
+body.has-hero .site-header.header-dark:not(.scrolled) .nav-links a:not(.nav-cta) { color: var(--text-primary) !important; }
+body.has-hero .site-header.header-dark:not(.scrolled) .nav-links a:not(.nav-cta):hover { color: var(--accent) !important; }
+body.has-hero .site-header.header-dark:not(.scrolled) .nav-toggle span { background: var(--text-primary) !important; }
 
 /* On mobile, when nav is open, force dark text/icon regardless of hero state */
 @media (max-width: 768px) {
