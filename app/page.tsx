@@ -9,6 +9,16 @@ import GalleryStrip from '@/components/GalleryStrip';
 import EmailForm from '@/components/EmailForm';
 import ArrowIcon from '@/components/ArrowIcon';
 import { unsplash, galleryImages, reviews } from '@/lib/constants';
+import productsData from '@/lib/products-data.json';
+
+type LineupProduct = {
+  id: string;
+  name: string;
+  price: string;
+  sizes: string;
+  images: { src: string; isMain: boolean }[];
+};
+const lineupProducts = (productsData as LineupProduct[]).filter((p) => p.images?.length > 0);
 
 export const metadata: Metadata = {
   title: 'Gym Era | Performance Apparel Built for Women Who Train',
@@ -147,37 +157,40 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 6. Featured Products Strip */}
+      {/* 6. Featured Products Strip — The Gym Era Lineup */}
       <section id="featured" className="section-pad bg-dark" aria-label="Featured products">
         <div className="container">
           <RevealOnScroll className="section-header text-center">
             <span className="section-tag">The Collection</span>
             <h2>The <span className="accent-text">Gym Era</span> Lineup</h2>
-            <p>Four essentials. Zero compromises. Built from the ground up for women who take training seriously.</p>
+            <p>{lineupProducts.length ? 'Performance essentials. Built from the ground up for women who take training seriously.' : 'Four essentials. Zero compromises. Built from the ground up for women who take training seriously.'}</p>
           </RevealOnScroll>
           <RevealOnScroll stagger className="product-scroll">
-            {[
-              { name: 'The Foundation Trainer', desc: 'Moves with you from warm-up to final set.', price: '$68.00', img: unsplash('training', 600), alt: 'Performance training top' },
-              { name: 'Era Compression Short', desc: 'Zero ride-up. Full range. Every rep.', price: '$54.00', img: unsplash('workout', 600), alt: 'Performance training shorts' },
-              { name: 'Grip Flex Legging', desc: 'Stays put so you can move without limits.', price: '$72.00', img: unsplash('legging', 600), alt: 'Performance legging' },
-              { name: 'The Gym Era Tee', desc: 'Earned, not given. Wear the standard.', price: '$38.00', img: unsplash('confident', 600), alt: 'Gym Era branded tee' },
-            ].map((product) => (
-              <article className="product-card-v2" key={product.name}>
-                <Link href="/shop" className="product-card-v2__link">
-                  <div className="product-card-v2__img">
-                    <Image src={product.img} alt={product.alt} width={600} height={800} loading="lazy" />
-                    <div className="product-card-v2__overlay">
-                      <span>View Product</span>
+            {(lineupProducts.length > 0 ? lineupProducts : [
+              { id: '1', name: 'The Foundation Trainer', price: '$68.00', images: [{ src: unsplash('training', 600), isMain: true }] },
+              { id: '2', name: 'Era Compression Short', price: '$54.00', images: [{ src: unsplash('workout', 600), isMain: true }] },
+              { id: '3', name: 'Grip Flex Legging', price: '$72.00', images: [{ src: unsplash('legging', 600), isMain: true }] },
+              { id: '4', name: 'The Gym Era Tee', price: '$38.00', images: [{ src: unsplash('confident', 600), isMain: true }] },
+            ] as LineupProduct[]).map((product) => {
+              const mainImg = product.images?.find((i) => i.isMain) || product.images?.[0];
+              return (
+                <article className="product-card-v2" key={product.id}>
+                  <Link href="/shop" className="product-card-v2__link">
+                    <div className="product-card-v2__img">
+                      <Image src={mainImg?.src ?? ''} alt={product.name} width={600} height={800} loading="lazy" unoptimized={mainImg?.src?.startsWith('/')} />
+                      <div className="product-card-v2__overlay">
+                        <span>View Product</span>
+                      </div>
                     </div>
-                  </div>
-                  <div className="product-card-v2__info">
-                    <h3>{product.name}</h3>
-                    <p>{product.desc}</p>
-                    <span className="product-price">{product.price}</span>
-                  </div>
-                </Link>
-              </article>
-            ))}
+                    <div className="product-card-v2__info">
+                      <h3>{product.name}</h3>
+                      <p>{product.price}{product.sizes ? ` · ${product.sizes}` : ''}</p>
+                      <span className="product-price">{product.price}</span>
+                    </div>
+                  </Link>
+                </article>
+              );
+            })}
           </RevealOnScroll>
           <RevealOnScroll className="text-center" style={{ marginTop: 48 }}>
             <Link href="/shop" className="btn btn-outline btn-lg">

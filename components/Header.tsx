@@ -2,10 +2,12 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import { useCart } from '@/context/CartContext';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [navOpen, setNavOpen] = useState(false);
+  const { totalItems } = useCart();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,6 +59,10 @@ export default function Header() {
             aria-label="Main navigation"
           >
             <Link href="/shop" onClick={closeNav}>Shop</Link>
+            <Link href="/cart" onClick={closeNav} className="header-cart-link">
+              Cart
+              {totalItems > 0 && <span className="header-cart-count" aria-label={`${totalItems} items in cart`}>{totalItems}</span>}
+            </Link>
             <Link href="/story" onClick={closeNav}>Our Story</Link>
             <Link href="/shop" className="btn btn-primary nav-cta" onClick={closeNav}>
               Shop Now

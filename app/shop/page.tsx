@@ -4,8 +4,9 @@ import HeroSubPage from '@/components/HeroSubPage';
 import RevealOnScroll from '@/components/RevealOnScroll';
 import EmailForm from '@/components/EmailForm';
 import ArrowIcon from '@/components/ArrowIcon';
-import ProductImageGallery from '@/components/ProductImageGallery';
+import ShopProductCard from '@/components/ShopProductCard';
 import CheckoutOptions from '@/components/CheckoutOptions';
+import AddToCartButton from '@/components/AddToCartButton';
 import { unsplash, reviews } from '@/lib/constants';
 import productsData from '@/lib/products-data.json';
 
@@ -97,25 +98,7 @@ export default function ShopPage() {
           <RevealOnScroll stagger className="shop-grid">
             {useFolderProducts
               ? folderProducts.map((product) => (
-                  <article className="shop-card" key={product.id}>
-                    <div className="shop-card__img shop-card__img--gallery">
-                      <ProductImageGallery
-                        images={product.images}
-                        productName={product.name}
-                      />
-                    </div>
-                    <div className="shop-card__body">
-                      <h3>{product.name}</h3>
-                      <div className="shop-card__price">
-                        <span className="price-current">{product.price || '—'}</span>
-                      </div>
-                      {product.sizes && (
-                        <p className="shop-card__sizes">
-                          Sizes: <span>{product.sizes}</span>
-                        </p>
-                      )}
-                    </div>
-                  </article>
+                  <ShopProductCard key={product.id} product={product} />
                 ))
               : shopProductsFallback.map((product, i) => (
                   <article className="shop-card" key={i}>
@@ -139,61 +122,87 @@ export default function ShopPage() {
         </div>
       </section>
 
-      {/* Featured Product Detail — Foundation Trainer */}
-      <section id="detail-foundation" className="section-pad bg-dark" aria-label="Foundation Trainer details">
-        <div className="container">
-          <RevealOnScroll>
-            <div className="shop-detail-grid">
-              <div className="shop-detail__img">
-                <Image src={unsplash('training', 900)} alt="The Foundation Trainer - detailed view" width={900} height={1200} loading="lazy" />
-              </div>
-              <div className="shop-detail__content">
-                <span className="section-tag">Bestseller</span>
-                <h2>The Foundation <span className="accent-text">Trainer</span></h2>
-                <span className="price-current">$68.00</span>
-                <p className="product-tagline">Moves with you from warm-up to final set. Engineered with 4-way stretch fabric that follows your body through every movement and stays breathable when the intensity rises.</p>
-                <div className="shop-detail__features">
-                  <span>4-Way Stretch</span>
-                  <span>Anti-Odor</span>
-                  <span>Moisture-Wicking</span>
-                  <span>Flatlock Seams</span>
+      {/* Featured Product Detail — Bestseller (first real product) */}
+      {useFolderProducts && folderProducts[0] ? (
+        <section id="detail-bestseller" className="section-pad bg-dark" aria-label={`${folderProducts[0].name} details`}>
+          <div className="container">
+            <RevealOnScroll>
+              <div className="shop-detail-grid">
+                <div className="shop-detail__img">
+                  <Image src={folderProducts[0].images.find((i) => i.isMain)?.src ?? folderProducts[0].images[0]?.src ?? ''} alt={folderProducts[0].name} width={900} height={1200} loading="lazy" unoptimized />
                 </div>
-                <button className="btn btn-primary btn-lg" aria-label="Add The Foundation Trainer to cart">
-                  Add to Cart <ArrowIcon />
-                </button>
+                <div className="shop-detail__content">
+                  <span className="section-tag">Bestseller</span>
+                  <h2>{folderProducts[0].name}</h2>
+                  <span className="price-current">{folderProducts[0].price}</span>
+                  {folderProducts[0].sizes && <p className="product-tagline">Sizes: {folderProducts[0].sizes}</p>}
+                  <AddToCartButton product={{ id: folderProducts[0].id, name: folderProducts[0].name, price: folderProducts[0].price, sizes: folderProducts[0].sizes || undefined, image: folderProducts[0].images[0]?.src }} />
+                </div>
               </div>
-            </div>
-          </RevealOnScroll>
-        </div>
-      </section>
+            </RevealOnScroll>
+          </div>
+        </section>
+      ) : (
+        <section id="detail-foundation" className="section-pad bg-dark" aria-label="Foundation Trainer details">
+          <div className="container">
+            <RevealOnScroll>
+              <div className="shop-detail-grid">
+                <div className="shop-detail__img">
+                  <Image src={unsplash('training', 900)} alt="The Foundation Trainer - detailed view" width={900} height={1200} loading="lazy" />
+                </div>
+                <div className="shop-detail__content">
+                  <span className="section-tag">Bestseller</span>
+                  <h2>The Foundation <span className="accent-text">Trainer</span></h2>
+                  <span className="price-current">$68.00</span>
+                  <p className="product-tagline">Moves with you from warm-up to final set.</p>
+                  <AddToCartButton product={{ id: 'foundation', name: 'The Foundation Trainer', price: '$68.00' }} />
+                </div>
+              </div>
+            </RevealOnScroll>
+          </div>
+        </section>
+      )}
 
-      {/* Featured Product Detail — Grip Flex Legging */}
-      <section id="detail-legging" className="section-pad" aria-label="Grip Flex Legging details">
-        <div className="container">
-          <RevealOnScroll>
-            <div className="shop-detail-grid" style={{ direction: 'rtl' }}>
-              <div className="shop-detail__img" style={{ direction: 'ltr' }}>
-                <Image src={unsplash('legging', 900)} alt="Grip Flex Legging - detailed view" width={900} height={1200} loading="lazy" />
-              </div>
-              <div className="shop-detail__content" style={{ direction: 'ltr' }}>
-                <span className="section-tag">Fan Favorite</span>
-                <h2>Grip Flex <span className="accent-text">Legging</span></h2>
-                <span className="price-current">$72.00</span>
-                <p className="product-tagline">Stays put so you can move without limits. The Grip Flex uses a proprietary waistband and compressive knit that hugs every curve without squeezing. Completely squat-proof, sweat-proof, and built for women who refuse to hold back.</p>
-                <div className="shop-detail__features">
-                  <span>Squat-Proof</span>
-                  <span>Compressive Knit</span>
-                  <span>High-Rise</span>
-                  <span>Side Pocket</span>
+      {/* Featured Product Detail — Fan Favorite (second real product) */}
+      {useFolderProducts && folderProducts[1] ? (
+        <section id="detail-fan-favorite" className="section-pad" aria-label={`${folderProducts[1].name} details`}>
+          <div className="container">
+            <RevealOnScroll>
+              <div className="shop-detail-grid" style={{ direction: 'rtl' }}>
+                <div className="shop-detail__img" style={{ direction: 'ltr' }}>
+                  <Image src={folderProducts[1].images.find((i) => i.isMain)?.src ?? folderProducts[1].images[0]?.src ?? ''} alt={folderProducts[1].name} width={900} height={1200} loading="lazy" unoptimized />
                 </div>
-                <button className="btn btn-primary btn-lg" aria-label="Add Grip Flex Legging to cart">
-                  Add to Cart <ArrowIcon />
-                </button>
+                <div className="shop-detail__content" style={{ direction: 'ltr' }}>
+                  <span className="section-tag">Fan Favorite</span>
+                  <h2>{folderProducts[1].name}</h2>
+                  <span className="price-current">{folderProducts[1].price}</span>
+                  {folderProducts[1].sizes && <p className="product-tagline">Sizes: {folderProducts[1].sizes}</p>}
+                  <AddToCartButton product={{ id: folderProducts[1].id, name: folderProducts[1].name, price: folderProducts[1].price, sizes: folderProducts[1].sizes || undefined, image: folderProducts[1].images[0]?.src }} />
+                </div>
               </div>
-            </div>
-          </RevealOnScroll>
-        </div>
-      </section>
+            </RevealOnScroll>
+          </div>
+        </section>
+      ) : (
+        <section id="detail-legging" className="section-pad" aria-label="Grip Flex Legging details">
+          <div className="container">
+            <RevealOnScroll>
+              <div className="shop-detail-grid" style={{ direction: 'rtl' }}>
+                <div className="shop-detail__img" style={{ direction: 'ltr' }}>
+                  <Image src={unsplash('legging', 900)} alt="Grip Flex Legging - detailed view" width={900} height={1200} loading="lazy" />
+                </div>
+                <div className="shop-detail__content" style={{ direction: 'ltr' }}>
+                  <span className="section-tag">Fan Favorite</span>
+                  <h2>Grip Flex <span className="accent-text">Legging</span></h2>
+                  <span className="price-current">$72.00</span>
+                  <p className="product-tagline">Stays put so you can move without limits.</p>
+                  <AddToCartButton product={{ id: 'legging', name: 'Grip Flex Legging', price: '$72.00' }} />
+                </div>
+              </div>
+            </RevealOnScroll>
+          </div>
+        </section>
+      )}
 
       {/* Size & Fit Guide */}
       <section className="section-pad bg-dark" aria-label="Size and fit">
