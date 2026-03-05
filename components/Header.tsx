@@ -2,12 +2,15 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useCart } from '@/context/CartContext';
 
 export default function Header() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [navOpen, setNavOpen] = useState(false);
   const { totalItems } = useCart();
+  const isLightPage = pathname === '/cart';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,7 +46,7 @@ export default function Header() {
 
   return (
     <header
-      className={`site-header${scrolled ? ' scrolled' : ''}`}
+      className={`site-header${scrolled ? ' scrolled' : ''}${isLightPage ? ' header-dark' : ''}`}
       id="site-header"
       role="banner"
     >

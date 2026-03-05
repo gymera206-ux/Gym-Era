@@ -200,6 +200,13 @@ body.has-hero .site-header:not(.scrolled) .nav-links a:not(.nav-cta) { color: rg
 body.has-hero .site-header:not(.scrolled) .nav-links a:not(.nav-cta):hover { color: #fff; }
 body.has-hero .site-header:not(.scrolled) .nav-toggle span { background: #fff; }
 
+/* On pages with light background (e.g. cart), use dark header text from the start */
+.site-header.header-dark:not(.scrolled) .logo,
+.site-header.header-dark:not(.scrolled) .logo span { color: var(--text-primary); }
+.site-header.header-dark:not(.scrolled) .nav-links a:not(.nav-cta) { color: var(--text-primary); }
+.site-header.header-dark:not(.scrolled) .nav-links a:not(.nav-cta):hover { color: var(--accent); }
+.site-header.header-dark:not(.scrolled) .nav-toggle span { background: var(--text-primary); }
+
 /* On mobile, when nav is open, force dark text/icon regardless of hero state */
 @media (max-width: 768px) {
   body.has-hero .site-header:not(.scrolled) .nav-links a:not(.nav-cta) { color: var(--text-primary); }
@@ -913,7 +920,11 @@ body.has-hero .site-header:not(.scrolled) .nav-toggle span { background: #fff; }
   text-align: center; padding: clamp(48px, 10vw, 80px) 20px;
 }
 .cart-empty h1 { margin-bottom: 12px; }
-.cart-empty p { margin-bottom: 24px; color: var(--text-secondary); }
+.cart-empty p {
+  margin-bottom: 24px; margin-left: auto; margin-right: auto;
+  color: var(--text-secondary); max-width: 36ch;
+}
+.cart-empty .btn { display: inline-flex; }
 .cart-page-title {
   font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 32px;
 }
