@@ -12,7 +12,7 @@ export default function CartPage() {
   const totalPrice = items.reduce((sum, i) => {
     const num = parseFloat((i.price || '').replace(/[^0-9.]/g, '')) || 0;
     return sum + num * i.quantity;
-  });
+  }, 0);
   const totalFormatted = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(totalPrice);
 
   if (items.length === 0) {
