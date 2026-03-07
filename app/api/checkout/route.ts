@@ -1,10 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2026-02-25.clover',
-});
-
 type CartItem = {
   id: string;
   name: string;
@@ -22,6 +18,13 @@ function parsePriceToCents(price: string): number {
 
 export async function POST(req: NextRequest) {
   try {
+    const secretKey = process.env.STRIPE_SECRET_KEY;
+    if (!secretKey) {
+      return NextResponse.json({ error: 'Stripe is not configured on this server.' }, { status: 500 });
+    }
+
+    const stripe = new Stripe(secretKey, { apiVersion: '2026-02-25.clover' });
+
     const { items }: { items: CartItem[] } = await req.json();
 
     if (!items || items.length === 0) {
