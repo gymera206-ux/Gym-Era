@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { hasStripe, hasPayPal, stripePaymentLink, paypalClientId, paypalOrderApi } from '@/lib/payment-config';
+import { hasStripe, hasPayPal, paypalClientId, paypalOrderApi } from '@/lib/payment-config';
+import { useCart } from '@/context/CartContext';
 
 declare global {
   interface Window {
@@ -16,8 +17,32 @@ declare global {
 }
 
 export default function CheckoutOptions() {
+  const { items } = useCart();
   const paypalRef = useRef<HTMLDivElement>(null);
   const [paypalLoaded, setPaypalLoaded] = useState(false);
+  const [stripeLoading, setStripeLoading] = useState(false);
+  const [stripeError, setStripeError] = useState('');
+
+  async function handleStripeCheckout() {
+    if (items.length === 0) return;
+    setStripeLoading(true);
+    setStripeError('');
+    try {
+      const res = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.url) {
+        throw new Error(data.error ?? 'Failed to create checkout session.');
+      }
+      window.location.href = data.url;
+    } catch (err) {
+      setStripeError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+      setStripeLoading(false);
+    }
+  }
 
   useEffect(() => {
     if (!hasPayPal || !paypalRef.current) return;
@@ -27,7 +52,6 @@ export default function CheckoutOptions() {
     script.async = true;
     script.onload = () => {
       if (window.paypal && paypalRef.current) {
-        const orderApi = process.env.NEXT_PUBLIC_PAYPAL_ORDER_API;
         window.paypal
           .Buttons({
             style: { layout: 'vertical', color: 'gold' },
@@ -42,8 +66,7 @@ export default function CheckoutOptions() {
                   return data.id ?? data.orderID ?? '';
                 }
               : undefined,
-            onApprove: async (data) => {
-              // Optional: capture on your server or show success
+            onApprove: async () => {
               window.location.href = '/shop?payment=success';
             },
           })
@@ -61,7 +84,8 @@ export default function CheckoutOptions() {
   if (!hasStripe && !hasPayPal) {
     return (
       <p className="checkout-options__setup">
-        Add <code>NEXT_PUBLIC_STRIPE_PAYMENT_LINK</code> and/or <code>NEXT_PUBLIC_PAYPAL_CLIENT_ID</code> + <code>NEXT_PUBLIC_PAYPAL_ORDER_API</code> in <code>.env.local</code> to enable checkout. See <code>.env.example</code>.
+        Add <code>NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY</code> and <code>STRIPE_SECRET_KEY</code> in{' '}
+        <code>.env.local</code> to enable Stripe checkout. See <code>.env.example</code>.
       </p>
     );
   }
@@ -71,14 +95,13 @@ export default function CheckoutOptions() {
       <p className="checkout-options__label">Secure checkout</p>
       <div className="checkout-options__buttons">
         {hasStripe && (
-          <a
-            href={stripePaymentLink}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={handleStripeCheckout}
+            disabled={stripeLoading || items.length === 0}
             className="btn btn-primary checkout-options__stripe"
           >
-            Pay with Stripe
-          </a>
+            {stripeLoading ? 'Redirecting…' : 'Pay with Stripe'}
+          </button>
         )}
         {hasPayPal && (
           <div className="checkout-options__paypal" ref={paypalRef}>
@@ -86,6 +109,7 @@ export default function CheckoutOptions() {
           </div>
         )}
       </div>
+      {stripeError && <p className="checkout-options__error">{stripeError}</p>}
       <p className="checkout-options__trust">
         We accept Stripe and PayPal. Your payment is secure.
       </p>
