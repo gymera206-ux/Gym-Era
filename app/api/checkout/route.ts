@@ -37,6 +37,16 @@ export async function POST(req: NextRequest) {
       const unitAmount = parsePriceToCents(item.price);
       const productName = item.sizes ? `${item.name} (${item.sizes})` : item.name;
 
+      // Stripe requires fully absolute https:// URLs for images.
+      // Convert relative paths (e.g. /products/...) to absolute using the request origin.
+      let imageUrls: string[] = [];
+      if (item.image) {
+        const absoluteImage = item.image.startsWith('http')
+          ? item.image
+          : `${origin}${item.image.startsWith('/') ? '' : '/'}${item.image}`;
+        imageUrls = [absoluteImage];
+      }
+
       return {
         quantity: item.quantity,
         price_data: {
@@ -44,7 +54,7 @@ export async function POST(req: NextRequest) {
           unit_amount: unitAmount,
           product_data: {
             name: productName,
-            ...(item.image ? { images: [item.image] } : {}),
+            ...(imageUrls.length > 0 ? { images: imageUrls } : {}),
           },
         },
       };
