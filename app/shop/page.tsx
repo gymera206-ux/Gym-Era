@@ -9,6 +9,7 @@ import CheckoutOptions from '@/components/CheckoutOptions';
 import AddToCartButton from '@/components/AddToCartButton';
 import { unsplash, reviews } from '@/lib/constants';
 import productsData from '@/lib/products-data.json';
+import { originalFromDiscounted } from '@/lib/pricing';
 
 export const metadata: Metadata = {
   title: 'Shop the Collection | Gym Era Performance Apparel for Women',
@@ -32,12 +33,12 @@ type FolderProduct = {
 };
 
 const shopProductsFallback = [
-  { name: 'The Foundation Trainer', subtitle: 'Performance Training Top', price: '$68.00', img: unsplash('training', 600), alt: 'The Foundation Trainer', badge: 'Bestseller', href: '#detail-foundation' },
-  { name: 'Era Compression Short', subtitle: 'Training Short', price: '$54.00', img: unsplash('workout', 600), alt: 'Era Compression Short', badge: null, href: '#detail-short' },
-  { name: 'Grip Flex Legging', subtitle: 'Performance Legging', price: '$72.00', img: unsplash('legging', 600), alt: 'Grip Flex Legging', badge: 'Fan Favorite', href: '#detail-legging' },
-  { name: 'The Gym Era Tee', subtitle: 'Cotton-Blend Tee', price: '$38.00', img: unsplash('confident', 600), alt: 'The Gym Era Tee', badge: null, href: '#detail-tee' },
-  { name: 'The Foundation Trainer', subtitle: 'Performance Training Top — Slate', price: '$68.00', img: unsplash('dumbbells', 600), alt: 'The Foundation Trainer - alternate', badge: null, href: '#detail-foundation' },
-  { name: 'Grip Flex Legging', subtitle: 'Performance Legging — Clay', price: '$72.00', img: unsplash('gymWoman', 600), alt: 'Grip Flex Legging - alternate', badge: 'New', href: '#detail-legging' },
+  { name: 'The Foundation Trainer', subtitle: 'Performance Training Top', price: '$54.40', img: unsplash('training', 600), alt: 'The Foundation Trainer', badge: 'Bestseller', href: '#detail-foundation' },
+  { name: 'Era Compression Short', subtitle: 'Training Short', price: '$43.20', img: unsplash('workout', 600), alt: 'Era Compression Short', badge: null, href: '#detail-short' },
+  { name: 'Grip Flex Legging', subtitle: 'Performance Legging', price: '$57.60', img: unsplash('legging', 600), alt: 'Grip Flex Legging', badge: 'Fan Favorite', href: '#detail-legging' },
+  { name: 'The Gym Era Tee', subtitle: 'Cotton-Blend Tee', price: '$30.40', img: unsplash('confident', 600), alt: 'The Gym Era Tee', badge: null, href: '#detail-tee' },
+  { name: 'The Foundation Trainer', subtitle: 'Performance Training Top — Slate', price: '$54.40', img: unsplash('dumbbells', 600), alt: 'The Foundation Trainer - alternate', badge: null, href: '#detail-foundation' },
+  { name: 'Grip Flex Legging', subtitle: 'Performance Legging — Clay', price: '$57.60', img: unsplash('gymWoman', 600), alt: 'Grip Flex Legging - alternate', badge: 'New', href: '#detail-legging' },
 ];
 
 const folderProducts = (productsData as FolderProduct[]).filter((p) => p.images?.length > 0);
@@ -67,10 +68,10 @@ export default function ShopPage() {
         name: 'The Gym Era Collection',
         numberOfItems: 4,
         itemListElement: [
-          { '@type': 'ListItem', position: 1, item: { '@type': 'Product', name: 'The Foundation Trainer', description: 'Performance training top that moves with you from warm-up to final set.', brand: { '@type': 'Brand', name: 'Gym Era' }, offers: { '@type': 'Offer', priceCurrency: 'USD', price: '68.00', availability: 'https://schema.org/InStock' } } },
-          { '@type': 'ListItem', position: 2, item: { '@type': 'Product', name: 'Era Compression Short', description: 'Zero ride-up compression shorts for full range every rep.', brand: { '@type': 'Brand', name: 'Gym Era' }, offers: { '@type': 'Offer', priceCurrency: 'USD', price: '54.00', availability: 'https://schema.org/InStock' } } },
-          { '@type': 'ListItem', position: 3, item: { '@type': 'Product', name: 'Grip Flex Legging', description: 'Performance legging that stays put so you can move without limits.', brand: { '@type': 'Brand', name: 'Gym Era' }, offers: { '@type': 'Offer', priceCurrency: 'USD', price: '72.00', availability: 'https://schema.org/InStock' } } },
-          { '@type': 'ListItem', position: 4, item: { '@type': 'Product', name: 'The Gym Era Tee', description: 'Earned, not given. The standard-bearer of Gym Era.', brand: { '@type': 'Brand', name: 'Gym Era' }, offers: { '@type': 'Offer', priceCurrency: 'USD', price: '38.00', availability: 'https://schema.org/InStock' } } },
+          { '@type': 'ListItem', position: 1, item: { '@type': 'Product', name: 'The Foundation Trainer', description: 'Performance training top that moves with you from warm-up to final set.', brand: { '@type': 'Brand', name: 'Gym Era' }, offers: { '@type': 'Offer', priceCurrency: 'USD', price: '54.40', availability: 'https://schema.org/InStock' } } },
+          { '@type': 'ListItem', position: 2, item: { '@type': 'Product', name: 'Era Compression Short', description: 'Zero ride-up compression shorts for full range every rep.', brand: { '@type': 'Brand', name: 'Gym Era' }, offers: { '@type': 'Offer', priceCurrency: 'USD', price: '43.20', availability: 'https://schema.org/InStock' } } },
+          { '@type': 'ListItem', position: 3, item: { '@type': 'Product', name: 'Grip Flex Legging', description: 'Performance legging that stays put so you can move without limits.', brand: { '@type': 'Brand', name: 'Gym Era' }, offers: { '@type': 'Offer', priceCurrency: 'USD', price: '57.60', availability: 'https://schema.org/InStock' } } },
+          { '@type': 'ListItem', position: 4, item: { '@type': 'Product', name: 'The Gym Era Tee', description: 'Earned, not given. The standard-bearer of Gym Era.', brand: { '@type': 'Brand', name: 'Gym Era' }, offers: { '@type': 'Offer', priceCurrency: 'USD', price: '30.40', availability: 'https://schema.org/InStock' } } },
         ],
       };
 
@@ -112,7 +113,9 @@ export default function ShopPage() {
                     <div className="shop-card__body">
                       <h3>{product.name}</h3>
                       <p className="shop-card__subtitle">{product.subtitle}</p>
+                      <span className="shop-card__sale-badge">20% OFF</span>
                       <div className="shop-card__price">
+                        <span className="price-original">{originalFromDiscounted(product.price)}</span>
                         <span className="price-current">{product.price}</span>
                       </div>
                     </div>
@@ -134,7 +137,11 @@ export default function ShopPage() {
                 <div className="shop-detail__content">
                   <span className="section-tag">Bestseller</span>
                   <h2>{folderProducts[0].name}</h2>
-                  <span className="price-current">{folderProducts[0].price}</span>
+                  <span className="shop-card__sale-badge">20% OFF</span>
+                  <div className="shop-card__price shop-detail__price">
+                    <span className="price-original">{originalFromDiscounted(folderProducts[0].price)}</span>
+                    <span className="price-current">{folderProducts[0].price}</span>
+                  </div>
                   {folderProducts[0].sizes && <p className="product-tagline">Sizes: {folderProducts[0].sizes}</p>}
                   <AddToCartButton product={{ id: folderProducts[0].id, name: folderProducts[0].name, price: folderProducts[0].price, sizes: folderProducts[0].sizes || undefined, image: folderProducts[0].images[0]?.src }} />
                 </div>
@@ -153,9 +160,13 @@ export default function ShopPage() {
                 <div className="shop-detail__content">
                   <span className="section-tag">Bestseller</span>
                   <h2>The Foundation <span className="accent-text">Trainer</span></h2>
-                  <span className="price-current">$68.00</span>
+                  <span className="shop-card__sale-badge">20% OFF</span>
+                  <div className="shop-card__price shop-detail__price">
+                    <span className="price-original">{originalFromDiscounted('$54.40')}</span>
+                    <span className="price-current">$54.40</span>
+                  </div>
                   <p className="product-tagline">Moves with you from warm-up to final set.</p>
-                  <AddToCartButton product={{ id: 'foundation', name: 'The Foundation Trainer', price: '$68.00' }} />
+                  <AddToCartButton product={{ id: 'foundation', name: 'The Foundation Trainer', price: '$54.40' }} />
                 </div>
               </div>
             </RevealOnScroll>
@@ -175,7 +186,11 @@ export default function ShopPage() {
                 <div className="shop-detail__content" style={{ direction: 'ltr' }}>
                   <span className="section-tag">Fan Favorite</span>
                   <h2>{folderProducts[1].name}</h2>
-                  <span className="price-current">{folderProducts[1].price}</span>
+                  <span className="shop-card__sale-badge">20% OFF</span>
+                  <div className="shop-card__price shop-detail__price">
+                    <span className="price-original">{originalFromDiscounted(folderProducts[1].price)}</span>
+                    <span className="price-current">{folderProducts[1].price}</span>
+                  </div>
                   {folderProducts[1].sizes && <p className="product-tagline">Sizes: {folderProducts[1].sizes}</p>}
                   <AddToCartButton product={{ id: folderProducts[1].id, name: folderProducts[1].name, price: folderProducts[1].price, sizes: folderProducts[1].sizes || undefined, image: folderProducts[1].images[0]?.src }} />
                 </div>
@@ -194,9 +209,13 @@ export default function ShopPage() {
                 <div className="shop-detail__content" style={{ direction: 'ltr' }}>
                   <span className="section-tag">Fan Favorite</span>
                   <h2>Grip Flex <span className="accent-text">Legging</span></h2>
-                  <span className="price-current">$72.00</span>
+                  <span className="shop-card__sale-badge">20% OFF</span>
+                  <div className="shop-card__price shop-detail__price">
+                    <span className="price-original">{originalFromDiscounted('$57.60')}</span>
+                    <span className="price-current">$57.60</span>
+                  </div>
                   <p className="product-tagline">Stays put so you can move without limits.</p>
-                  <AddToCartButton product={{ id: 'legging', name: 'Grip Flex Legging', price: '$72.00' }} />
+                  <AddToCartButton product={{ id: 'legging', name: 'Grip Flex Legging', price: '$57.60' }} />
                 </div>
               </div>
             </RevealOnScroll>

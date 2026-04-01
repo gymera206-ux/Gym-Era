@@ -460,6 +460,11 @@ body.has-hero .site-header.header-dark:not(.scrolled) .nav-toggle span { backgro
   font-weight: 700;
   letter-spacing: 0.04em; color: var(--text-primary);
 }
+.product-price-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
 /* ===== SHOP PAGE — NIKE-STYLE PRODUCT GRID ===== */
 .shop-grid {
@@ -489,6 +494,19 @@ body.has-hero .site-header.header-dark:not(.scrolled) .nav-toggle span { backgro
   background: var(--accent); color: #fff;
   font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
   text-transform: uppercase; padding: 5px 12px; border-radius: 100px;
+}
+.shop-card__sale-badge {
+  display: inline-block;
+  margin-top: 4px;
+  margin-bottom: 6px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 100px;
 }
 /* Quick-view overlay */
 .shop-card__quick {
@@ -747,6 +765,13 @@ body.has-hero .site-header.header-dark:not(.scrolled) .nav-toggle span { backgro
   font-family: var(--font-body); font-size: 15px; font-weight: 600;
   color: var(--text-primary);
 }
+.price-original {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
 
 /* Feature chips - compact inline below card */
 .shop-card__features {
@@ -790,7 +815,16 @@ body.has-hero .site-header.header-dark:not(.scrolled) .nav-toggle span { backgro
 }
 .shop-detail__content .price-current {
   font-family: var(--font-display); font-size: clamp(1.4rem, 1.8vw, 1.6rem);
-  font-weight: 700; display: block; margin-bottom: 20px;
+  font-weight: 700;
+}
+.shop-detail__price {
+  margin-bottom: 20px;
+}
+.shop-detail__content .price-original {
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+}
+.shop-detail__content .shop-card__sale-badge {
+  margin-bottom: 12px;
 }
 .shop-detail__features {
   display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 24px;
@@ -954,6 +988,7 @@ body.has-hero .site-header.header-dark:not(.scrolled) .nav-toggle span { backgro
 .cart-item__name { font-size: 1rem; margin-bottom: 4px; }
 .cart-item__sizes { font-size: 13px; color: var(--text-muted); margin-bottom: 4px; }
 .cart-item__price { font-weight: 600; }
+.cart-item__price-row { margin-top: 2px; }
 .cart-item__qty {
   display: flex; align-items: center; gap: 8px;
 }

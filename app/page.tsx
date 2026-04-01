@@ -10,6 +10,7 @@ import EmailForm from '@/components/EmailForm';
 import ArrowIcon from '@/components/ArrowIcon';
 import { unsplash, galleryImages, reviews } from '@/lib/constants';
 import productsData from '@/lib/products-data.json';
+import { originalFromDiscounted } from '@/lib/pricing';
 
 type LineupProduct = {
   id: string;
@@ -167,10 +168,10 @@ export default function HomePage() {
           </RevealOnScroll>
           <RevealOnScroll stagger className="product-scroll">
             {(lineupProducts.length > 0 ? lineupProducts : [
-              { id: '1', name: 'The Foundation Trainer', price: '$68.00', images: [{ src: unsplash('training', 600), isMain: true }] },
-              { id: '2', name: 'Era Compression Short', price: '$54.00', images: [{ src: unsplash('workout', 600), isMain: true }] },
-              { id: '3', name: 'Grip Flex Legging', price: '$72.00', images: [{ src: unsplash('legging', 600), isMain: true }] },
-              { id: '4', name: 'The Gym Era Tee', price: '$38.00', images: [{ src: unsplash('confident', 600), isMain: true }] },
+              { id: '1', name: 'The Foundation Trainer', price: '$54.40', images: [{ src: unsplash('training', 600), isMain: true }] },
+              { id: '2', name: 'Era Compression Short', price: '$43.20', images: [{ src: unsplash('workout', 600), isMain: true }] },
+              { id: '3', name: 'Grip Flex Legging', price: '$57.60', images: [{ src: unsplash('legging', 600), isMain: true }] },
+              { id: '4', name: 'The Gym Era Tee', price: '$30.40', images: [{ src: unsplash('confident', 600), isMain: true }] },
             ] as LineupProduct[]).map((product) => {
               const mainImg = product.images?.find((i) => i.isMain) || product.images?.[0];
               return (
@@ -185,7 +186,11 @@ export default function HomePage() {
                     <div className="product-card-v2__info">
                       <h3>{product.name}</h3>
                       <p>{product.price}{product.sizes ? ` · ${product.sizes}` : ''}</p>
-                      <span className="product-price">{product.price}</span>
+                      <span className="shop-card__sale-badge">20% OFF</span>
+                      <div className="product-price-row">
+                        <span className="price-original">{originalFromDiscounted(product.price)}</span>
+                        <span className="product-price">{product.price}</span>
+                      </div>
                     </div>
                   </Link>
                 </article>

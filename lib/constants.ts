@@ -45,25 +45,25 @@ export const products = [
   {
     name: 'The Foundation Trainer',
     description: 'Performance training top that moves with you from warm-up to final set.',
-    price: '68.00',
+    price: '54.40',
     image: 'training',
   },
   {
     name: 'Era Compression Short',
     description: 'Zero ride-up compression shorts for full range every rep.',
-    price: '54.00',
+    price: '43.20',
     image: 'workout',
   },
   {
     name: 'Grip Flex Legging',
     description: 'Performance legging that stays put so you can move without limits.',
-    price: '72.00',
+    price: '57.60',
     image: 'legging',
   },
   {
     name: 'The Gym Era Tee',
     description: 'Earned, not given. The standard-bearer of Gym Era.',
-    price: '38.00',
+    price: '30.40',
     image: 'confident',
   },
 ];

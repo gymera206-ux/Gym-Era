@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useCart } from '@/context/CartContext';
 import CheckoutOptions from '@/components/CheckoutOptions';
 import ArrowIcon from '@/components/ArrowIcon';
+import { originalFromDiscounted } from '@/lib/pricing';
 
 export default function CartPage() {
   const { items, removeItem, updateQuantity, totalItems } = useCart();
@@ -47,7 +48,10 @@ export default function CartPage() {
                 <div className="cart-item__info">
                   <h3 className="cart-item__name">{item.name}</h3>
                   {item.sizes && <p className="cart-item__sizes">Size: {item.sizes}</p>}
-                  <span className="cart-item__price">{item.price}</span>
+                  <div className="shop-card__price cart-item__price-row">
+                    <span className="price-original">{originalFromDiscounted(item.price)}</span>
+                    <span className="cart-item__price">{item.price}</span>
+                  </div>
                 </div>
                 <div className="cart-item__qty">
                   <button
