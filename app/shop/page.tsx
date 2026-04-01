@@ -12,12 +12,12 @@ import productsData from '@/lib/products-data.json';
 import { originalFromDiscounted } from '@/lib/pricing';
 
 export const metadata: Metadata = {
-  title: 'Shop the Collection | Gym Era Performance Apparel for Women',
-  description: 'Shop Gym Era performance apparel for women. The Foundation Trainer, Era Compression Short, Grip Flex Legging, and The Gym Era Tee. Built for women who train.',
+  title: 'Shop Gym Era | Activewear for Busy Women and Moms',
+  description: 'Shop Gym Era activewear built for busy women and moms getting back to training. Secure fit, real-body comfort, and workout clothes that stay in place.',
   alternates: { canonical: '/shop' },
   openGraph: {
     title: 'Shop the Collection | Gym Era',
-    description: 'Four essentials. Zero compromises. Shop performance apparel built for women who train.',
+    description: 'Performance activewear for busy women and moms. Built to fit, stay secure, and support your training comeback.',
     type: 'website',
     url: '/shop',
   },
@@ -86,7 +86,7 @@ export default function ShopPage() {
       <HeroSubPage src={unsplash('training', 1920)} ariaLabel="Shop hero">
         <div className="hero-badge reveal">The Collection</div>
         <h1 className="reveal" style={{ fontSize: 'clamp(2.5rem,7vw,5rem)' }}>The Gym Era<br /><span className="accent-text">Collection</span></h1>
-        <p className="hero-sub reveal">Four essentials. Zero compromises. Built for women who take training seriously.</p>
+        <p className="hero-sub reveal">Performance essentials for busy women and moms who want supportive fits that stay in place and feel good to wear.</p>
       </HeroSubPage>
 
       {/* Product Grid — from folder products or fallback */}
@@ -94,7 +94,7 @@ export default function ShopPage() {
         <div className="container">
           <RevealOnScroll className="section-header">
             <span className="section-tag">Shop All</span>
-            <h2>Performance <span className="accent-text">Essentials</span></h2>
+            <h2>Supportive <span className="accent-text">Essentials</span> for Your Routine</h2>
           </RevealOnScroll>
           <RevealOnScroll stagger className="shop-grid">
             {useFolderProducts
@@ -214,7 +214,7 @@ export default function ShopPage() {
                     <span className="price-original">{originalFromDiscounted('$57.60')}</span>
                     <span className="price-current">$57.60</span>
                   </div>
-                  <p className="product-tagline">Stays put so you can move without limits.</p>
+                  <p className="product-tagline">Stays put through squats, lunges, lifts, and everything in between.</p>
                   <AddToCartButton product={{ id: 'legging', name: 'Grip Flex Legging', price: '$57.60' }} />
                 </div>
               </div>
@@ -236,7 +236,7 @@ export default function ShopPage() {
               <div className="split-content">
                 <span className="section-tag">Built to Fit</span>
                 <h2>Designed on <span className="accent-text">Real Bodies</span></h2>
-                <p>We did not build our patterns on mannequins. Every Gym Era piece was fit-tested on real women doing real movements — squats, presses, lunges, deadlifts, and everything in between. The result is a fit that holds up through your hardest session and still looks incredible walking out the door.</p>
+                <p>We fit-test on real women with different body shapes and training goals. The result is activewear that feels secure, flattering, and comfortable, especially when you are getting back into your routine.</p>
                 <div className="stat-row">
                   <div className="stat">
                     <span className="stat-num">200+</span>
@@ -300,7 +300,7 @@ export default function ShopPage() {
               <div className="email-block__content">
                 <span className="section-tag">Join the Era</span>
                 <h2>Get Early Access + <span className="accent-text">15% Off</span></h2>
-                <p>New drops. Member-only deals. Training content that actually helps. No spam. Unsubscribe anytime.</p>
+                <p>Get practical training tips, new drops, and member-only deals for women and moms building consistency again, one week at a time.</p>
                 <EmailForm inputId="shop-email" />
               </div>
               <div className="email-block__img">

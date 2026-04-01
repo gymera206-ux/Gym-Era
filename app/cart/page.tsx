@@ -24,7 +24,7 @@ export default function CartPage() {
             <h1>Your cart is empty</h1>
             <p>Add something from the shop and come back to checkout.</p>
             <Link href="/shop" className="btn btn-primary btn-lg">
-              Shop the Collection <ArrowIcon />
+              Find Your Fit <ArrowIcon />
             </Link>
           </div>
         </div>
@@ -91,7 +91,7 @@ export default function CartPage() {
               <CheckoutOptions />
             </div>
             <Link href="/shop" className="btn btn-ghost" style={{ marginTop: 16 }}>
-              Keep shopping
+              Continue browsing
             </Link>
           </div>
         </div>

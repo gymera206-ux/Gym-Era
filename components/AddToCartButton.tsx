@@ -52,10 +52,10 @@ export default function AddToCartButton({ product, className = '', label = 'Add 
             <p className="add-to-cart-modal__product">{product.name}</p>
             <div className="add-to-cart-modal__actions">
               <Link href="/cart" className="btn btn-primary" onClick={() => setShowModal(false)}>
-                Go to cart
+                Review my cart
               </Link>
               <button type="button" className="btn btn-ghost" onClick={() => setShowModal(false)}>
-                Keep shopping
+                Continue browsing
               </button>
             </div>
           </div>

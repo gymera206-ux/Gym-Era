@@ -38,18 +38,18 @@ export default function HeroHome() {
       <div className="hero-content container">
         <div className="hero-badge reveal">PERFORMANCE APPAREL</div>
         <h1 className="hero-title reveal">
-          <span className="line">Your</span>
-          <span className="line line-no-wrap">Foundation.</span>
-          <span className="line accent-text">Your Power.</span>
+          <span className="line">Back to</span>
+          <span className="line line-no-wrap">Feeling Strong.</span>
+          <span className="line accent-text">One Workout at a Time.</span>
         </h1>
         <p className="hero-sub reveal">
-          Gym Era builds the base women who train stand on. This is not fast fashion. This is your second skin.
+          For busy women and moms finding their way back to movement. Gym Era stays in place, supports real bodies, and helps you feel confident in every session.
         </p>
         <div className="hero-actions reveal">
           <Link href="/shop" className="btn btn-primary btn-lg">
-            Shop the Collection <ArrowIcon />
+            Find Your Fit <ArrowIcon />
           </Link>
-          <Link href="/story" className="btn btn-ghost btn-lg">Our Story</Link>
+          <Link href="/story" className="btn btn-ghost btn-lg">Meet the Community</Link>
         </div>
       </div>
       <div className="hero-scroll-cue" aria-hidden="true">

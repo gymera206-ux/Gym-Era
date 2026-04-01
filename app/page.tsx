@@ -22,21 +22,21 @@ type LineupProduct = {
 const lineupProducts = (productsData as LineupProduct[]).filter((p) => p.images?.length > 0);
 
 export const metadata: Metadata = {
-  title: 'Gym Era | Performance Apparel Built for Women Who Train',
-  description: 'Gym Era builds the foundation women who train stand on. Performance apparel engineered for real workouts, real bodies, and real results. Shop the collection.',
-  keywords: 'women gym apparel, performance workout clothes, athletic wear for women, gym clothing, fitness apparel, Gym Era',
+  title: 'Gym Era | Performance Activewear for Busy Women and Moms',
+  description: 'Gym Era performance activewear is built for busy women and moms getting back to training. Secure fit, real-body comfort, and zero distractions during workouts.',
+  keywords: 'activewear for moms, workout clothes for busy women, women gym apparel, supportive workout sets, squat proof leggings, fitness apparel, Gym Era',
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Gym Era | Your Foundation. Your Power.',
-    description: 'Gym Era builds the foundation women who train stand on. Performance apparel for real workouts, real bodies, real results.',
+    title: 'Gym Era | Back to Feeling Strong',
+    description: 'Performance activewear for busy women and moms. Built to fit your body, stay in place, and support your routine.',
     type: 'website',
     url: '/',
     siteName: 'Gym Era',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Gym Era | Your Foundation. Your Power.',
-    description: 'Performance apparel for women who train hard every single day.',
+    title: 'Gym Era | Activewear for Busy Women and Moms',
+    description: 'Supportive workout clothes that stay put, fit real bodies, and help you train confidently.',
   },
 };
 
@@ -48,7 +48,7 @@ export default function HomePage() {
         '@type': 'Organization',
         name: 'Gym Era',
         url: 'https://gymera.com',
-        description: 'Performance gym apparel built for women who train.',
+        description: 'Performance gym apparel built for busy women and moms getting back to training.',
         sameAs: [
           'https://instagram.com/gymera',
           'https://tiktok.com/@gymera',
@@ -84,9 +84,9 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="split-content">
-                <span className="section-tag">Move Without Thinking</span>
-                <h2>Apparel That Disappears<br />When You <span className="accent-text">Show Up</span></h2>
-                <p>Between the warm-up and the final set, your clothes should be the last thing on your mind. Gym Era is engineered to move with you — so the only thing you feel is your strength building.</p>
+                <span className="section-tag">Made for Real Schedules</span>
+                <h2>Move with Confidence.<br />No Constant <span className="accent-text">Readjusting.</span></h2>
+                <p>You are balancing a lot already. Your workout clothes should feel supportive, comfortable, and easy to trust so you can focus on taking care of yourself.</p>
                 <div className="stat-row">
                   <div className="stat">
                     <span className="stat-num">4-Way</span>
@@ -102,7 +102,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <Link href="/shop" className="btn btn-primary">
-                  Explore the Collection <ArrowIcon />
+                  Find Your Fit <ArrowIcon />
                 </Link>
               </div>
             </div>
@@ -114,7 +114,7 @@ export default function HomePage() {
       <ParallaxBanner src={unsplash('training', 1920)} ariaLabel="Action shot">
         <div className="parallax-content container">
           <RevealOnScroll>
-            <h2 className="parallax-text">Every Rep.<br />Every Set.<br />Every <span className="accent-text">Single Day.</span></h2>
+            <h2 className="parallax-text">Short Session.<br />Big Heart.<br />Real <span className="accent-text">Progress.</span></h2>
           </RevealOnScroll>
         </div>
       </ParallaxBanner>
@@ -123,7 +123,7 @@ export default function HomePage() {
       <section id="why-gym-era" className="section-pad" aria-label="Benefits">
         <div className="container">
           <RevealOnScroll className="section-header text-center">
-            <span className="section-tag">Why Women Choose Us</span>
+            <span className="section-tag">Why Busy Women Choose Us</span>
             <h2>What You Get When You<br />Train in <span className="accent-text">Gym Era</span></h2>
           </RevealOnScroll>
           <RevealOnScroll stagger className="benefits-grid">
@@ -132,8 +132,8 @@ export default function HomePage() {
                 <Image src={unsplash('gymWoman', 600)} alt="Woman focused during workout" width={600} height={375} loading="lazy" />
               </div>
               <div className="benefit-card__body">
-                <h3>Total Focus</h3>
-                <p>When your apparel fits right and moves with you, there is nothing left to adjust. Your only job is to train and feel powerful doing it.</p>
+                <h3>More Focus, Less Friction</h3>
+                <p>No constant pulling or fixing. When your outfit stays put, you can spend your workout time on movement, not adjustments.</p>
               </div>
             </div>
             <div className="benefit-card benefit-card--photo">
@@ -141,8 +141,8 @@ export default function HomePage() {
                 <Image src={unsplash('boxJump', 600)} alt="Athletic woman doing box jump" width={600} height={375} loading="lazy" />
               </div>
               <div className="benefit-card__body">
-                <h3>Zero Distractions</h3>
-                <p>No pulling, no bunching, no riding up. Gym Era stays locked in so you can push harder without thinking twice about coverage.</p>
+                <h3>Secure Fit on Real Bodies</h3>
+                <p>Our pieces are designed to support different body shapes comfortably, so you feel covered and confident through every movement.</p>
               </div>
             </div>
             <div className="benefit-card benefit-card--photo">
@@ -150,8 +150,8 @@ export default function HomePage() {
                 <Image src={unsplash('confident', 600)} alt="Confident woman at the gym" width={600} height={375} loading="lazy" />
               </div>
               <div className="benefit-card__body">
-                <h3>Confidence Built In</h3>
-                <p>Walk into any gym knowing you look as strong as you feel. Gym Era is built for women who show up and put in the work.</p>
+                <h3>Confidence to Start Again</h3>
+                <p>Getting back into training can feel vulnerable. The right fit helps you show up feeling comfortable, supported, and proud of yourself.</p>
               </div>
             </div>
           </RevealOnScroll>
@@ -164,7 +164,7 @@ export default function HomePage() {
           <RevealOnScroll className="section-header text-center">
             <span className="section-tag">The Collection</span>
             <h2>The <span className="accent-text">Gym Era</span> Lineup</h2>
-            <p>{lineupProducts.length ? 'Performance essentials. Built from the ground up for women who take training seriously.' : 'Four essentials. Zero compromises. Built from the ground up for women who take training seriously.'}</p>
+            <p>{lineupProducts.length ? 'Performance essentials for women and moms rebuilding routine, strength, and confidence.' : 'Four essentials for women and moms rebuilding routine, strength, and confidence.'}</p>
           </RevealOnScroll>
           <RevealOnScroll stagger className="product-scroll">
             {(lineupProducts.length > 0 ? lineupProducts : [
@@ -199,7 +199,7 @@ export default function HomePage() {
           </RevealOnScroll>
           <RevealOnScroll className="text-center" style={{ marginTop: 48 }}>
             <Link href="/shop" className="btn btn-outline btn-lg">
-              Shop All Products <ArrowIcon />
+              Browse All Styles <ArrowIcon />
             </Link>
           </RevealOnScroll>
         </div>
@@ -215,8 +215,8 @@ export default function HomePage() {
               </div>
               <div className="testimonial-hero__content">
                 <div className="review-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <blockquote>&ldquo;I Don&apos;t Think About My Clothes Anymore. I Just Train.&rdquo;</blockquote>
-                <cite>Samira T., Strength Athlete</cite>
+                <blockquote>&ldquo;I only get 30 minutes to train. Gym Era lets me use all 30 without fixing my outfit once.&rdquo;</blockquote>
+                <cite>Nadia R., Mom of Two</cite>
               </div>
             </div>
           </RevealOnScroll>
@@ -241,10 +241,10 @@ export default function HomePage() {
         <img src={unsplash('gymWoman', 1920)} alt="" className="manifesto-bg" loading="lazy" aria-hidden="true" />
         <div className="manifesto-overlay" />
         <RevealOnScroll className="manifesto-inner container">
-          <h2>We Don&apos;t Sell Clothes.<br />We Build <span className="accent-text">Confidence.</span></h2>
-          <p>Gym Era exists for women who show up every single day and demand more from their apparel. This is for the ones who train with purpose.</p>
+          <h2>We Don&apos;t Just Sell Clothes.<br />We Support Your <span className="accent-text">Comeback.</span></h2>
+          <p>Gym Era is for women and moms returning to fitness with full schedules, real responsibilities, and a desire to feel strong in their bodies again.</p>
           <Link href="/story" className="btn btn-primary btn-lg">
-            Read Our Story <ArrowIcon />
+            Meet the Community <ArrowIcon />
           </Link>
         </RevealOnScroll>
       </section>
@@ -257,7 +257,7 @@ export default function HomePage() {
               <div className="email-block__content">
                 <span className="section-tag">Join the Era</span>
                 <h2>Get Early Access + <span className="accent-text">15% Off</span> Your First Order</h2>
-                <p>Be first to shop new drops and member-only deals. No spam. Unsubscribe anytime.</p>
+                <p>Join a supportive community of women rebuilding strength on busy schedules. Get first access to new drops, practical tips, and member-only deals.</p>
                 <EmailForm inputId="email-input" />
               </div>
               <div className="email-block__img">
