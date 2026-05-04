@@ -108,103 +108,139 @@ export default function ResetLandingPage() {
         ))}
       </div>
 
-      {/* ─── VALUE CARDS ─── */}
-      <section className="re-section">
-        <div className="re-section-header">
-          <span className="re-pill">What&apos;s Inside</span>
-          <h2 className="re-h2">
-            Day 1 of the Reset.
-            <em>Yours, Free.</em>
-          </h2>
+      {/* ─── MAIN CONTENT + STICKY FORM (desktop two-col) ─── */}
+      <div className="re-split">
+        {/* LEFT: scrolling content */}
+        <div className="re-split-content">
+          {/* ─── VALUE CARDS ─── */}
+          <section className="re-section re-section--nested">
+            <div className="re-section-header re-section-header--left">
+              <span className="re-pill">What&apos;s Inside</span>
+              <h2 className="re-h2">
+                Day 1 of the Reset.
+                <em>Yours, Free.</em>
+              </h2>
+            </div>
+
+            <div className="re-value-grid">
+              <article className="re-card">
+                <span className="re-card-num">01 / The Workout</span>
+                <h3 className="re-card-title">A 20-Min Full-Body Session.</h3>
+                <p className="re-card-body">
+                  Three rounds. Four moves. The same workout I do before the kids
+                  wake up. No gym. No equipment beyond a kettlebell or a backpack
+                  of books.
+                </p>
+              </article>
+              <article className="re-card">
+                <span className="re-card-num">02 / The Plan</span>
+                <h3 className="re-card-title">A Simple Grocery List.</h3>
+                <p className="re-card-body">
+                  Real food. Whole proteins. The list I actually use on Sunday.
+                  Designed for the woman who packs three lunches before her own
+                  breakfast.
+                </p>
+              </article>
+              <article className="re-card">
+                <span className="re-card-num">03 / The Cool-Down</span>
+                <h3 className="re-card-title">A 5-Minute Reset Routine.</h3>
+                <p className="re-card-body">
+                  The stretches that keep you from breaking. Hip flexors,
+                  hamstrings, shoulders. The places motherhood breaks first.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          {/* ─── FOUNDER ─── */}
+          <section className="re-founder re-founder--nested">
+            <div className="re-founder-inner">
+              <div className="re-founder-img" aria-label="Founder photo">
+                <span className="re-founder-tag">The Founder</span>
+              </div>
+              <div className="re-founder-text">
+                <span className="re-pill">Why This Exists</span>
+                <h2 className="re-h2" style={{ marginTop: '1rem' }}>
+                  Built for Women
+                  <em>Who Show Up.</em>
+                </h2>
+                <p>
+                  I built Gym Era because{' '}
+                  <strong>
+                    nothing on the market was made for the life I actually live.
+                  </strong>{' '}
+                  The packed schedule. The 20-minute reality. The body
+                  that&apos;s had babies and still wants to move.
+                </p>
+                <p>
+                  I built the Reset for the same reason. Not an aspirational
+                  program. The one I wrote for myself, refined over a year of
+                  training, and now run with hundreds of women.
+                </p>
+                <div className="re-founder-sig">
+                  [Her Name], Founder of Gym Era
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* ─── VIDEO MESSAGE ─── */}
+          <section className="re-section re-section--nested">
+            <div className="re-section-header re-section-header--left">
+              <span className="re-pill">A Message From Our Founder</span>
+              <h2 className="re-h2">
+                Hear It
+                <em>From Her.</em>
+              </h2>
+            </div>
+
+            <div className="re-video-wrapper">
+              <div className="re-video-placeholder">
+                <div className="re-video-play" aria-label="Play video">
+                  <svg
+                    width="48"
+                    height="48"
+                    viewBox="0 0 48 48"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <circle cx="24" cy="24" r="24" fill="var(--coral)" />
+                    <polygon
+                      points="19,14 19,34 36,24"
+                      fill="var(--cream)"
+                    />
+                  </svg>
+                </div>
+                <p className="re-video-caption">
+                  [Upload founder video here — replace this placeholder with an
+                  embedded video or link to hosted video]
+                </p>
+              </div>
+            </div>
+          </section>
         </div>
 
-        <div className="re-value-grid">
-          <article className="re-card">
-            <span className="re-card-num">01 / The Workout</span>
-            <h3 className="re-card-title">A 20-Min Full-Body Session.</h3>
-            <p className="re-card-body">
-              Three rounds. Four moves. The same workout I do before the kids
-              wake up. No gym. No equipment beyond a kettlebell or a backpack of
-              books.
-            </p>
-          </article>
-          <article className="re-card">
-            <span className="re-card-num">02 / The Plan</span>
-            <h3 className="re-card-title">A Simple Grocery List.</h3>
-            <p className="re-card-body">
-              Real food. Whole proteins. The list I actually use on Sunday.
-              Designed for the woman who packs three lunches before her own
-              breakfast.
-            </p>
-          </article>
-          <article className="re-card">
-            <span className="re-card-num">03 / The Cool-Down</span>
-            <h3 className="re-card-title">A 5-Minute Reset Routine.</h3>
-            <p className="re-card-body">
-              The stretches that keep you from breaking. Hip flexors, hamstrings,
-              shoulders. The places motherhood breaks first.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      {/* ─── FOUNDER ─── */}
-      <section className="re-founder">
-        <div className="re-founder-inner">
-          <div className="re-founder-img" aria-label="Founder photo">
-            <span className="re-founder-tag">The Founder</span>
-          </div>
-          <div className="re-founder-text">
-            <span className="re-pill">Why This Exists</span>
-            <h2 className="re-h2" style={{ marginTop: '1rem' }}>
-              Built for Women
-              <em>Who Show Up.</em>
-            </h2>
-            <p>
-              I built Gym Era because{' '}
-              <strong>
-                nothing on the market was made for the life I actually live.
-              </strong>{' '}
-              The packed schedule. The 20-minute reality. The body that&apos;s
-              had babies and still wants to move.
-            </p>
-            <p>
-              I built the Reset for the same reason. Not an aspirational program.
-              The one I wrote for myself, refined over a year of training, and
-              now run with hundreds of women.
-            </p>
-            <div className="re-founder-sig">
-              [Her Name], Founder of Gym Era
+        {/* RIGHT: sticky lead form (desktop only) */}
+        <aside className="re-split-aside">
+          <div className="re-sticky-form">
+            <ResetEmailForm id="side-email" location="sidebar" />
+            <div className="re-sticky-extras">
+              <div className="re-trust-point">
+                <span className="re-trust-icon">&#9201;</span>
+                <span>20 minutes a day</span>
+              </div>
+              <div className="re-trust-point">
+                <span className="re-trust-icon">&#10003;</span>
+                <span>No gym required</span>
+              </div>
+              <div className="re-trust-point">
+                <span className="re-trust-icon">&#9993;</span>
+                <span>Delivered to your inbox</span>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ─── VIDEO MESSAGE ─── */}
-      <section className="re-section">
-        <div className="re-section-header">
-          <span className="re-pill">A Message From Our Founder</span>
-          <h2 className="re-h2">
-            Hear It
-            <em>From Her.</em>
-          </h2>
-        </div>
-
-        <div className="re-video-wrapper">
-          <div className="re-video-placeholder">
-            <div className="re-video-play" aria-label="Play video">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                <circle cx="24" cy="24" r="24" fill="var(--coral)" />
-                <polygon points="19,14 19,34 36,24" fill="var(--cream)" />
-              </svg>
-            </div>
-            <p className="re-video-caption">
-              [Upload founder video here — replace this placeholder with an
-              embedded video or link to hosted video]
-            </p>
-          </div>
-        </div>
-      </section>
+        </aside>
+      </div>
 
       {/* ─── FINAL CTA ─── */}
       <section className="re-final">
