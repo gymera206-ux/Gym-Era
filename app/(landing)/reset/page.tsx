@@ -1,14 +1,15 @@
 'use client';
 
-import { useState, useCallback, useRef, type FormEvent } from 'react';
+import { useState, useCallback, type FormEvent } from 'react';
+import { useRouter } from 'next/navigation';
 import './reset.css';
 
 function ResetEmailForm({ id, location }: { id: string; location: string }) {
-  const [state, setState] = useState<'idle' | 'sending' | 'done'>('idle');
-  const timeoutRef = useRef<ReturnType<typeof setTimeout>>(undefined);
+  const [state, setState] = useState<'idle' | 'sending' | 'error'>('idle');
+  const router = useRouter();
 
   const handleSubmit = useCallback(
-    (e: FormEvent<HTMLFormElement>) => {
+    async (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       const form = e.currentTarget;
       const input = form.querySelector(
@@ -18,16 +19,22 @@ function ResetEmailForm({ id, location }: { id: string; location: string }) {
 
       setState('sending');
 
-      // TODO: Replace with real Klaviyo / API call
-      console.log(`Email captured (${location}):`, input.value);
+      try {
+        const res = await fetch('/api/klaviyo', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: input.value }),
+        });
 
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-      timeoutRef.current = setTimeout(() => {
-        setState('done');
-        input.value = '';
-      }, 800);
+        if (!res.ok) throw new Error('Subscribe failed');
+
+        router.push('/reset/thank-you');
+      } catch {
+        setState('error');
+        setTimeout(() => setState('idle'), 3000);
+      }
     },
-    [location],
+    [router],
   );
 
   return (
@@ -63,7 +70,7 @@ function ResetEmailForm({ id, location }: { id: string; location: string }) {
             </>
           )}
           {state === 'sending' && 'Sending…'}
-          {state === 'done' && 'Check Your Inbox ✓'}
+          {state === 'error' && 'Something went wrong — try again'}
         </button>
       </form>
       <p className="re-fine">

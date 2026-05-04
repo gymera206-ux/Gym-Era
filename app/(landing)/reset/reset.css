@@ -418,6 +418,27 @@
 .re-final .re-form-card { text-align: left; margin: 0 auto; }
 
 /* ================================================================
+   THANK YOU PAGE
+   ================================================================ */
+.re-thankyou {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2.5rem;
+  text-align: center;
+}
+.re-thankyou-inner { max-width: 600px; }
+.re-thankyou-inner .re-wordmark { margin-bottom: 2rem; }
+.re-thankyou-sub {
+  font-size: 1.1rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-top: 1.5rem;
+}
+
+/* ================================================================
    FOOTER — minimal, no exit links
    ================================================================ */
 .re-footer {
