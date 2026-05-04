@@ -80,16 +80,21 @@ export default function ResetLandingPage() {
       <section className="re-hero">
         <div className="re-hero-bg" aria-hidden="true" />
         <div className="re-hero-content">
-          <p className="re-eyebrow">A 7-Day Reset Program</p>
-          <h1 className="re-h1">
-            Back to
-            <em>Feeling Strong.</em>
-          </h1>
-          <p className="re-hero-sub">
-            For busy women and moms finding their way back to movement. Twenty
-            minutes a day. Real moves only. The workout you&apos;ll actually do.
-          </p>
-          <ResetEmailForm id="hero-email" location="hero" />
+          <div className="re-hero-left">
+            <p className="re-eyebrow">A 7-Day Reset Program</p>
+            <h1 className="re-h1">
+              Back to
+              <em>Feeling Strong.</em>
+            </h1>
+            <p className="re-hero-sub">
+              For busy women and moms finding their way back to movement. Twenty
+              minutes a day. Real moves only. The workout you&apos;ll actually
+              do.
+            </p>
+          </div>
+          <div className="re-hero-right">
+            <ResetEmailForm id="hero-email" location="hero" />
+          </div>
         </div>
       </section>
 

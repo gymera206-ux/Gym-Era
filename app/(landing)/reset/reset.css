@@ -67,6 +67,7 @@
   position: relative; z-index: 1;
   max-width: 1400px; width: 100%; margin: 0 auto;
 }
+.re-hero-right { margin-top: 2rem; }
 .re-eyebrow {
   font-family: var(--font-josefin, 'Josefin Sans', sans-serif);
   font-size: 0.75rem;
@@ -491,6 +492,23 @@
    DESKTOP — two-column layout with sticky form sidebar
    ================================================================ */
 @media (min-width: 1024px) {
+  /* Hero side-by-side: text left, form right */
+  .re-hero-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+  .re-hero-left { flex: 1; min-width: 0; }
+  .re-hero-right {
+    flex-shrink: 0;
+    width: 420px;
+    margin-top: 0;
+  }
+  .re-hero-right .re-form-card { max-width: none; }
+  .re-hero-sub { margin-bottom: 0; }
+  .re-h1 { font-size: clamp(3rem, 5.5vw, 5rem); }
+
+  /* Content split sidebar */
   .re-split-aside {
     display: block;
     width: 380px;
