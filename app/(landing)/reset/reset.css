@@ -1,0 +1,454 @@
+/* ================================================================
+   GYM ERA RESET — LANDING PAGE STYLES
+   CRO-optimized: no nav, no exit links, sticky mobile CTA,
+   single conversion goal, high-contrast CTAs, minimal friction
+   ================================================================ */
+
+/* --- Tokens --- */
+.re-page {
+  --cream: #FBFAF7;
+  --cream-2: #F5EFE9;
+  --dark: #1A1A1A;
+  --dark-2: #262626;
+  --coral: #D4654A;
+  --coral-deep: #B85339;
+  --coral-light: #FCEAE3;
+  --muted: #7A7A7A;
+  --line: #E8E0D6;
+
+  font-family: var(--font-inter, 'Inter', -apple-system, sans-serif);
+  background: var(--cream);
+  color: var(--dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* --- Utility --- */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0, 0, 0, 0); border: 0;
+}
+
+/* --- Pill Tag --- */
+.re-pill {
+  display: inline-block;
+  background: var(--coral-light);
+  color: var(--coral);
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* ================================================================
+   HERO
+   ================================================================ */
+.re-hero {
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 4rem 2.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.re-hero-bg {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
+    url('https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=1920&q=80&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+.re-hero-content {
+  position: relative; z-index: 1;
+  max-width: 1400px; width: 100%; margin: 0 auto;
+}
+.re-eyebrow {
+  font-family: var(--font-josefin, 'Josefin Sans', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: var(--cream);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+.re-h1 {
+  font-family: var(--font-josefin, 'Josefin Sans', sans-serif);
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  color: var(--cream);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  max-width: 14ch;
+}
+.re-h1 em {
+  font-style: normal;
+  color: var(--coral);
+  display: block;
+}
+.re-hero-sub {
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  color: var(--cream);
+  max-width: 32rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+/* ================================================================
+   EMAIL FORM CARD
+   ================================================================ */
+.re-form-card {
+  background: var(--cream);
+  padding: 1.75rem;
+  border-radius: 16px;
+  max-width: 30rem;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.re-form-title {
+  font-family: var(--font-josefin, 'Josefin Sans', sans-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--dark);
+  text-transform: uppercase;
+  margin: 0.75rem 0 1.25rem;
+  letter-spacing: -0.005em;
+}
+.re-form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.re-input {
+  width: 100%;
+  padding: 1rem 1.1rem;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  background: var(--cream);
+  font-family: inherit;
+  font-size: 1rem;   /* 16px prevents iOS zoom */
+  color: var(--dark);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.re-input::placeholder { color: var(--muted); }
+.re-input:focus { border-color: var(--coral); }
+
+/* CTA button — high contrast, rounded, 44px+ height, first-person copy */
+.re-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.1rem 1.5rem;
+  min-height: 48px;
+  background: var(--coral);
+  color: var(--cream);
+  border: none;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.re-cta:hover { background: var(--coral-deep); transform: translateY(-1px); }
+.re-cta:active { transform: translateY(0); }
+.re-arrow { display: inline-block; transition: transform 0.2s; }
+.re-cta:hover .re-arrow { transform: translateX(4px); }
+.re-fine {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* ================================================================
+   STAT STRIP
+   ================================================================ */
+.re-strip {
+  background: var(--cream);
+  padding: 3rem 2.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.re-strip-item { text-align: center; }
+.re-strip-num {
+  font-family: var(--font-josefin, 'Josefin Sans', sans-serif);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--coral);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.re-strip-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--dark);
+  font-weight: 700;
+}
+
+/* ================================================================
+   SECTIONS
+   ================================================================ */
+.re-section {
+  padding: 6rem 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.re-section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.re-h2 {
+  font-family: var(--font-josefin, 'Josefin Sans', sans-serif);
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--dark);
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
+.re-h2 em { font-style: normal; color: var(--coral); display: block; }
+
+/* ================================================================
+   VALUE CARDS
+   ================================================================ */
+.re-value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.re-card {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.re-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 60px; height: 4px;
+  background: var(--coral);
+}
+.re-card-num {
+  display: block;
+  font-family: var(--font-josefin, 'Josefin Sans', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--coral);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+}
+.re-card-title {
+  font-family: var(--font-josefin, 'Josefin Sans', sans-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 0.85rem;
+  color: var(--dark);
+  text-transform: uppercase;
+}
+.re-card-body { font-size: 0.95rem; color: var(--muted); line-height: 1.6; }
+
+/* ================================================================
+   FOUNDER
+   ================================================================ */
+.re-founder {
+  background: var(--cream-2);
+  padding: 7rem 2.5rem;
+}
+.re-founder-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 4rem;
+  align-items: center;
+}
+.re-founder-img {
+  aspect-ratio: 4/5;
+  border-radius: 20px;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(0,0,0,0.2), rgba(212,101,74,0.3)),
+    url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.re-founder-tag {
+  position: absolute; top: 1.5rem; left: 1.5rem;
+  background: var(--coral); color: var(--cream);
+  padding: 0.4rem 1rem; border-radius: 999px;
+  font-weight: 700; font-size: 0.7rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+}
+.re-founder-text p {
+  font-size: 1.05rem; line-height: 1.7;
+  color: var(--dark); margin-bottom: 1.25rem;
+}
+.re-founder-text strong { color: var(--coral); font-weight: 700; }
+.re-founder-sig {
+  margin-top: 2rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-josefin, 'Josefin Sans', sans-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--coral);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ================================================================
+   TESTIMONIALS
+   ================================================================ */
+.re-testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.re-testimonial {
+  background: var(--cream-2);
+  padding: 2rem;
+  border-radius: 16px;
+}
+.re-stars {
+  color: var(--coral);
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+.re-testimonial-text {
+  font-size: 1rem; line-height: 1.55;
+  color: var(--dark); margin-bottom: 1.5rem;
+}
+.re-testimonial-author {
+  font-family: var(--font-josefin, 'Josefin Sans', sans-serif);
+  font-size: 0.85rem; font-weight: 700;
+  color: var(--dark); letter-spacing: 0.04em;
+  text-transform: uppercase; margin: 0;
+}
+.re-testimonial-meta {
+  font-size: 0.8rem; color: var(--muted);
+  margin: 0.25rem 0 0; letter-spacing: 0.05em;
+}
+.re-placeholder-note {
+  text-align: center; color: var(--muted);
+  font-size: 0.85rem; margin-top: 2rem;
+}
+
+/* ================================================================
+   FINAL CTA
+   ================================================================ */
+.re-final {
+  padding: 7rem 2.5rem;
+  background: var(--dark);
+  color: var(--cream);
+  text-align: center;
+}
+.re-final-inner { max-width: 720px; margin: 0 auto; }
+.re-h2-light {
+  font-family: var(--font-josefin, 'Josefin Sans', sans-serif);
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--cream);
+  text-transform: uppercase;
+  margin: 1rem 0 1.5rem;
+}
+.re-h2-light em { font-style: normal; color: var(--coral); display: block; }
+.re-final-sub {
+  color: var(--cream); opacity: 0.85;
+  font-size: 1.1rem; margin-bottom: 2.5rem; line-height: 1.55;
+}
+.re-final .re-form-card { text-align: left; margin: 0 auto; }
+
+/* ================================================================
+   FOOTER — minimal, no exit links
+   ================================================================ */
+.re-footer {
+  background: var(--cream);
+  padding: 3rem 2.5rem 2rem;
+  text-align: center;
+  border-top: 1px solid var(--line);
+}
+.re-wordmark {
+  font-family: var(--font-josefin, 'Josefin Sans', sans-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.75rem;
+  display: flex; justify-content: center; gap: 0.5em;
+}
+.re-wm-gym { color: var(--dark); }
+.re-wm-era { color: var(--coral); }
+.re-footer-tagline {
+  color: var(--coral); font-weight: 700;
+  font-size: 0.85rem; letter-spacing: 0.2em;
+  text-transform: uppercase; margin-bottom: 1.5rem;
+}
+.re-footer-copy { font-size: 0.8rem; color: var(--muted); }
+
+/* ================================================================
+   STICKY MOBILE CTA — always visible on scroll (CRO: line 71, 86, 99)
+   ================================================================ */
+.re-sticky-mobile {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  padding: 0.75rem 1rem;
+  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+  background: rgba(251, 250, 247, 0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid var(--line);
+  z-index: 100;
+}
+.re-cta--sticky { width: 100%; }
+
+/* ================================================================
+   MOBILE — single column, large touch targets, 16px+ fonts
+   ================================================================ */
+@media (max-width: 800px) {
+  .re-hero { padding: 3rem 1.25rem; }
+  .re-section { padding: 4rem 1.25rem; }
+  .re-founder { padding: 4rem 1.25rem; }
+  .re-final { padding: 4rem 1.25rem; }
+  .re-strip { padding: 2.5rem 1.25rem; }
+
+  .re-value-grid { grid-template-columns: 1fr; }
+  .re-testimonial-grid { grid-template-columns: 1fr; }
+  .re-founder-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+
+  .re-sticky-mobile { display: block; }
+  .re-footer { padding-bottom: calc(2rem + 60px + env(safe-area-inset-bottom, 0px)); }
+}
+
+@media (max-width: 500px) {
+  .re-strip { gap: 1.25rem; }
+  .re-strip-num { font-size: 2.25rem; }
+  .re-form-card { padding: 1.25rem; }
+}
