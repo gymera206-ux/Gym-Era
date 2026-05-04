@@ -180,47 +180,30 @@ export default function ResetLandingPage() {
         </div>
       </section>
 
-      {/* ─── TESTIMONIALS ─── */}
+      {/* ─── VIDEO MESSAGE ─── */}
       <section className="re-section">
         <div className="re-section-header">
-          <span className="re-pill">Real Women / Real Reviews</span>
+          <span className="re-pill">A Message From Our Founder</span>
           <h2 className="re-h2">
-            What the First
-            <em>30 Women Said.</em>
+            Hear It
+            <em>From Her.</em>
           </h2>
         </div>
 
-        <div className="re-testimonial-grid">
-          {[
-            {
-              text: '[Beta testimonial #1. Replace after Week 1 cohort completes. Pull a 1-2 sentence quote about results, fit, or how it changed her week.]',
-              author: 'Sarah M.',
-              meta: 'Mom of 2, Chicago',
-            },
-            {
-              text: '[Beta testimonial #2. Pull from video review. Focus on the specific moment something clicked.]',
-              author: 'Jen R.',
-              meta: 'Mom of 3, Austin',
-            },
-            {
-              text: '[Beta testimonial #3. Emotional or identity transformation. "I felt like myself again" type.]',
-              author: 'Nicole T.',
-              meta: 'Mom of 4, Brooklyn',
-            },
-          ].map((t) => (
-            <div className="re-testimonial" key={t.author}>
-              <div className="re-stars" aria-label="5 out of 5 stars">
-                ★★★★★
-              </div>
-              <p className="re-testimonial-text">{t.text}</p>
-              <p className="re-testimonial-author">{t.author}</p>
-              <p className="re-testimonial-meta">{t.meta}</p>
+        <div className="re-video-wrapper">
+          <div className="re-video-placeholder">
+            <div className="re-video-play" aria-label="Play video">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <circle cx="24" cy="24" r="24" fill="var(--coral)" />
+                <polygon points="19,14 19,34 36,24" fill="var(--cream)" />
+              </svg>
             </div>
-          ))}
+            <p className="re-video-caption">
+              [Upload founder video here — replace this placeholder with an
+              embedded video or link to hosted video]
+            </p>
+          </div>
         </div>
-        <p className="re-placeholder-note">
-          Real reviews go here once the first 30 testers finish Week 1.
-        </p>
       </section>
 
       {/* ─── FINAL CTA ─── */}
