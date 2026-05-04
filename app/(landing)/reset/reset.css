@@ -206,31 +206,14 @@
 }
 
 /* ================================================================
-   DESKTOP TWO-COLUMN SPLIT — content left, sticky form right
+   TRUST POINTS ROW — under "Day 1 of the Reset" header
    ================================================================ */
-.re-split {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 2.5rem;
+.re-trust-row {
   display: flex;
-  gap: 3rem;
-}
-.re-split-content { flex: 1; min-width: 0; }
-.re-split-aside {
-  display: none; /* shown on desktop via media query */
-}
-.re-sticky-form {
-  position: sticky;
-  top: 2rem;
-}
-.re-sticky-form .re-form-card {
-  box-shadow: 0 8px 40px rgba(0,0,0,0.08);
-}
-.re-sticky-extras {
-  margin-top: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
 }
 .re-trust-point {
   display: flex;
@@ -244,26 +227,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   background: var(--coral-light);
   color: var(--coral);
-  border-radius: 8px;
-  font-size: 0.85rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
   font-weight: 700;
   flex-shrink: 0;
 }
-
-/* Nested section variants (inside split layout) */
-.re-section--nested { padding: 4rem 0; max-width: none; }
-.re-section-header--left { text-align: left; }
-.re-founder--nested { padding: 4rem 0; border-radius: 20px; margin: 0; }
-.re-founder--nested .re-founder-inner {
-  max-width: none;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-}
-.re-founder--nested .re-founder-img { max-height: 400px; }
 
 /* ================================================================
    SECTIONS
@@ -294,7 +266,7 @@
    ================================================================ */
 .re-value-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
 .re-card {
@@ -507,31 +479,11 @@
   .re-hero-right .re-form-card { max-width: none; }
   .re-hero-sub { margin-bottom: 0; }
   .re-h1 { font-size: clamp(3rem, 5.5vw, 5rem); }
-
-  /* Content split sidebar */
-  .re-split-aside {
-    display: block;
-    width: 380px;
-    flex-shrink: 0;
-    padding-top: 4rem;
-  }
-  .re-founder--nested .re-founder-inner {
-    grid-template-columns: 280px 1fr;
-    gap: 2.5rem;
-  }
-  .re-video-wrapper { max-width: 100%; }
 }
 
 /* ================================================================
    MOBILE — single column, large touch targets, 16px+ fonts
    ================================================================ */
-@media (max-width: 1023px) {
-  .re-split { flex-direction: column; padding: 0; }
-  .re-split-aside { display: none; }
-  .re-section--nested { padding: 4rem 1.25rem; }
-  .re-founder--nested { padding: 4rem 1.25rem; }
-}
-
 @media (max-width: 800px) {
   .re-hero { padding: 3rem 1.25rem; }
   .re-section { padding: 4rem 1.25rem; }
@@ -539,6 +491,7 @@
   .re-final { padding: 4rem 1.25rem; }
   .re-strip { padding: 2.5rem 1.25rem; }
 
+  .re-value-grid { grid-template-columns: 1fr; }
   .re-founder-inner { grid-template-columns: 1fr; gap: 2.5rem; }
 
   .re-sticky-mobile { display: block; }
