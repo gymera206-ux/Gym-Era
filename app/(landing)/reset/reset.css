@@ -497,18 +497,6 @@
     flex-shrink: 0;
     padding-top: 4rem;
   }
-  .re-hero-content {
-    display: grid;
-    grid-template-columns: 1fr 400px;
-    gap: 3rem;
-    align-items: center;
-  }
-  .re-hero-text-col { display: contents; }
-  /* Hero form sits in the right column on desktop */
-  .re-hero-content .re-form-card {
-    justify-self: end;
-    align-self: center;
-  }
   .re-founder--nested .re-founder-inner {
     grid-template-columns: 280px 1fr;
     gap: 2.5rem;
