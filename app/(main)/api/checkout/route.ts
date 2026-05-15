@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import Stripe from 'stripe';
+import { SquareClient, SquareEnvironment } from 'square';
 
 type CartItem = {
   id: string;
@@ -18,12 +18,20 @@ function parsePriceToCents(price: string): number {
 
 export async function POST(req: NextRequest) {
   try {
-    const secretKey = process.env.STRIPE_SECRET_KEY;
-    if (!secretKey) {
-      return NextResponse.json({ error: 'Stripe is not configured on this server.' }, { status: 500 });
+    const accessToken = process.env.SQUARE_ACCESS_TOKEN;
+    const locationId = process.env.SQUARE_LOCATION_ID;
+
+    if (!accessToken || !locationId) {
+      return NextResponse.json({ error: 'Square is not configured on this server.' }, { status: 500 });
     }
 
-    const stripe = new Stripe(secretKey, { apiVersion: '2026-02-25.clover' });
+    const client = new SquareClient({
+      token: accessToken,
+      environment:
+        process.env.SQUARE_ENVIRONMENT === 'production'
+          ? SquareEnvironment.Production
+          : SquareEnvironment.Sandbox,
+    });
 
     const { items }: { items: CartItem[] } = await req.json();
 
@@ -33,48 +41,42 @@ export async function POST(req: NextRequest) {
 
     const origin = req.headers.get('origin') ?? process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000';
 
-    const line_items: Stripe.Checkout.SessionCreateParams.LineItem[] = items.map((item) => {
+    const lineItems = items.map((item) => {
       const unitAmount = parsePriceToCents(item.price);
       const productName = item.sizes ? `${item.name} (${item.sizes})` : item.name;
 
-      // Stripe requires fully absolute https:// URLs for images.
-      // Convert relative paths (e.g. /products/...) to absolute using the request origin.
-      let imageUrls: string[] = [];
-      if (item.image) {
-        const absoluteImage = item.image.startsWith('http')
-          ? item.image
-          : `${origin}${item.image.startsWith('/') ? '' : '/'}${item.image}`;
-        imageUrls = [absoluteImage];
-      }
-
       return {
-        quantity: item.quantity,
-        price_data: {
-          currency: 'usd',
-          unit_amount: unitAmount,
-          product_data: {
-            name: productName,
-            ...(imageUrls.length > 0 ? { images: imageUrls } : {}),
-          },
+        name: productName,
+        quantity: String(item.quantity),
+        basePriceMoney: {
+          amount: BigInt(unitAmount),
+          currency: 'USD' as const,
         },
       };
     });
 
-    const session = await stripe.checkout.sessions.create({
-      mode: 'payment',
-      line_items,
-      success_url: `${origin}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${origin}/checkout/cancel`,
-      billing_address_collection: 'required',
-      shipping_address_collection: {
-        allowed_countries: ['US', 'CA', 'GB', 'AU'],
+    const result = await client.checkout.paymentLinks.create({
+      idempotencyKey: crypto.randomUUID(),
+      order: {
+        locationId,
+        lineItems,
+      },
+      checkoutOptions: {
+        redirectUrl: `${origin}/checkout/success`,
+        askForShippingAddress: true,
       },
     });
 
-    return NextResponse.json({ url: session.url });
+    const checkoutUrl = result.paymentLink?.url;
+
+    if (!checkoutUrl) {
+      throw new Error('Square did not return a checkout URL.');
+    }
+
+    return NextResponse.json({ url: checkoutUrl });
   } catch (err) {
     const message = err instanceof Error ? err.message : 'Internal server error';
-    console.error('[Stripe Checkout]', message);
+    console.error('[Square Checkout]', message);
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }

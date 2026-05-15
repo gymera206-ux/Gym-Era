@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { hasStripe, hasPayPal, paypalClientId, paypalOrderApi } from '@/lib/payment-config';
+import { hasPayPal, paypalClientId, paypalOrderApi } from '@/lib/payment-config';
 import { useCart } from '@/context/CartContext';
 
 declare global {
@@ -20,13 +20,13 @@ export default function CheckoutOptions() {
   const { items } = useCart();
   const paypalRef = useRef<HTMLDivElement>(null);
   const [paypalLoaded, setPaypalLoaded] = useState(false);
-  const [stripeLoading, setStripeLoading] = useState(false);
-  const [stripeError, setStripeError] = useState('');
+  const [squareLoading, setSquareLoading] = useState(false);
+  const [squareError, setSquareError] = useState('');
 
-  async function handleStripeCheckout() {
+  async function handleSquareCheckout() {
     if (items.length === 0) return;
-    setStripeLoading(true);
-    setStripeError('');
+    setSquareLoading(true);
+    setSquareError('');
     try {
       const res = await fetch('/api/checkout', {
         method: 'POST',
@@ -39,8 +39,8 @@ export default function CheckoutOptions() {
       }
       window.location.href = data.url;
     } catch (err) {
-      setStripeError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
-      setStripeLoading(false);
+      setSquareError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+      setSquareLoading(false);
     }
   }
 
@@ -81,37 +81,26 @@ export default function CheckoutOptions() {
     };
   }, []);
 
-  if (!hasStripe && !hasPayPal) {
-    return (
-      <p className="checkout-options__setup">
-        Add <code>NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY</code> and <code>STRIPE_SECRET_KEY</code> in{' '}
-        <code>.env.local</code> to enable Stripe checkout. See <code>.env.example</code>.
-      </p>
-    );
-  }
-
   return (
     <div className="checkout-options">
       <p className="checkout-options__label">Secure checkout</p>
       <div className="checkout-options__buttons">
-        {hasStripe && (
-          <button
-            onClick={handleStripeCheckout}
-            disabled={stripeLoading || items.length === 0}
-            className="btn btn-primary checkout-options__stripe"
-          >
-            {stripeLoading ? 'Redirecting…' : 'Pay with Stripe'}
-          </button>
-        )}
+        <button
+          onClick={handleSquareCheckout}
+          disabled={squareLoading || items.length === 0}
+          className="btn btn-primary checkout-options__square"
+        >
+          {squareLoading ? 'Redirecting…' : 'Pay with Square'}
+        </button>
         {hasPayPal && (
           <div className="checkout-options__paypal" ref={paypalRef}>
             {!paypalLoaded && <span className="checkout-options__loading">Loading PayPal…</span>}
           </div>
         )}
       </div>
-      {stripeError && <p className="checkout-options__error">{stripeError}</p>}
+      {squareError && <p className="checkout-options__error">{squareError}</p>}
       <p className="checkout-options__trust">
-        We accept Stripe and PayPal. Your payment is secure.
+        We accept Square and PayPal. Your payment is secure.
       </p>
     </div>
   );

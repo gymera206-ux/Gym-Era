@@ -276,15 +276,15 @@ export default function ShopPage() {
         </div>
       </section>
 
-      {/* Payment methods — Stripe & PayPal */}
+      {/* Payment methods — Square & PayPal */}
       <section id="checkout" className="section-pad" aria-label="Checkout and payment">
         <div className="container">
           <RevealOnScroll>
             <div className="checkout-section">
               <span className="section-tag">Secure Payment</span>
-              <h2>Check Out with <span className="accent-text">Stripe</span> or <span className="accent-text">PayPal</span></h2>
+              <h2>Check Out with <span className="accent-text">Square</span> or <span className="accent-text">PayPal</span></h2>
               <p className="checkout-section__p">
-                We accept Stripe and PayPal. Choose your preferred method at checkout.
+                We accept Square and PayPal. Choose your preferred method at checkout.
               </p>
               <CheckoutOptions />
             </div>

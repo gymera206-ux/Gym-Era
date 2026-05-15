@@ -1,11 +1,11 @@
 /**
  * Payment configuration. Set these in .env.local (see .env.example).
- * - Stripe: Set NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY and STRIPE_SECRET_KEY from your Stripe Dashboard.
- * - PayPal: Create an app at developer.paypal.com → get Client ID → set as NEXT_PUBLIC_PAYPAL_CLIENT_ID
+ * - Square: Set SQUARE_ACCESS_TOKEN and SQUARE_LOCATION_ID from your Square Dashboard.
+ * - PayPal: Create an app at developer.paypal.com -> get Client ID -> set as NEXT_PUBLIC_PAYPAL_CLIENT_ID
  */
 
-export const stripePublishableKey =
-  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY ?? '';
+export const squareEnvironment =
+  process.env.SQUARE_ENVIRONMENT === 'production' ? 'production' : 'sandbox';
 
 export const paypalClientId =
   process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID ?? '';
@@ -14,6 +14,6 @@ export const paypalClientId =
 export const paypalOrderApi =
   process.env.NEXT_PUBLIC_PAYPAL_ORDER_API ?? '';
 
-export const hasStripe = Boolean(stripePublishableKey);
+export const hasSquare = Boolean(process.env.SQUARE_ACCESS_TOKEN && process.env.SQUARE_LOCATION_ID);
 export const hasPayPal = Boolean(paypalClientId && paypalOrderApi);
-export const hasAnyPayment = hasStripe || hasPayPal;
+export const hasAnyPayment = hasSquare || hasPayPal;

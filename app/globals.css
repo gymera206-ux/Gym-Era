@@ -915,7 +915,7 @@ body.has-hero .site-header.header-dark:not(.scrolled) .nav-toggle span { backgro
 }
 
 /* ===== EMAIL BLOCK ===== */
-/* ===== CHECKOUT (Stripe & PayPal) ===== */
+/* ===== CHECKOUT (Square & PayPal) ===== */
 .checkout-section { max-width: 560px; }
 .checkout-section__p { margin-bottom: 24px; color: var(--text-secondary); }
 .checkout-options__label {
@@ -925,7 +925,7 @@ body.has-hero .site-header.header-dark:not(.scrolled) .nav-toggle span { backgro
 .checkout-options__buttons {
   display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-bottom: 16px;
 }
-.checkout-options__stripe { min-width: 160px; text-align: center; }
+.checkout-options__square { min-width: 160px; text-align: center; }
 .checkout-options__paypal { min-height: 45px; min-width: 150px; }
 .checkout-options__loading { font-size: 14px; color: var(--text-muted); }
 .checkout-options__trust {

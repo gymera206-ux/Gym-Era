@@ -105,6 +105,38 @@ export default function ResetLandingPage() {
         </div>
       </section>
 
+      {/* ─── VIDEO MESSAGE ─── */}
+      <section className="re-section">
+        <div className="re-section-header">
+          <span className="re-pill">A Message From Our Founder</span>
+          <h2 className="re-h2">
+            Hear It
+            <em>From Her.</em>
+          </h2>
+        </div>
+
+        <div className="re-video-wrapper">
+          <div className="re-video-placeholder">
+            <div className="re-video-play" aria-label="Play video">
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 48 48"
+                fill="none"
+                aria-hidden="true"
+              >
+                <circle cx="24" cy="24" r="24" fill="var(--coral)" />
+                <polygon points="19,14 19,34 36,24" fill="var(--cream)" />
+              </svg>
+            </div>
+            <p className="re-video-caption">
+              [Upload founder video here — replace this placeholder with an
+              embedded video or link to hosted video]
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ─── STAT STRIP ─── */}
       <div className="re-strip">
         {[
@@ -202,38 +234,6 @@ export default function ResetLandingPage() {
             <div className="re-founder-sig">
               [Her Name], Founder of Gym Era
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── VIDEO MESSAGE ─── */}
-      <section className="re-section">
-        <div className="re-section-header">
-          <span className="re-pill">A Message From Our Founder</span>
-          <h2 className="re-h2">
-            Hear It
-            <em>From Her.</em>
-          </h2>
-        </div>
-
-        <div className="re-video-wrapper">
-          <div className="re-video-placeholder">
-            <div className="re-video-play" aria-label="Play video">
-              <svg
-                width="48"
-                height="48"
-                viewBox="0 0 48 48"
-                fill="none"
-                aria-hidden="true"
-              >
-                <circle cx="24" cy="24" r="24" fill="var(--coral)" />
-                <polygon points="19,14 19,34 36,24" fill="var(--cream)" />
-              </svg>
-            </div>
-            <p className="re-video-caption">
-              [Upload founder video here — replace this placeholder with an
-              embedded video or link to hosted video]
-            </p>
           </div>
         </div>
       </section>
