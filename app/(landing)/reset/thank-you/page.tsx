@@ -39,7 +39,7 @@ export default function ThankYouPage() {
         <div className="re-ty-offer-inner">
           <h1 className="re-h2">
             You just made a decision most mums never make.
-            <em>Don&apos;t stop at Day 1.</em>
+            <em>Don&apos;t stop at Day&nbsp;1.</em>
           </h1>
 
           <p className="re-ty-hook">
