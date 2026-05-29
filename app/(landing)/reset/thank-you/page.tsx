@@ -32,47 +32,68 @@ export default function ThankYouPage() {
           <span className="re-wm-era">ERA</span>
         </div>
         <span className="re-pill">You&apos;re In</span>
-        <p className="re-ty-confirm-text">
-          Day 1 is on its way to your inbox. While you wait&hellip;
-        </p>
       </section>
 
-      {/* One-Time Offer */}
+      {/* Offer Section */}
       <section className="re-ty-offer">
         <div className="re-ty-offer-inner">
-          <span className="re-ty-badge">One-Time Offer</span>
-          <h1 className="re-h2" style={{ marginTop: '1rem' }}>
-            Why Wait 7 Days?
-            <em>Get the Full Reset Now.</em>
+          <h1 className="re-h2">
+            You just made a decision most mums never make.
+            <em>Don&apos;t stop at Day 1.</em>
           </h1>
-          <p className="re-ty-offer-sub">
-            You signed up for Day 1. But you can unlock the entire 7-Day Reset
-            right now — all workouts, all meal plans, all cool-downs — delivered
-            instantly for just <strong>$17</strong>.
+
+          <p className="re-ty-hook">
+            Here&apos;s something I wish someone had told me when I started over.
           </p>
 
-          {/* What's Included */}
+          <div className="re-ty-body">
+            <p>
+              Day 1 will feel good.
+              You&apos;ll finish it, catch your breath, and think — <em>yes, I can do this.</em>
+            </p>
+            <p>
+              And then Day 2 arrives with no plan. No instructions. Just you, trying to
+              remember what came next, wondering if you should repeat Day 1 or make
+              something up.
+            </p>
+            <p>
+              That&apos;s where most women stop.
+            </p>
+            <p>
+              Not because they lack discipline. Because they ran out of road.
+            </p>
+            <p>
+              The full 7-Day Reset exists for exactly that moment. It picks up where
+              Day 1 ends and carries you through to the other side — the part where it
+              stops feeling like effort and starts feeling like <strong>yours</strong> again.
+            </p>
+          </div>
+
+          {/* What You Get */}
           <div className="re-ty-includes">
             <div className="re-ty-includes-header">
-              <span className="re-ty-includes-title">Everything Inside:</span>
+              <span className="re-ty-includes-title">What You Get Instantly:</span>
             </div>
             <ul className="re-ty-list">
-              <li>7 complete 20-minute kettlebell workouts (progressive difficulty)</li>
-              <li>Full 7-day meal plan with grocery lists</li>
-              <li>Daily 5-minute cool-down &amp; mobility routines</li>
-              <li>Printable workout tracker to log your reps</li>
-              <li>Private access — keep forever, repeat anytime</li>
+              <li>All 7 complete workouts — progressive, purposeful, 20 minutes each</li>
+              <li>Full 7-day meal plan with done-for-you grocery lists</li>
+              <li>Daily cool-down and mobility routines (5 minutes — non-negotiable)</li>
+              <li>Printable habit tracker to log every rep, every day</li>
+              <li>Yours to keep, repeat, and return to whenever life gets loud again</li>
             </ul>
           </div>
 
-          {/* Price Anchor */}
+          {/* Price Block */}
           <div className="re-ty-price">
             <div className="re-ty-price-compare">
               <span className="re-ty-price-old">$47</span>
               <span className="re-ty-price-current">$17</span>
+              <span className="re-ty-price-today">today</span>
             </div>
             <p className="re-ty-price-note">
-              This price is only available right now, on this page.
+              This is a one-time offer available only on this page. When you close this
+              page, this price closes with it. The Reset will still be available — just
+              not at this price.
             </p>
           </div>
 
@@ -82,17 +103,27 @@ export default function ThankYouPage() {
             disabled={loading}
             className="re-cta re-ty-cta"
           >
-            {loading ? 'Loading...' : 'Get Instant Access — $17'}
+            {loading ? 'Loading...' : 'Yes — Give Me the Full Reset for $17'}
             {!loading && <span className="re-arrow">&rarr;</span>}
           </button>
 
           <p className="re-fine">
-            Secure checkout. Instant delivery. No subscription.
+            Instant delivery. Secure checkout. No subscription. Ever.
           </p>
 
-          {/* No Thanks */}
+          {/* Social Proof */}
+          <div className="re-ty-review">
+            <div className="re-ty-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote className="re-ty-quote">
+              &ldquo;I only had the free day at first. I came back for the full plan after
+              Day 2 because I had no idea what to do next. Best $17 I&apos;ve spent.&rdquo;
+            </blockquote>
+            <cite className="re-ty-cite">— Nadia R., mum of two</cite>
+          </div>
+
+          {/* Decline */}
           <a href="/" className="re-ty-skip">
-            No thanks, I&apos;ll wait for the daily emails
+            No thanks — I&apos;ll figure out Days 2–7 on my own
           </a>
         </div>
       </section>
