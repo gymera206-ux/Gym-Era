@@ -418,25 +418,151 @@
 .re-final .re-form-card { text-align: left; margin: 0 auto; }
 
 /* ================================================================
-   THANK YOU PAGE
+   THANK YOU PAGE — $17 UPSELL
    ================================================================ */
-.re-thankyou {
-  min-height: 100vh;
-  min-height: 100dvh;
+
+/* Confirmation banner at top */
+.re-ty-confirm {
+  padding: 3rem 2.5rem 2rem;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+}
+.re-ty-confirm .re-wordmark { margin-bottom: 1.5rem; }
+.re-ty-confirm .re-pill { margin-bottom: 1rem; }
+.re-ty-confirm-text {
+  font-size: 1rem;
+  color: var(--muted);
+  margin-top: 1rem;
+}
+
+/* Main offer section */
+.re-ty-offer {
+  padding: 4rem 2.5rem 5rem;
+  text-align: center;
+}
+.re-ty-offer-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+.re-ty-badge {
+  display: inline-block;
+  background: var(--dark);
+  color: var(--cream);
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.re-ty-offer-sub {
+  font-size: 1.1rem;
+  color: var(--dark);
+  line-height: 1.7;
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.re-ty-offer-sub strong {
+  color: var(--coral);
+  font-weight: 700;
+}
+
+/* What's included box */
+.re-ty-includes {
+  background: var(--cream-2);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: left;
+  margin-bottom: 2.5rem;
+}
+.re-ty-includes-header {
+  margin-bottom: 1.25rem;
+}
+.re-ty-includes-title {
+  font-family: var(--font-josefin, 'Josefin Sans', sans-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--dark);
+}
+.re-ty-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.re-ty-list li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--dark);
+}
+.re-ty-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.45rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--coral);
+}
+.re-ty-list li:last-child { margin-bottom: 0; }
+
+/* Price anchor */
+.re-ty-price {
+  margin-bottom: 2rem;
+}
+.re-ty-price-compare {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem 2.5rem;
-  text-align: center;
+  gap: 1rem;
 }
-.re-thankyou-inner { max-width: 600px; }
-.re-thankyou-inner .re-wordmark { margin-bottom: 2rem; }
-.re-thankyou-sub {
-  font-size: 1.1rem;
+.re-ty-price-old {
+  font-family: var(--font-josefin, 'Josefin Sans', sans-serif);
+  font-size: 2rem;
+  font-weight: 700;
   color: var(--muted);
-  line-height: 1.6;
-  margin-top: 1.5rem;
+  text-decoration: line-through;
+  opacity: 0.6;
 }
+.re-ty-price-current {
+  font-family: var(--font-josefin, 'Josefin Sans', sans-serif);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--coral);
+  line-height: 1;
+}
+.re-ty-price-note {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.75rem;
+  font-weight: 500;
+}
+
+/* CTA button override for size */
+.re-ty-cta {
+  width: 100%;
+  max-width: 400px;
+  padding: 1.25rem 2rem;
+  font-size: 0.9rem;
+}
+
+/* Skip / no thanks link */
+.re-ty-skip {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+.re-ty-skip:hover { color: var(--dark); }
 
 /* ================================================================
    FOOTER — minimal, no exit links
