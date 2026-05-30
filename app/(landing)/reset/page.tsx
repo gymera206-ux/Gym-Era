@@ -228,7 +228,7 @@ export default function ResetLandingPage() {
               now run with hundreds of women.
             </p>
             <div className="re-founder-sig">
-              [Her Name], Founder of Gym Era
+              Solange, Founder of Gym Era
             </div>
           </div>
         </div>
