@@ -115,25 +115,14 @@ export default function ResetLandingPage() {
           </h2>
         </div>
 
-        <div className="re-video-wrapper">
-          <div className="re-video-placeholder">
-            <div className="re-video-play" aria-label="Play video">
-              <svg
-                width="48"
-                height="48"
-                viewBox="0 0 48 48"
-                fill="none"
-                aria-hidden="true"
-              >
-                <circle cx="24" cy="24" r="24" fill="var(--coral)" />
-                <polygon points="19,14 19,34 36,24" fill="var(--cream)" />
-              </svg>
-            </div>
-            <p className="re-video-caption">
-              [Upload founder video here — replace this placeholder with an
-              embedded video or link to hosted video]
-            </p>
-          </div>
+        <div className="re-video-wrapper re-video-wrapper--shorts">
+          <iframe
+            className="re-video-embed"
+            src="https://www.youtube.com/embed/Eg23ZmZGmf4"
+            title="A message from our founder"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
         </div>
       </section>
 
