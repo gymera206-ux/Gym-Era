@@ -141,6 +141,13 @@ export default function ResetLandingPage() {
         ))}
       </div>
 
+      {/* ─── MID-PAGE EMAIL CTA ─── */}
+      <section className="re-mid-cta">
+        <div className="re-mid-cta-inner">
+          <ResetEmailForm id="mid-email" location="mid" />
+        </div>
+      </section>
+
       {/* ─── VALUE CARDS ─── */}
       <section className="re-section">
         <div className="re-section-header">

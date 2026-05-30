@@ -238,6 +238,23 @@
 }
 
 /* ================================================================
+   MID-PAGE EMAIL CTA — below stat strip
+   ================================================================ */
+.re-mid-cta {
+  padding: 4rem 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+.re-mid-cta-inner {
+  width: 100%;
+  max-width: 480px;
+}
+.re-mid-cta .re-form-card {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--line);
+}
+
+/* ================================================================
    SECTIONS
    ================================================================ */
 .re-section {
