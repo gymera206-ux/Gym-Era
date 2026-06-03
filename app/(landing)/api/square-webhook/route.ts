@@ -1,15 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 const KLAVIYO_API_KEY = process.env.KLAVIYO_API_KEY!;
+const RESET_BUYERS_LIST_ID = 'XG3Ptq';
 const SQUARE_ACCESS_TOKEN = process.env.SQUARE_ACCESS_TOKEN!;
-const SQUARE_WEBHOOK_SIGNATURE_KEY = process.env.SQUARE_WEBHOOK_SIGNATURE_KEY;
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     const eventType = body?.type;
 
-    // Only handle completed payments
+    // Only handle payment events
     if (eventType !== 'payment.completed' && eventType !== 'payment.updated') {
       return NextResponse.json({ received: true });
     }
@@ -24,50 +24,31 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ received: true });
     }
 
-    const orderId = payment.order_id;
-    if (!orderId) {
-      console.error('[Square Webhook] No order_id on payment');
-      return NextResponse.json({ received: true });
-    }
+    // Get buyer email directly from payment
+    let buyerEmail = payment.buyer_email_address;
 
-    // Fetch the order to get the buyer's email and line items
-    const orderRes = await fetch(
-      `https://connect.squareup.com/v2/orders/${orderId}`,
-      {
-        headers: {
-          Authorization: `Bearer ${SQUARE_ACCESS_TOKEN}`,
-          'Content-Type': 'application/json',
+    // If no email on payment, fetch the order
+    if (!buyerEmail && payment.order_id) {
+      const orderRes = await fetch(
+        `https://connect.squareup.com/v2/orders/${payment.order_id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${SQUARE_ACCESS_TOKEN}`,
+            'Content-Type': 'application/json',
+          },
         },
-      },
-    );
+      );
 
-    if (!orderRes.ok) {
-      console.error('[Square Webhook] Failed to fetch order:', orderRes.status);
-      return NextResponse.json({ received: true });
+      if (orderRes.ok) {
+        const orderData = await orderRes.json();
+        buyerEmail =
+          orderData.order?.fulfillments?.[0]?.shipment_details?.recipient?.email_address;
+      }
     }
-
-    const orderData = await orderRes.json();
-    const order = orderData.order;
-
-    // Get buyer email from the order
-    const buyerEmail =
-      payment.buyer_email_address ??
-      order?.fulfillments?.[0]?.shipment_details?.recipient?.email_address ??
-      null;
 
     if (!buyerEmail) {
-      console.error('[Square Webhook] No buyer email found on order', orderId);
+      console.error('[Square Webhook] No buyer email found');
       return NextResponse.json({ received: true });
-    }
-
-    // Determine which product was purchased based on amount
-    const amountCents = Number(payment.amount_money?.amount ?? 0);
-    let tag: string;
-
-    if (amountCents <= 2000) {
-      tag = 'reset-17-purchased';
-    } else {
-      tag = 'reset-47-purchased';
     }
 
     // 1. Create or get profile in Klaviyo
@@ -103,65 +84,30 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ received: true });
     }
 
-    // 2. Tag the profile so the Klaviyo flow triggers
-    // First, create the tag if it doesn't exist (Klaviyo will return it or 409)
-    const tagRes = await fetch('https://a.klaviyo.com/api/tags/', {
-      method: 'POST',
-      headers: {
-        Authorization: `Klaviyo-API-Key ${KLAVIYO_API_KEY}`,
-        'Content-Type': 'application/json',
-        revision: '2024-10-15',
+    // 2. Add profile to Reset Buyers list
+    const listRes = await fetch(
+      `https://a.klaviyo.com/api/lists/${RESET_BUYERS_LIST_ID}/relationships/profiles/`,
+      {
+        method: 'POST',
+        headers: {
+          Authorization: `Klaviyo-API-Key ${KLAVIYO_API_KEY}`,
+          'Content-Type': 'application/json',
+          revision: '2024-10-15',
+        },
+        body: JSON.stringify({
+          data: [{ type: 'profile', id: profileId }],
+        }),
       },
-      body: JSON.stringify({
-        data: {
-          type: 'tag',
-          attributes: { name: tag },
-        },
-      }),
-    });
+    );
 
-    let tagId: string;
-
-    if (tagRes.status === 201) {
-      const created = await tagRes.json();
-      tagId = created.data.id;
-    } else {
-      // Tag likely already exists, fetch it
-      const listRes = await fetch(
-        `https://a.klaviyo.com/api/tags/?filter=equals(name,"${tag}")`,
-        {
-          headers: {
-            Authorization: `Klaviyo-API-Key ${KLAVIYO_API_KEY}`,
-            'Content-Type': 'application/json',
-            revision: '2024-10-15',
-          },
-        },
-      );
-      const listData = await listRes.json();
-      tagId = listData.data?.[0]?.id;
-
-      if (!tagId) {
-        console.error('[Square Webhook] Could not create or find tag:', tag);
-        return NextResponse.json({ received: true });
-      }
+    if (!listRes.ok) {
+      const err = await listRes.text();
+      console.error('[Square Webhook] Failed to add to list:', err);
     }
 
-    // 3. Assign the tag to the profile
-    await fetch(`https://a.klaviyo.com/api/tags/${tagId}/relationships/profiles/`, {
-      method: 'POST',
-      headers: {
-        Authorization: `Klaviyo-API-Key ${KLAVIYO_API_KEY}`,
-        'Content-Type': 'application/json',
-        revision: '2024-10-15',
-      },
-      body: JSON.stringify({
-        data: [{ type: 'profile', id: profileId }],
-      }),
-    });
+    console.log(`[Square Webhook] Added ${buyerEmail} to Reset Buyers list`);
 
-    console.log(`[Square Webhook] Tagged ${buyerEmail} with ${tag}`);
-
-    return NextResponse.json({ received: true, tagged: tag });
+    return NextResponse.json({ received: true });
   } catch (err) {
     console.error('[Square Webhook] Error:', err);
     return NextResponse.json({ received: true });
