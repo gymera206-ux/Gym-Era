@@ -21,7 +21,7 @@
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.65)),
     url("/photos/hero-stretch.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: top;
   z-index: 0;
 }
 .gtr-hero-content {
@@ -135,10 +135,19 @@
   align-items: center;
 }
 .gtr-community-icon {
-  display: block;
-  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: var(--coral);
+  color: var(--cream);
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
   margin-bottom: 1.25rem;
   line-height: 1;
+  flex-shrink: 0;
 }
 .gtr-community-feature strong {
   display: block;

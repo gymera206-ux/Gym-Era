@@ -71,7 +71,7 @@ export default function GetTheResetSuccessPage() {
           }}
         >
           <p style={{ fontSize: '1.5rem', marginBottom: '0.75rem' }}>
-            &#128172;
+            &#9993;
           </p>
           <h2
             style={{

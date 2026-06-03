@@ -208,7 +208,7 @@ export default function GetTheResetPage() {
 
           <div className="gtr-community-features">
             <div className="gtr-community-feature">
-              <span className="gtr-community-icon">&#128172;</span>
+              <span className="gtr-community-icon">&#9993;</span>
               <div>
                 <strong>Share Your Wins</strong>
                 <p>
@@ -218,7 +218,7 @@ export default function GetTheResetPage() {
               </div>
             </div>
             <div className="gtr-community-feature">
-              <span className="gtr-community-icon">&#129309;</span>
+              <span className="gtr-community-icon">&#10003;</span>
               <div>
                 <strong>Get Real Support</strong>
                 <p>
@@ -228,7 +228,7 @@ export default function GetTheResetPage() {
               </div>
             </div>
             <div className="gtr-community-feature">
-              <span className="gtr-community-icon">&#128170;</span>
+              <span className="gtr-community-icon">&#9733;</span>
               <div>
                 <strong>Stay Accountable</strong>
                 <p>
