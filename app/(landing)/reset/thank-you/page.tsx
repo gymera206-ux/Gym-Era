@@ -122,7 +122,7 @@ export default function ThankYouPage() {
           </div>
 
           {/* Decline */}
-          <a href="/" className="re-ty-skip">
+          <a href="/reset/get-the-reset" className="re-ty-skip">
             No thanks — I&apos;ll figure out Days 2–7 on my own
           </a>
         </div>

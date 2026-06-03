@@ -1,0 +1,167 @@
+/* ================================================================
+   GET THE RESET — $47 FULL PRICE PAGE
+   For users who skipped the $17 upsell
+   ================================================================ */
+
+/* --- Hero --- */
+.gtr-hero {
+  min-height: 70vh;
+  min-height: 70dvh;
+  padding: 5rem 2.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.gtr-hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.65)),
+    url("/photos/hero-stretch.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+.gtr-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gtr-hero .re-h1 {
+  max-width: none;
+  text-align: center;
+}
+.gtr-hero-sub {
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  color: var(--cream);
+  max-width: 480px;
+  line-height: 1.65;
+  opacity: 0.9;
+}
+
+/* --- Story block --- */
+.gtr-story {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.gtr-story p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--dark);
+  margin-bottom: 1.25rem;
+}
+.gtr-story em {
+  font-style: italic;
+  color: var(--dark);
+}
+.gtr-story strong {
+  color: var(--coral);
+  font-weight: 700;
+}
+
+/* --- Offer section --- */
+.gtr-offer {
+  padding: 5rem 2.5rem;
+  text-align: center;
+  background: var(--cream-2);
+}
+.gtr-offer-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- Community section --- */
+.gtr-community {
+  padding: 6rem 2.5rem;
+  background: var(--dark);
+  color: var(--cream);
+  text-align: center;
+}
+.gtr-community-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gtr-community-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--cream);
+  opacity: 0.9;
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+  max-width: 560px;
+}
+
+/* Community feature cards */
+.gtr-community-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  margin-bottom: 2.5rem;
+}
+.gtr-community-feature {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.75rem;
+  text-align: left;
+}
+.gtr-community-icon {
+  display: block;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+.gtr-community-feature strong {
+  display: block;
+  font-family: var(--font-josefin, "Josefin Sans", sans-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--coral);
+  margin-bottom: 0.5rem;
+}
+.gtr-community-feature p {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--cream);
+  opacity: 0.8;
+  margin: 0;
+}
+
+.gtr-community-note {
+  font-size: 0.9rem;
+  color: var(--cream);
+  opacity: 0.6;
+  line-height: 1.6;
+  max-width: 480px;
+  font-style: italic;
+}
+
+/* ================================================================
+   MOBILE
+   ================================================================ */
+@media (max-width: 800px) {
+  .gtr-hero {
+    min-height: 60vh;
+    min-height: 60dvh;
+    padding: 4rem 1.25rem;
+  }
+  .gtr-offer { padding: 4rem 1.25rem; }
+  .gtr-community { padding: 4rem 1.25rem; }
+
+  .gtr-community-features {
+    grid-template-columns: 1fr;
+  }
+}
