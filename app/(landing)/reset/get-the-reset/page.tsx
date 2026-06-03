@@ -40,8 +40,8 @@ export default function GetTheResetPage() {
             <em>7 Days?</em>
           </h1>
           <p className="gtr-hero-sub">
-            You tried Day 1. You know what it feels like. Now imagine what a full
-            week of that momentum could do.
+            You tried Day 1. You know what it feels like. Now imagine what a
+            full week of that momentum could do.
           </p>
         </div>
       </section>
@@ -59,8 +59,8 @@ export default function GetTheResetPage() {
         <div className="gtr-story">
           <p>
             You got the free workout. Maybe you did it, maybe it&apos;s still
-            sitting in your inbox. Either way, you&apos;re here \u2014 and that tells
-            me something.
+            sitting in your inbox. Either way, you&apos;re here &mdash; and
+            that tells me something.
           </p>
           <p>
             You <em>want</em> to move again. You want to feel like yourself
@@ -71,9 +71,9 @@ export default function GetTheResetPage() {
             <strong>Seven days does.</strong>
           </p>
           <p>
-            The full 7-Day Reset is the complete program \u2014 designed to take you
-            from &ldquo;I haven&apos;t moved in months&rdquo; to &ldquo;I
-            actually look forward to this&rdquo; in just one week.
+            The full 7-Day Reset is the complete program &mdash; designed to
+            take you from &ldquo;I haven&apos;t moved in months&rdquo; to
+            &ldquo;I actually look forward to this&rdquo; in just one week.
           </p>
         </div>
       </section>
@@ -94,7 +94,7 @@ export default function GetTheResetPage() {
             <h3 className="re-card-title">7 Progressive Sessions.</h3>
             <p className="re-card-body">
               Each day builds on the last. 20 minutes. Full body. Designed for
-              women getting back to movement \u2014 not already there.
+              women getting back to movement &mdash; not already there.
             </p>
           </article>
           <article className="re-card">
@@ -110,7 +110,8 @@ export default function GetTheResetPage() {
             <h3 className="re-card-title">Daily Cool-Down Routines.</h3>
             <p className="re-card-body">
               5-minute mobility flows for each day. Hip flexors, shoulders,
-              hamstrings \u2014 the places that tighten first when life takes over.
+              hamstrings &mdash; the places that tighten first when life
+              takes over.
             </p>
           </article>
           <article className="re-card">
@@ -180,7 +181,9 @@ export default function GetTheResetPage() {
             disabled={loading}
             className="re-cta re-ty-cta"
           >
-            {loading ? 'Loading...' : 'Give Me the Full 7-Day Reset \u2014 $47'}
+            {loading
+              ? 'Loading...'
+              : <>Give Me the Full 7-Day Reset &mdash; $47</>}
             {!loading && <span className="re-arrow">&rarr;</span>}
           </button>
 
@@ -198,8 +201,9 @@ export default function GetTheResetPage() {
           </h2>
           <p className="gtr-community-text">
             Every woman who gets the full Reset gets access to our private
-            WhatsApp community \u2014 a group of real women, real moms, who are all
-            doing the same thing you are: getting back to feeling strong.
+            WhatsApp community &mdash; a group of real women, real moms, who
+            are all doing the same thing you are: getting back to feeling
+            strong.
           </p>
 
           <div className="gtr-community-features">
@@ -207,21 +211,30 @@ export default function GetTheResetPage() {
               <span className="gtr-community-icon">&#128172;</span>
               <div>
                 <strong>Share Your Wins</strong>
-                <p>Finished Day 3? Tell someone who gets it. Every small win matters.</p>
+                <p>
+                  Finished Day 3? Tell someone who gets it. Every small win
+                  matters.
+                </p>
               </div>
             </div>
             <div className="gtr-community-feature">
               <span className="gtr-community-icon">&#129309;</span>
               <div>
                 <strong>Get Real Support</strong>
-                <p>Ask questions, swap tips, and lean on women who understand your schedule.</p>
+                <p>
+                  Ask questions, swap tips, and lean on women who understand
+                  your schedule.
+                </p>
               </div>
             </div>
             <div className="gtr-community-feature">
               <span className="gtr-community-icon">&#128170;</span>
               <div>
                 <strong>Stay Accountable</strong>
-                <p>It&apos;s harder to skip Day 5 when someone&apos;s cheering you on.</p>
+                <p>
+                  It&apos;s harder to skip Day 5 when someone&apos;s cheering
+                  you on.
+                </p>
               </div>
             </div>
           </div>
@@ -248,13 +261,15 @@ export default function GetTheResetPage() {
             </h2>
             <p>
               I know what it&apos;s like to want to move again but not know
-              where to start. To feel like every program out there was built for
-              someone with two free hours and no kids.
+              where to start. To feel like every program out there was built
+              for someone with two free hours and no kids.
             </p>
             <p>
-              <strong>The Reset is the program I built for myself</strong> \u2014 and
-              now it&apos;s for you. Seven days. Twenty minutes. The version of
-              fitness that fits your actual life.
+              <strong>
+                The Reset is the program I built for myself
+              </strong>{' '}
+              &mdash; and now it&apos;s for you. Seven days. Twenty minutes.
+              The version of fitness that fits your actual life.
             </p>
             <div className="re-founder-sig">
               Solange, Founder of Gym Era
@@ -281,7 +296,9 @@ export default function GetTheResetPage() {
             className="re-cta re-ty-cta"
             style={{ maxWidth: '440px', margin: '0 auto' }}
           >
-            {loading ? 'Loading...' : 'Get the Full Reset \u2014 $47'}
+            {loading
+              ? 'Loading...'
+              : <>Get the Full Reset &mdash; $47</>}
             {!loading && <span className="re-arrow">&rarr;</span>}
           </button>
 
@@ -299,7 +316,8 @@ export default function GetTheResetPage() {
         </div>
         <p className="re-footer-tagline">Back to Feeling Strong.</p>
         <p className="re-footer-copy">
-          &copy; {new Date().getFullYear()} Gym Era. Built for women who show up.
+          &copy; {new Date().getFullYear()} Gym Era. Built for women who
+          show up.
         </p>
       </footer>
 
@@ -310,7 +328,9 @@ export default function GetTheResetPage() {
           disabled={loading}
           className="re-cta re-cta--sticky"
         >
-          {loading ? 'Loading...' : 'Get the Full Reset \u2014 $47'}
+          {loading
+            ? 'Loading...'
+            : <>Get the Full Reset &mdash; $47</>}
           {!loading && <span className="re-arrow">&rarr;</span>}
         </button>
       </div>

@@ -43,7 +43,7 @@ export default function GetTheResetSuccessPage() {
             textAlign: 'center',
           }}
         >
-          Check your inbox \u2014 the full 7-Day Reset program is being delivered
+          Check your inbox &mdash; the full 7-Day Reset program is being delivered
           now. All workouts, meal plans, and cool-downs in one place.
         </p>
         <p
