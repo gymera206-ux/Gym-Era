@@ -10,12 +10,17 @@ export async function POST(req: NextRequest) {
     const eventType = body?.type;
 
     // Only handle completed payments
-    if (eventType !== 'payment.completed') {
+    if (eventType !== 'payment.completed' && eventType !== 'payment.updated') {
       return NextResponse.json({ received: true });
     }
 
     const payment = body?.data?.object?.payment;
     if (!payment) {
+      return NextResponse.json({ received: true });
+    }
+
+    // For payment.updated, only proceed if status is COMPLETED
+    if (payment.status && payment.status !== 'COMPLETED') {
       return NextResponse.json({ received: true });
     }
 
