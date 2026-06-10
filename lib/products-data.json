@@ -258,5 +258,222 @@
         "isMain": false
       }
     ]
+  },
+  {
+    "id": "Noir Eclipse Set - $42.00 (S & M)",
+    "name": "Noir Eclipse Set",
+    "price": "$33.60",
+    "sizes": "S & M",
+    "folderName": "Noir Eclipse Set - $42.00 (S & M)",
+    "images": [
+      {
+        "src": "/products/Noir%20Eclipse%20Set%20-%20%2442.00%20(S%20%26%20M)/main.jpg",
+        "isMain": true
+      },
+      {
+        "src": "/products/Noir%20Eclipse%20Set%20-%20%2442.00%20(S%20%26%20M)/noir-eclipse-black-back.jpg",
+        "isMain": false
+      },
+      {
+        "src": "/products/Noir%20Eclipse%20Set%20-%20%2442.00%20(S%20%26%20M)/noir-eclipse-pink-front.jpg",
+        "isMain": false
+      },
+      {
+        "src": "/products/Noir%20Eclipse%20Set%20-%20%2442.00%20(S%20%26%20M)/noir-eclipse-pink-back.jpg",
+        "isMain": false
+      }
+    ]
+  },
+  {
+    "id": "Solstice Sculpt Set - $34.00 (S & M)",
+    "name": "Solstice Sculpt Set",
+    "price": "$27.20",
+    "sizes": "S & M",
+    "folderName": "Solstice Sculpt Set - $34.00 (S & M)",
+    "images": [
+      {
+        "src": "/products/Solstice%20Sculpt%20Set%20-%20%2434.00%20(S%20%26%20M)/main.jpg",
+        "isMain": true
+      },
+      {
+        "src": "/products/Solstice%20Sculpt%20Set%20-%20%2434.00%20(S%20%26%20M)/solstice-sculpt-vest-back.jpg",
+        "isMain": false
+      }
+    ]
+  },
+  {
+    "id": "Sleek Goddess Legging - $24.00 (S & M)",
+    "name": "Sleek Goddess Legging",
+    "price": "$19.20",
+    "sizes": "S & M",
+    "folderName": "Sleek Goddess Legging - $24.00 (S & M)",
+    "images": [
+      {
+        "src": "/products/Sleek%20Goddess%20Legging%20-%20%2424.00%20(S%20%26%20M)/main.jpg",
+        "isMain": true
+      },
+      {
+        "src": "/products/Sleek%20Goddess%20Legging%20-%20%2424.00%20(S%20%26%20M)/sleek-goddess-navy-back.jpg",
+        "isMain": false
+      }
+    ]
+  },
+  {
+    "id": "Celestial Power Set - $44.00 (S & M)",
+    "name": "Celestial Power Set",
+    "price": "$35.20",
+    "sizes": "S & M",
+    "folderName": "Celestial Power Set - $44.00 (S & M)",
+    "images": [
+      {
+        "src": "/products/Celestial%20Power%20Set%20-%20%2444.00%20(S%20%26%20M)/main.jpg",
+        "isMain": true
+      },
+      {
+        "src": "/products/Celestial%20Power%20Set%20-%20%2444.00%20(S%20%26%20M)/celestial-power-pants-back.jpg",
+        "isMain": false
+      },
+      {
+        "src": "/products/Celestial%20Power%20Set%20-%20%2444.00%20(S%20%26%20M)/celestial-power-vest.jpg",
+        "isMain": false
+      }
+    ]
+  },
+  {
+    "id": "Vibe Flux Jumpsuit - $40.00 (S & M)",
+    "name": "Vibe Flux Jumpsuit",
+    "price": "$32.00",
+    "sizes": "S & M",
+    "folderName": "Vibe Flux Jumpsuit - $40.00 (S & M)",
+    "images": [
+      {
+        "src": "/products/Vibe%20Flux%20Jumpsuit%20-%20%2440.00%20(S%20%26%20M)/main.jpg",
+        "isMain": true
+      },
+      {
+        "src": "/products/Vibe%20Flux%20Jumpsuit%20-%20%2440.00%20(S%20%26%20M)/vibe-flux-jumpsuit-back.jpg",
+        "isMain": false
+      }
+    ]
+  },
+  {
+    "id": "Fierce Flash Set - $36.00 (S & M)",
+    "name": "Fierce Flash Set",
+    "price": "$28.80",
+    "sizes": "S & M",
+    "folderName": "Fierce Flash Set - $36.00 (S & M)",
+    "images": [
+      {
+        "src": "/products/Fierce%20Flash%20Set%20-%20%2436.00%20(S%20%26%20M)/main.jpg",
+        "isMain": true
+      },
+      {
+        "src": "/products/Fierce%20Flash%20Set%20-%20%2436.00%20(S%20%26%20M)/fierce-flash-back.jpg",
+        "isMain": false
+      }
+    ]
+  },
+  {
+    "id": "Pulse Core Legging - $24.00 (S & M)",
+    "name": "Pulse Core Legging",
+    "price": "$19.20",
+    "sizes": "S & M",
+    "folderName": "Pulse Core Legging - $24.00 (S & M)",
+    "images": [
+      {
+        "src": "/products/Pulse%20Core%20Legging%20-%20%2424.00%20(S%20%26%20M)/main.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "id": "Rally Queen Set - $32.00 (S & M)",
+    "name": "Rally Queen Set",
+    "price": "$25.60",
+    "sizes": "S & M",
+    "folderName": "Rally Queen Set - $32.00 (S & M)",
+    "images": [
+      {
+        "src": "/products/Rally%20Queen%20Set%20-%20%2432.00%20(S%20%26%20M)/main.jpg",
+        "isMain": true
+      },
+      {
+        "src": "/products/Rally%20Queen%20Set%20-%20%2432.00%20(S%20%26%20M)/rally-queen-back.jpg",
+        "isMain": false
+      }
+    ]
+  },
+  {
+    "id": "Aura Lift Set - $40.00 (S & M)",
+    "name": "Aura Lift Set",
+    "price": "$32.00",
+    "sizes": "S & M",
+    "folderName": "Aura Lift Set - $40.00 (S & M)",
+    "images": [
+      {
+        "src": "/products/Aura%20Lift%20Set%20-%20%2440.00%20(S%20%26%20M)/main.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "id": "Berry Rush Set - $38.00 (S & M)",
+    "name": "Berry Rush Set",
+    "price": "$30.40",
+    "sizes": "S & M",
+    "folderName": "Berry Rush Set - $38.00 (S & M)",
+    "images": [
+      {
+        "src": "/products/Berry%20Rush%20Set%20-%20%2438.00%20(S%20%26%20M)/main.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "id": "Groove State Legging - $26.00 (S & M)",
+    "name": "Groove State Legging",
+    "price": "$20.80",
+    "sizes": "S & M",
+    "folderName": "Groove State Legging - $26.00 (S & M)",
+    "images": [
+      {
+        "src": "/products/Groove%20State%20Legging%20-%20%2426.00%20(S%20%26%20M)/main.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "id": "Divine Form Set - $40.00 (S & M)",
+    "name": "Divine Form Set",
+    "price": "$32.00",
+    "sizes": "S & M",
+    "folderName": "Divine Form Set - $40.00 (S & M)",
+    "images": [
+      {
+        "src": "/products/Divine%20Form%20Set%20-%20%2440.00%20(S%20%26%20M)/main.jpg",
+        "isMain": true
+      },
+      {
+        "src": "/products/Divine%20Form%20Set%20-%20%2440.00%20(S%20%26%20M)/divine-form-back.jpg",
+        "isMain": false
+      }
+    ]
+  },
+  {
+    "id": "Eden Sport Shorts - $18.00 (S & M)",
+    "name": "Eden Sport Shorts",
+    "price": "$14.40",
+    "sizes": "S & M",
+    "folderName": "Eden Sport Shorts - $18.00 (S & M)",
+    "images": [
+      {
+        "src": "/products/Eden%20Sport%20Shorts%20-%20%2418.00%20(S%20%26%20M)/main.jpg",
+        "isMain": true
+      },
+      {
+        "src": "/products/Eden%20Sport%20Shorts%20-%20%2418.00%20(S%20%26%20M)/eden-shorts-yellow.jpg",
+        "isMain": false
+      }
+    ]
   }
 ]
