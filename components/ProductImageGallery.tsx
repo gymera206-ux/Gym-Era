@@ -91,7 +91,6 @@ export default function ProductImageGallery({ images, productName, className = '
                 width={400}
                 height={533}
                 loading={i === 0 ? 'eager' : 'lazy'}
-                unoptimized
               />
               {img.isMain && <span className="product-gallery__main-badge">Main</span>}
             </button>
@@ -162,7 +161,6 @@ export default function ProductImageGallery({ images, productName, className = '
               alt={`${productName} - full size`}
               width={1200}
               height={1600}
-              unoptimized
               className="product-gallery__lightbox-img"
               onClick={(e) => e.stopPropagation()}
             />

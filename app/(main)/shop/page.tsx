@@ -132,7 +132,7 @@ export default function ShopPage() {
             <RevealOnScroll>
               <div className="shop-detail-grid">
                 <div className="shop-detail__img">
-                  <Image src={folderProducts[0].images.find((i) => i.isMain)?.src ?? folderProducts[0].images[0]?.src ?? ''} alt={folderProducts[0].name} width={900} height={1200} loading="lazy" unoptimized />
+                  <Image src={folderProducts[0].images.find((i) => i.isMain)?.src ?? folderProducts[0].images[0]?.src ?? ''} alt={folderProducts[0].name} width={900} height={1200} loading="lazy" />
                 </div>
                 <div className="shop-detail__content">
                   <span className="section-tag">Bestseller</span>
@@ -181,7 +181,7 @@ export default function ShopPage() {
             <RevealOnScroll>
               <div className="shop-detail-grid" style={{ direction: 'rtl' }}>
                 <div className="shop-detail__img" style={{ direction: 'ltr' }}>
-                  <Image src={folderProducts[1].images.find((i) => i.isMain)?.src ?? folderProducts[1].images[0]?.src ?? ''} alt={folderProducts[1].name} width={900} height={1200} loading="lazy" unoptimized />
+                  <Image src={folderProducts[1].images.find((i) => i.isMain)?.src ?? folderProducts[1].images[0]?.src ?? ''} alt={folderProducts[1].name} width={900} height={1200} loading="lazy" />
                 </div>
                 <div className="shop-detail__content" style={{ direction: 'ltr' }}>
                   <span className="section-tag">Fan Favorite</span>
