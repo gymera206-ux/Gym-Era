@@ -16,6 +16,22 @@ const OUTPUT_JSON = path.join(__dirname, '..', 'lib', 'products-data.json');
 
 const IMAGE_EXT = new Set(['.jpg', '.jpeg', '.png', '.webp', '.gif']);
 
+function slugify(str) {
+  return str
+    .toLowerCase()
+    .replace(/\$/g, '')
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+}
+
+function slugifyFilename(filename) {
+  const ext = path.extname(filename).toLowerCase();
+  const base = path.basename(filename, path.extname(filename));
+  if (base.toLowerCase() === 'main') return 'main' + ext;
+  return slugify(base) + ext;
+}
+
 function parseFolderName(folderName) {
   // Format: "name - price (sizes)"  e.g. "Foundation Trainer - $68 (S M L XL)"
   const dashIdx = folderName.lastIndexOf(' - ');
@@ -79,8 +95,8 @@ function syncProducts(sourceDir) {
     if (imageFiles.length === 0) continue;
 
     const { name, price, sizes } = parseFolderName(folderName);
-    const safeSlug = folderName.replace(/[<>:"/\\|?*]/g, '-').trim();
-    const destFolder = path.join(PUBLIC_PRODUCTS, safeSlug);
+    const slug = slugify(folderName);
+    const destFolder = path.join(PUBLIC_PRODUCTS, slug);
 
     if (!fs.existsSync(destFolder)) {
       fs.mkdirSync(destFolder, { recursive: true });
@@ -89,20 +105,21 @@ function syncProducts(sourceDir) {
     const imagePaths = [];
     for (const file of imageFiles) {
       const src = path.join(srcFolder, file);
-      const dest = path.join(destFolder, file);
+      const safeFile = slugifyFilename(file);
+      const dest = path.join(destFolder, safeFile);
       if (fs.existsSync(src)) {
         fs.copyFileSync(src, dest);
-        const webPath = `/products/${encodeURIComponent(safeSlug)}/${encodeURIComponent(file)}`;
+        const webPath = `/products/${slug}/${safeFile}`;
         imagePaths.push({ src: webPath, isMain: path.basename(file, path.extname(file)).toLowerCase() === 'main' });
       }
     }
 
     products.push({
-      id: safeSlug,
+      id: slug,
       name,
       price,
       sizes,
-      folderName: safeSlug,
+      folderName: slug,
       images: imagePaths,
     });
   }
