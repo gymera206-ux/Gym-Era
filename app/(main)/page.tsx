@@ -10,7 +10,6 @@ import EmailForm from '@/components/EmailForm';
 import ArrowIcon from '@/components/ArrowIcon';
 import { unsplash, galleryImages, reviews } from '@/lib/constants';
 import productsData from '@/lib/products-data.json';
-import { originalFromDiscounted } from '@/lib/pricing';
 
 type LineupProduct = {
   id: string;
@@ -186,9 +185,8 @@ export default function HomePage() {
                     <div className="product-card-v2__info">
                       <h3>{product.name}</h3>
                       <p>{product.price}{product.sizes ? ` · ${product.sizes}` : ''}</p>
-                      <span className="shop-card__sale-badge">20% OFF</span>
+                      
                       <div className="product-price-row">
-                        <span className="price-original">{originalFromDiscounted(product.price)}</span>
                         <span className="product-price">{product.price}</span>
                       </div>
                     </div>

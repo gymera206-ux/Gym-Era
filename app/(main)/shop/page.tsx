@@ -9,7 +9,6 @@ import CheckoutOptions from '@/components/CheckoutOptions';
 import AddToCartButton from '@/components/AddToCartButton';
 import { unsplash, reviews } from '@/lib/constants';
 import productsData from '@/lib/products-data.json';
-import { originalFromDiscounted } from '@/lib/pricing';
 
 export const metadata: Metadata = {
   title: 'Shop Gym Era | Activewear for Busy Women and Moms',
@@ -113,9 +112,8 @@ export default function ShopPage() {
                     <div className="shop-card__body">
                       <h3>{product.name}</h3>
                       <p className="shop-card__subtitle">{product.subtitle}</p>
-                      <span className="shop-card__sale-badge">20% OFF</span>
+                      
                       <div className="shop-card__price">
-                        <span className="price-original">{originalFromDiscounted(product.price)}</span>
                         <span className="price-current">{product.price}</span>
                       </div>
                     </div>
@@ -137,9 +135,8 @@ export default function ShopPage() {
                 <div className="shop-detail__content">
                   <span className="section-tag">Bestseller</span>
                   <h2>{folderProducts[0].name}</h2>
-                  <span className="shop-card__sale-badge">20% OFF</span>
+                  
                   <div className="shop-card__price shop-detail__price">
-                    <span className="price-original">{originalFromDiscounted(folderProducts[0].price)}</span>
                     <span className="price-current">{folderProducts[0].price}</span>
                   </div>
                   {folderProducts[0].sizes && <p className="product-tagline">Sizes: {folderProducts[0].sizes}</p>}
@@ -160,9 +157,8 @@ export default function ShopPage() {
                 <div className="shop-detail__content">
                   <span className="section-tag">Bestseller</span>
                   <h2>The Foundation <span className="accent-text">Trainer</span></h2>
-                  <span className="shop-card__sale-badge">20% OFF</span>
+                  
                   <div className="shop-card__price shop-detail__price">
-                    <span className="price-original">{originalFromDiscounted('$54.40')}</span>
                     <span className="price-current">$54.40</span>
                   </div>
                   <p className="product-tagline">Moves with you from warm-up to final set.</p>
@@ -186,9 +182,8 @@ export default function ShopPage() {
                 <div className="shop-detail__content" style={{ direction: 'ltr' }}>
                   <span className="section-tag">Fan Favorite</span>
                   <h2>{folderProducts[1].name}</h2>
-                  <span className="shop-card__sale-badge">20% OFF</span>
+                  
                   <div className="shop-card__price shop-detail__price">
-                    <span className="price-original">{originalFromDiscounted(folderProducts[1].price)}</span>
                     <span className="price-current">{folderProducts[1].price}</span>
                   </div>
                   {folderProducts[1].sizes && <p className="product-tagline">Sizes: {folderProducts[1].sizes}</p>}
@@ -209,9 +204,8 @@ export default function ShopPage() {
                 <div className="shop-detail__content" style={{ direction: 'ltr' }}>
                   <span className="section-tag">Fan Favorite</span>
                   <h2>Grip Flex <span className="accent-text">Legging</span></h2>
-                  <span className="shop-card__sale-badge">20% OFF</span>
+                  
                   <div className="shop-card__price shop-detail__price">
-                    <span className="price-original">{originalFromDiscounted('$57.60')}</span>
                     <span className="price-current">$57.60</span>
                   </div>
                   <p className="product-tagline">Stays put through squats, lunges, lifts, and everything in between.</p>

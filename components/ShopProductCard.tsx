@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import AddToCartButton from '@/components/AddToCartButton';
-import { originalFromDiscounted } from '@/lib/pricing';
 
 type FolderProduct = {
   id: string;
@@ -14,7 +13,6 @@ type FolderProduct = {
 export default function ShopProductCard({ product }: { product: FolderProduct }) {
   const mainImg = product.images?.find((i) => i.isMain) || product.images?.[0];
   const discountedPrice = product.price || '—';
-  const originalPrice = product.price ? originalFromDiscounted(product.price) : '';
 
   return (
     <article className="shop-card">
@@ -31,9 +29,8 @@ export default function ShopProductCard({ product }: { product: FolderProduct })
       </div>
       <div className="shop-card__body">
         <h3>{product.name}</h3>
-        <span className="shop-card__sale-badge">20% OFF</span>
+        
         <div className="shop-card__price">
-          {originalPrice && <span className="price-original">{originalPrice}</span>}
           <span className="price-current">{discountedPrice}</span>
         </div>
         {product.sizes && (
