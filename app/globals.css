@@ -92,52 +92,7 @@ p { color: var(--text-secondary); line-height: 1.75; max-width: 60ch; }
 .section-header h2 { margin-bottom: 16px; }
 .section-header p { margin: 0 auto; font-size: clamp(15px, 1.1vw, 17px); }
 
-/* ===== ANIMATIONS ===== */
-.reveal {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
-}
-.reveal.reveal--hidden { opacity: 0; transform: translateY(40px); }
-.reveal.visible { opacity: 1; transform: translateY(0); }
-
-/* Hero content should be visible immediately — no scroll required */
-.hero-home .reveal,
-.hero-sub-page .reveal {
-  opacity: 1;
-  transform: translateY(0);
-  animation: heroFadeIn 1s var(--ease-out) forwards;
-}
-.hero-home .reveal.reveal--hidden,
-.hero-sub-page .reveal.reveal--hidden {
-  opacity: 0;
-  transform: translateY(30px);
-}
-.hero-home .hero-badge.reveal { animation-delay: 0.2s; }
-.hero-home .hero-title.reveal { animation-delay: 0.4s; }
-.hero-home .hero-sub.reveal { animation-delay: 0.6s; }
-.hero-home .hero-actions.reveal { animation-delay: 0.8s; }
-.hero-sub-page .hero-badge.reveal { animation-delay: 0.15s; }
-.hero-sub-page h1.reveal { animation-delay: 0.35s; }
-.hero-sub-page .hero-sub.reveal { animation-delay: 0.55s; }
-@keyframes heroFadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.reveal-stagger > * {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
-}
-.reveal-stagger.reveal--hidden > * { opacity: 0; transform: translateY(30px); }
-.reveal-stagger.visible > * { opacity: 1; transform: translateY(0); }
-.reveal-stagger.visible > *:nth-child(1) { transition-delay: 0s; }
-.reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.06s; }
-.reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.12s; }
-.reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.18s; }
-.reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.24s; }
-.reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.3s; }
+/* Animations removed for maximum compatibility */
 
 /* ===== BUTTONS ===== */
 .btn {
@@ -257,7 +212,7 @@ body.has-hero .site-header.header-dark:not(.scrolled) .nav-toggle span { backgro
   transform: scale(1.05);
   transition: transform 12s linear;
 }
-.hero-home.loaded .hero-img { transform: scale(1); }
+
 .hero-overlay {
   position: absolute; inset: 0;
   background: linear-gradient(135deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.45) 100%);
@@ -537,9 +492,9 @@ body.has-hero .site-header.header-dark:not(.scrolled) .nav-toggle span { backgro
 }
 .shop-card__quick .btn:hover { background: var(--accent); color: #fff; }
 .shop-card__body { padding: 0 2px; }
-.shop-card__img--gallery { padding: 0; }
-.shop-card__img--gallery .product-gallery { border-radius: var(--radius-md); }
-.shop-card__img--gallery .product-gallery__scroll { aspect-ratio: 3/4; }
+
+
+
 .shop-card__sizes {
   font-size: 13px;
   color: var(--text-muted);
@@ -548,13 +503,12 @@ body.has-hero .site-header.header-dark:not(.scrolled) .nav-toggle span { backgro
 }
 .shop-card__sizes span { font-weight: 500; color: var(--text-secondary); }
 
-/* ===== PRODUCT IMAGE GALLERY (scrollable + lightbox) ===== */
+/* ===== PRODUCT IMAGE GALLERY (simple) ===== */
 .product-gallery {
   position: relative;
   width: 100%;
   border-radius: var(--radius-md);
   overflow: hidden;
-  background: var(--bg-secondary);
 }
 .product-gallery__scroll {
   display: flex;
@@ -1231,8 +1185,7 @@ body.has-hero .site-header.header-dark:not(.scrolled) .nav-toggle span { backgro
     transition-duration: 0.01ms !important;
   }
   html { scroll-behavior: auto; }
-  .reveal, .reveal-stagger > * { opacity: 1; transform: none; }
   .marquee-content { animation: none; }
   .gallery-row { animation: none; }
-  .hero-img { transform: none; }
+  
 }

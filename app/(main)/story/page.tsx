@@ -25,8 +25,8 @@ export default function StoryPage() {
     <>
       {/* Hero */}
       <HeroSubPage src={unsplash('gymWoman', 1920)} ariaLabel="Our Story hero">
-        <div className="hero-badge reveal">Our Story</div>
-        <h1 className="reveal" style={{ fontSize: 'clamp(2.5rem,7vw,5rem)' }}>Built for Your Comeback.<br /><span className="accent-text">With Real Life in Mind.</span></h1>
+        <div className="hero-badge">Our Story</div>
+        <h1 className="" style={{ fontSize: 'clamp(2.5rem,7vw,5rem)' }}>Built for Your Comeback.<br /><span className="accent-text">With Real Life in Mind.</span></h1>
       </HeroSubPage>
 
       {/* Origin Story */}

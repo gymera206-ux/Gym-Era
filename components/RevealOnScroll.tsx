@@ -1,6 +1,4 @@
-'use client';
-
-import { useEffect, useRef, type ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 interface RevealOnScrollProps {
   children: ReactNode;
@@ -15,44 +13,9 @@ export default function RevealOnScroll({
   children,
   className = '',
   style,
-  stagger = false,
-  threshold = 0.1,
-  rootMargin = '0px 0px -30px 0px',
 }: RevealOnScrollProps) {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    // Hide first so the reveal animation can play
-    el.classList.add('reveal--hidden');
-
-    if (!('IntersectionObserver' in window)) {
-      el.classList.remove('reveal--hidden');
-      el.classList.add('visible');
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.remove('reveal--hidden');
-          el.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      },
-      { threshold, rootMargin }
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [threshold, rootMargin]);
-
-  const baseClass = stagger ? 'reveal-stagger' : 'reveal';
-
   return (
-    <div ref={ref} className={`${baseClass} ${className}`.trim()} style={style}>
+    <div className={className} style={style}>
       {children}
     </div>
   );
