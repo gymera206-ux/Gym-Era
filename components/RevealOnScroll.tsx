@@ -25,7 +25,11 @@ export default function RevealOnScroll({
     const el = ref.current;
     if (!el) return;
 
+    // Hide first so the reveal animation can play
+    el.classList.add('reveal--hidden');
+
     if (!('IntersectionObserver' in window)) {
+      el.classList.remove('reveal--hidden');
       el.classList.add('visible');
       return;
     }
@@ -33,7 +37,8 @@ export default function RevealOnScroll({
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+          el.classList.remove('reveal--hidden');
+          el.classList.add('visible');
           observer.unobserve(entry.target);
         }
       },

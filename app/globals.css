@@ -94,18 +94,24 @@ p { color: var(--text-secondary); line-height: 1.75; max-width: 60ch; }
 
 /* ===== ANIMATIONS ===== */
 .reveal {
-  opacity: 0;
-  transform: translateY(40px);
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
 }
+.reveal.reveal--hidden { opacity: 0; transform: translateY(40px); }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* Hero content should be visible immediately — no scroll required */
 .hero-home .reveal,
 .hero-sub-page .reveal {
+  opacity: 1;
+  transform: translateY(0);
+  animation: heroFadeIn 1s var(--ease-out) forwards;
+}
+.hero-home .reveal.reveal--hidden,
+.hero-sub-page .reveal.reveal--hidden {
   opacity: 0;
   transform: translateY(30px);
-  animation: heroFadeIn 1s var(--ease-out) forwards;
 }
 .hero-home .hero-badge.reveal { animation-delay: 0.2s; }
 .hero-home .hero-title.reveal { animation-delay: 0.4s; }
@@ -120,10 +126,11 @@ p { color: var(--text-secondary); line-height: 1.75; max-width: 60ch; }
 }
 
 .reveal-stagger > * {
-  opacity: 0;
-  transform: translateY(30px);
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
 }
+.reveal-stagger.reveal--hidden > * { opacity: 0; transform: translateY(30px); }
 .reveal-stagger.visible > * { opacity: 1; transform: translateY(0); }
 .reveal-stagger.visible > *:nth-child(1) { transition-delay: 0s; }
 .reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.06s; }
@@ -572,6 +579,8 @@ body.has-hero .site-header.header-dark:not(.scrolled) .nav-toggle span { backgro
   border: none;
   padding: 0;
   background: var(--bg-secondary);
+  -webkit-appearance: none;
+  appearance: none;
 }
 .product-gallery__thumb img {
   width: 100%;

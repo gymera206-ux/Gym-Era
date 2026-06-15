@@ -178,7 +178,7 @@ export default function HomePage() {
                 <article className="product-card-v2" key={product.id}>
                   <Link href="/shop" className="product-card-v2__link">
                     <div className="product-card-v2__img">
-                      <Image src={mainImg?.src ?? ''} alt={product.name} width={600} height={800} loading="lazy" unoptimized={mainImg?.src?.startsWith('/')} />
+                      <Image src={mainImg?.src ?? ''} alt={product.name} width={600} height={800} loading="lazy" />
                       <div className="product-card-v2__overlay">
                         <span>View Product</span>
                       </div>

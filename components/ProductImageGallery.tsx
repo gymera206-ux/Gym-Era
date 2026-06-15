@@ -78,11 +78,13 @@ export default function ProductImageGallery({ images, productName, className = '
           tabIndex={0}
         >
           {images.map((img, i) => (
-            <button
-              type="button"
+            <div
               key={img.src}
               className="product-gallery__thumb"
+              role="button"
+              tabIndex={0}
               onClick={() => openLightbox(i)}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') openLightbox(i); }}
               aria-label={`View image ${i + 1} of ${images.length}`}
             >
               <Image
@@ -93,7 +95,7 @@ export default function ProductImageGallery({ images, productName, className = '
                 loading={i === 0 ? 'eager' : 'lazy'}
               />
               {img.isMain && <span className="product-gallery__main-badge">Main</span>}
-            </button>
+            </div>
           ))}
         </div>
         {images.length > 1 && (
