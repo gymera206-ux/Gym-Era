@@ -10,8 +10,15 @@ export default function HeroHome() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    // Add reveal--hidden to enable animations, then loaded triggers them
+    el.querySelectorAll('.reveal').forEach((r) => r.classList.add('reveal--hidden'));
+
     const handleLoad = () => {
-      sectionRef.current?.classList.add('loaded');
+      el.classList.add('loaded');
+      el.querySelectorAll('.reveal').forEach((r) => r.classList.remove('reveal--hidden'));
     };
     if (document.readyState === 'complete') {
       handleLoad();
