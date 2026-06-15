@@ -1,35 +1,11 @@
-'use client';
-
-import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import ArrowIcon from './ArrowIcon';
 import { unsplash } from '@/lib/constants';
 
 export default function HeroHome() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const el = sectionRef.current;
-    if (!el) return;
-
-    // Add reveal--hidden to enable animations, then loaded triggers them
-    el.querySelectorAll('.reveal').forEach((r) => r.classList.add('reveal--hidden'));
-
-    const handleLoad = () => {
-      el.classList.add('loaded');
-      el.querySelectorAll('.reveal').forEach((r) => r.classList.remove('reveal--hidden'));
-    };
-    if (document.readyState === 'complete') {
-      handleLoad();
-    } else {
-      window.addEventListener('load', handleLoad);
-      return () => window.removeEventListener('load', handleLoad);
-    }
-  }, []);
-
   return (
-    <section id="hero" className="hero-home" aria-label="Hero" ref={sectionRef}>
+    <section id="hero" className="hero-home loaded" aria-label="Hero">
       <div className="hero-media" aria-hidden="true">
         <Image
           src={unsplash('gymWoman', 1920)}
@@ -43,16 +19,16 @@ export default function HeroHome() {
         <div className="hero-grain" aria-hidden="true" />
       </div>
       <div className="hero-content container">
-        <div className="hero-badge reveal">PERFORMANCE APPAREL</div>
-        <h1 className="hero-title reveal">
+        <div className="hero-badge">PERFORMANCE APPAREL</div>
+        <h1 className="hero-title">
           <span className="line">Back to</span>
           <span className="line line-no-wrap">Feeling Strong.</span>
           <span className="line accent-text">One Workout at a Time.</span>
         </h1>
-        <p className="hero-sub reveal">
+        <p className="hero-sub">
           For busy women and moms finding their way back to movement. Gym Era stays in place, supports real bodies, and helps you feel confident in every session.
         </p>
-        <div className="hero-actions reveal">
+        <div className="hero-actions">
           <Link href="/shop" className="btn btn-primary btn-lg">
             Find Your Fit <ArrowIcon />
           </Link>

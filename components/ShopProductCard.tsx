@@ -1,6 +1,4 @@
-'use client';
-
-import ProductImageGallery from '@/components/ProductImageGallery';
+import Image from 'next/image';
 import AddToCartButton from '@/components/AddToCartButton';
 import { originalFromDiscounted } from '@/lib/pricing';
 
@@ -20,8 +18,16 @@ export default function ShopProductCard({ product }: { product: FolderProduct })
 
   return (
     <article className="shop-card">
-      <div className="shop-card__img shop-card__img--gallery">
-        <ProductImageGallery images={product.images} productName={product.name} />
+      <div className="shop-card__img">
+        {mainImg && (
+          <Image
+            src={mainImg.src}
+            alt={product.name}
+            width={600}
+            height={800}
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          />
+        )}
       </div>
       <div className="shop-card__body">
         <h3>{product.name}</h3>

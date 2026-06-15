@@ -84,9 +84,9 @@ export default function ShopPage() {
 
       {/* Hero */}
       <HeroSubPage src={unsplash('training', 1920)} ariaLabel="Shop hero">
-        <div className="hero-badge reveal">The Collection</div>
-        <h1 className="reveal" style={{ fontSize: 'clamp(2.5rem,7vw,5rem)' }}>The Gym Era<br /><span className="accent-text">Collection</span></h1>
-        <p className="hero-sub reveal">Performance essentials for busy women and moms who want supportive fits that stay in place and feel good to wear.</p>
+        <div className="hero-badge">The Collection</div>
+        <h1 style={{ fontSize: 'clamp(2.5rem,7vw,5rem)' }}>The Gym Era<br /><span className="accent-text">Collection</span></h1>
+        <p className="hero-sub">Performance essentials for busy women and moms who want supportive fits that stay in place and feel good to wear.</p>
       </HeroSubPage>
 
       {/* Product Grid — from folder products or fallback */}
