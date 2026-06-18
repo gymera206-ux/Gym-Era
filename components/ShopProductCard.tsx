@@ -12,7 +12,7 @@ type FolderProduct = {
 
 export default function ShopProductCard({ product }: { product: FolderProduct }) {
   const mainImg = product.images?.find((i) => i.isMain) || product.images?.[0];
-  const discountedPrice = product.price || '—';
+  const price = product.price || '—';
 
   return (
     <article className="shop-card">
@@ -29,9 +29,9 @@ export default function ShopProductCard({ product }: { product: FolderProduct })
       </div>
       <div className="shop-card__body">
         <h3>{product.name}</h3>
-        
+
         <div className="shop-card__price">
-          <span className="price-current">{discountedPrice}</span>
+          <span className="price-current">{price}</span>
         </div>
         {product.sizes && (
           <p className="shop-card__sizes">

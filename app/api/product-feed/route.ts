@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import products from '@/lib/products-data.json';
-import { originalFromDiscounted, parsePrice } from '@/lib/pricing';
+import { parsePrice } from '@/lib/pricing';
 
 /**
  * Meta Commerce Manager product catalog feed.
@@ -38,10 +38,9 @@ function buildFeedItem(product: Product, siteUrl: string) {
   const mainImg = product.images.find((i) => i.isMain) ?? product.images[0];
   const additionalImages = product.images
     .filter((i) => !i.isMain)
-    .slice(0, 9); // Meta allows up to 10 additional images
+    .slice(0, 9);
 
-  const sellingPrice = parsePrice(product.price);
-  const originalPrice = parsePrice(originalFromDiscounted(product.price));
+  const price = parsePrice(product.price);
 
   return {
     id: product.id,
@@ -51,8 +50,7 @@ function buildFeedItem(product: Product, siteUrl: string) {
       : `${product.name} — premium activewear by Gym Era.`,
     availability: 'in stock',
     condition: 'new',
-    price: `${originalPrice.toFixed(2)} USD`,
-    sale_price: `${sellingPrice.toFixed(2)} USD`,
+    price: `${price.toFixed(2)} USD`,
     link: `${siteUrl}/shop`,
     image_link: mainImg ? `${siteUrl}${decodeURIComponent(mainImg.src)}` : '',
     additional_image_link: additionalImages
@@ -78,7 +76,6 @@ function toXml(items: ReturnType<typeof buildFeedItem>[], siteUrl: string): stri
       <g:availability>${item.availability}</g:availability>
       <g:condition>${item.condition}</g:condition>
       <g:price>${item.price}</g:price>
-      <g:sale_price>${item.sale_price}</g:sale_price>
       <g:link>${escXml(item.link)}</g:link>
       <g:image_link>${escXml(item.image_link)}</g:image_link>${
         item.additional_image_link
@@ -112,7 +109,6 @@ function toCsv(items: ReturnType<typeof buildFeedItem>[]): string {
     'availability',
     'condition',
     'price',
-    'sale_price',
     'link',
     'image_link',
     'additional_image_link',
