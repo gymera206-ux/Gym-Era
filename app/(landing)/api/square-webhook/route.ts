@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { sendPurchaseEvent, hasMetaConversions } from '@/lib/meta-conversions';
 
 const KLAVIYO_API_KEY = process.env.KLAVIYO_API_KEY!;
 const RESET_BUYERS_LIST_ID = 'XG3Ptq';
@@ -106,6 +107,18 @@ export async function POST(req: NextRequest) {
     }
 
     console.log(`[Square Webhook] Added ${buyerEmail} to Reset Buyers list`);
+
+    // 3. Fire Meta Conversions API Purchase event
+    if (hasMetaConversions) {
+      const amountCents = payment.amount_money?.amount ?? payment.total_money?.amount ?? 0;
+      const amountUsd = Number(amountCents) / 100;
+
+      await sendPurchaseEvent({
+        email: buyerEmail,
+        amountUsd,
+        orderId: payment.order_id,
+      });
+    }
 
     return NextResponse.json({ received: true });
   } catch (err) {
