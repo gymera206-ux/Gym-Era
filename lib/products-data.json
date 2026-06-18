@@ -1,479 +1,272 @@
 [
   {
-    "id": "aura-lift-set-40-00-s-and-m",
-    "name": "Aura Lift Set",
-    "price": "$32.00",
+    "id": "aura-lift-top",
+    "name": "Aura Lift Top",
+    "price": "$20.00",
     "sizes": "S & M",
     "folderName": "aura-lift-set-40-00-s-and-m",
     "images": [
-      {
-        "src": "/products/aura-lift-set-40-00-s-and-m/main.jpg",
-        "isMain": true
-      }
+      { "src": "/products/aura-lift-set-40-00-s-and-m/main.jpg", "isMain": true }
     ]
   },
   {
-    "id": "baby-blue-luxe-set-85-00-l-and-m",
-    "name": "Baby Blue Luxe Set",
-    "price": "$50.00",
-    "sizes": "L & M",
-    "folderName": "baby-blue-luxe-set-85-00-l-and-m",
-    "images": [
-      {
-        "src": "/products/baby-blue-luxe-set-85-00-l-and-m/main.jpg",
-        "isMain": true
-      },
-      {
-        "src": "/products/baby-blue-luxe-set-85-00-l-and-m/babyblue-set-back-1.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/baby-blue-luxe-set-85-00-l-and-m/babyblueset-3.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/baby-blue-luxe-set-85-00-l-and-m/detail-shot-of-baby-blue-set.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/baby-blue-luxe-set-85-00-l-and-m/side-view-of-baby-blue-set-1.jpg",
-        "isMain": false
-      }
-    ]
-  },
-  {
-    "id": "berry-rush-set-38-00-s-and-m",
-    "name": "Berry Rush Set",
-    "price": "$30.40",
-    "sizes": "S & M",
-    "folderName": "berry-rush-set-38-00-s-and-m",
-    "images": [
-      {
-        "src": "/products/berry-rush-set-38-00-s-and-m/main.jpg",
-        "isMain": true
-      }
-    ]
-  },
-  {
-    "id": "celestial-power-set-44-00-s-and-m",
-    "name": "Celestial Power Set",
-    "price": "$35.20",
+    "id": "aura-lift-yoga-pants",
+    "name": "Aura Lift Yoga Pants",
+    "price": "$30.00",
     "sizes": "S & M",
     "folderName": "celestial-power-set-44-00-s-and-m",
     "images": [
-      {
-        "src": "/products/celestial-power-set-44-00-s-and-m/main.jpg",
-        "isMain": true
-      },
-      {
-        "src": "/products/celestial-power-set-44-00-s-and-m/celestial-power-pants-back.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/celestial-power-set-44-00-s-and-m/celestial-power-vest.jpg",
-        "isMain": false
-      }
+      { "src": "/products/celestial-power-set-44-00-s-and-m/main.jpg", "isMain": true },
+      { "src": "/products/celestial-power-set-44-00-s-and-m/celestial-power-pants-back.jpg", "isMain": false },
+      { "src": "/products/celestial-power-set-44-00-s-and-m/celestial-power-vest.jpg", "isMain": false }
     ]
   },
   {
-    "id": "cloud-comfort-lounge-set-70-00",
-    "name": "Cloud Comfort Lounge Set",
-    "price": "$50.00",
-    "sizes": "",
-    "folderName": "cloud-comfort-lounge-set-70-00",
-    "images": [
-      {
-        "src": "/products/cloud-comfort-lounge-set-70-00/main.jpg",
-        "isMain": true
-      },
-      {
-        "src": "/products/cloud-comfort-lounge-set-70-00/light-blue-lounge-set-back-view.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/cloud-comfort-lounge-set-70-00/light-blue-lounge-set-casual-pose.jpg",
-        "isMain": false
-      }
-    ]
-  },
-  {
-    "id": "confidence-set-50-00-l-and-m",
-    "name": "Confidence Set",
-    "price": "$50.00",
-    "sizes": "L & M",
-    "folderName": "confidence-set-50-00-l-and-m",
-    "images": [
-      {
-        "src": "/products/confidence-set-50-00-l-and-m/main.jpg",
-        "isMain": true
-      },
-      {
-        "src": "/products/confidence-set-50-00-l-and-m/back-view-maroon.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/confidence-set-50-00-l-and-m/blueleggingsSS-1.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/confidence-set-50-00-l-and-m/maroon-leggings-ss-2.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/confidence-set-50-00-l-and-m/maroon-top-ss-2-ecf7de17-8e93-4108-948d-fb2bb4d06a75.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/confidence-set-50-00-l-and-m/maroon-top-ss-2.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/confidence-set-50-00-l-and-m/stretch-pose-1.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/confidence-set-50-00-l-and-m/stretch-pose-maroon.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/confidence-set-50-00-l-and-m/waistband-detail.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/confidence-set-50-00-l-and-m/yoga-pose.jpg",
-        "isMain": false
-      }
-    ]
-  },
-  {
-    "id": "divine-form-set-40-00-s-and-m",
-    "name": "Divine Form Set",
-    "price": "$32.00",
+    "id": "aura-lift-set",
+    "name": "Aura Lift Set",
+    "price": "$48.00",
     "sizes": "S & M",
-    "folderName": "divine-form-set-40-00-s-and-m",
+    "folderName": "aura-lift-set-40-00-s-and-m",
     "images": [
-      {
-        "src": "/products/divine-form-set-40-00-s-and-m/main.jpg",
-        "isMain": true
-      },
-      {
-        "src": "/products/divine-form-set-40-00-s-and-m/divine-form-back.jpg",
-        "isMain": false
-      }
+      { "src": "/products/aura-lift-set-40-00-s-and-m/main.jpg", "isMain": true }
     ]
   },
   {
-    "id": "eden-sport-shorts-18-00-s-and-m",
-    "name": "Eden Sport Shorts",
-    "price": "$14.40",
+    "id": "berry-rush-bra",
+    "name": "Berry Rush Bra",
+    "price": "$20.00",
     "sizes": "S & M",
-    "folderName": "eden-sport-shorts-18-00-s-and-m",
+    "folderName": "berry-rush-set-38-00-s-and-m",
     "images": [
-      {
-        "src": "/products/eden-sport-shorts-18-00-s-and-m/main.jpg",
-        "isMain": true
-      },
-      {
-        "src": "/products/eden-sport-shorts-18-00-s-and-m/eden-shorts-yellow.jpg",
-        "isMain": false
-      }
+      { "src": "/products/berry-rush-set-38-00-s-and-m/main.jpg", "isMain": true }
     ]
   },
   {
-    "id": "elevate-set-55-00-l-and-m",
-    "name": "Elevate Set",
-    "price": "$50.00",
-    "sizes": "L & M",
-    "folderName": "elevate-set-55-00-l-and-m",
-    "images": [
-      {
-        "src": "/products/elevate-set-55-00-l-and-m/main.jpg",
-        "isMain": true
-      },
-      {
-        "src": "/products/elevate-set-55-00-l-and-m/back-view-of-black-sculpting-set.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/elevate-set-55-00-l-and-m/black-set-with-butt-lift-set-top-front.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/elevate-set-55-00-l-and-m/detail-of-curved-contour-seams-1.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/elevate-set-55-00-l-and-m/side-view-of-black-sculpting-set.jpg",
-        "isMain": false
-      }
-    ]
-  },
-  {
-    "id": "fierce-flash-set-36-00-s-and-m",
-    "name": "Fierce Flash Set",
-    "price": "$28.80",
+    "id": "5-inch-berry-rush-shorts",
+    "name": "5\" Berry Rush Shorts",
+    "price": "$25.00",
     "sizes": "S & M",
-    "folderName": "fierce-flash-set-36-00-s-and-m",
+    "folderName": "berry-rush-set-38-00-s-and-m",
     "images": [
-      {
-        "src": "/products/fierce-flash-set-36-00-s-and-m/main.jpg",
-        "isMain": true
-      },
-      {
-        "src": "/products/fierce-flash-set-36-00-s-and-m/fierce-flash-back.jpg",
-        "isMain": false
-      }
+      { "src": "/products/berry-rush-set-38-00-s-and-m/main.jpg", "isMain": true }
     ]
   },
   {
-    "id": "groove-state-legging-26-00-s-and-m",
-    "name": "Groove State Legging",
-    "price": "$20.80",
-    "sizes": "S & M",
-    "folderName": "groove-state-legging-26-00-s-and-m",
-    "images": [
-      {
-        "src": "/products/groove-state-legging-26-00-s-and-m/main.jpg",
-        "isMain": true
-      }
-    ]
-  },
-  {
-    "id": "noir-eclipse-set-42-00-s-and-m",
-    "name": "Noir Eclipse Set",
-    "price": "$33.60",
-    "sizes": "S & M",
-    "folderName": "noir-eclipse-set-42-00-s-and-m",
-    "images": [
-      {
-        "src": "/products/noir-eclipse-set-42-00-s-and-m/main.jpg",
-        "isMain": true
-      },
-      {
-        "src": "/products/noir-eclipse-set-42-00-s-and-m/noir-eclipse-black-back.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/noir-eclipse-set-42-00-s-and-m/noir-eclipse-pink-back.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/noir-eclipse-set-42-00-s-and-m/noir-eclipse-pink-front.jpg",
-        "isMain": false
-      }
-    ]
-  },
-  {
-    "id": "performance-jacket-40-00-m",
-    "name": "Performance Jacket",
-    "price": "$50.00",
-    "sizes": "M",
-    "folderName": "performance-jacket-40-00-m",
-    "images": [
-      {
-        "src": "/products/performance-jacket-40-00-m/main.jpg",
-        "isMain": true
-      },
-      {
-        "src": "/products/performance-jacket-40-00-m/back-view-of-black-jacket.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/performance-jacket-40-00-m/cross-back-set-jacket.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/performance-jacket-40-00-m/crossbacksetjacket1.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/performance-jacket-40-00-m/detail-shot-of-black-jacket.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/performance-jacket-40-00-m/side-view-of-black-jacket.jpg",
-        "isMain": false
-      }
-    ]
-  },
-  {
-    "id": "performance-set-60-00-l-and-m",
-    "name": "Performance Set",
-    "price": "$50.00",
-    "sizes": "L & M",
-    "folderName": "performance-set-60-00-l-and-m",
-    "images": [
-      {
-        "src": "/products/performance-set-60-00-l-and-m/main.jpg",
-        "isMain": true
-      },
-      {
-        "src": "/products/performance-set-60-00-l-and-m/blck-cross-back-set-back.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/performance-set-60-00-l-and-m/blck-cross-back-set-front-top.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/performance-set-60-00-l-and-m/charcoal-grey-set-back.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/performance-set-60-00-l-and-m/charcoal-grey-set-front.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/performance-set-60-00-l-and-m/cross-back-set-blk.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/performance-set-60-00-l-and-m/cross-back-set.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/performance-set-60-00-l-and-m/detail-shot-of-strappy-back-design.jpg",
-        "isMain": false
-      }
-    ]
-  },
-  {
-    "id": "power-set-mocha-65-00-l-and-m",
-    "name": "power set - mocha",
-    "price": "$50.00",
-    "sizes": "L & M",
-    "folderName": "power-set-mocha-65-00-l-and-m",
-    "images": [
-      {
-        "src": "/products/power-set-mocha-65-00-l-and-m/main.jpg",
-        "isMain": true
-      },
-      {
-        "src": "/products/power-set-mocha-65-00-l-and-m/brown-with-v-back.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/power-set-mocha-65-00-l-and-m/brownwithVset.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/power-set-mocha-65-00-l-and-m/detail-shot.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/power-set-mocha-65-00-l-and-m/yoga-side-view.jpg",
-        "isMain": false
-      }
-    ]
-  },
-  {
-    "id": "pulse-core-legging-24-00-s-and-m",
-    "name": "Pulse Core Legging",
-    "price": "$19.20",
-    "sizes": "S & M",
-    "folderName": "pulse-core-legging-24-00-s-and-m",
-    "images": [
-      {
-        "src": "/products/pulse-core-legging-24-00-s-and-m/main.jpg",
-        "isMain": true
-      }
-    ]
-  },
-  {
-    "id": "rally-queen-set-32-00-s-and-m",
-    "name": "Rally Queen Set",
-    "price": "$25.60",
-    "sizes": "S & M",
-    "folderName": "rally-queen-set-32-00-s-and-m",
-    "images": [
-      {
-        "src": "/products/rally-queen-set-32-00-s-and-m/main.jpg",
-        "isMain": true
-      },
-      {
-        "src": "/products/rally-queen-set-32-00-s-and-m/rally-queen-back.jpg",
-        "isMain": false
-      }
-    ]
-  },
-  {
-    "id": "sleek-goddess-legging-24-00-s-and-m",
-    "name": "Sleek Goddess Legging",
-    "price": "$19.20",
+    "id": "berry-rush-leggings",
+    "name": "Berry Rush Leggings",
+    "price": "$30.00",
     "sizes": "S & M",
     "folderName": "sleek-goddess-legging-24-00-s-and-m",
     "images": [
-      {
-        "src": "/products/sleek-goddess-legging-24-00-s-and-m/main.jpg",
-        "isMain": true
-      },
-      {
-        "src": "/products/sleek-goddess-legging-24-00-s-and-m/sleek-goddess-navy-back.jpg",
-        "isMain": false
-      }
+      { "src": "/products/sleek-goddess-legging-24-00-s-and-m/main.jpg", "isMain": true },
+      { "src": "/products/sleek-goddess-legging-24-00-s-and-m/sleek-goddess-navy-back.jpg", "isMain": false }
     ]
   },
   {
-    "id": "solstice-sculpt-set-34-00-s-and-m",
+    "id": "berry-rush-set",
+    "name": "Berry Rush Set (Bra + Shorts)",
+    "price": "$42.00",
+    "sizes": "S & M",
+    "folderName": "berry-rush-set-38-00-s-and-m",
+    "images": [
+      { "src": "/products/berry-rush-set-38-00-s-and-m/main.jpg", "isMain": true }
+    ]
+  },
+  {
+    "id": "divine-form-set",
+    "name": "Divine Form Set",
+    "price": "$45.00",
+    "sizes": "S & M",
+    "folderName": "divine-form-set-40-00-s-and-m",
+    "images": [
+      { "src": "/products/divine-form-set-40-00-s-and-m/main.jpg", "isMain": true },
+      { "src": "/products/divine-form-set-40-00-s-and-m/divine-form-back.jpg", "isMain": false }
+    ]
+  },
+  {
+    "id": "divine-form-shorts",
+    "name": "Divine Form Shorts",
+    "price": "$20.00",
+    "sizes": "S & M",
+    "folderName": "eden-sport-shorts-18-00-s-and-m",
+    "images": [
+      { "src": "/products/eden-sport-shorts-18-00-s-and-m/main.jpg", "isMain": true },
+      { "src": "/products/eden-sport-shorts-18-00-s-and-m/eden-shorts-yellow.jpg", "isMain": false }
+    ]
+  },
+  {
+    "id": "groove-state-leggings",
+    "name": "Groove State Leggings",
+    "price": "$28.00",
+    "sizes": "S & M",
+    "folderName": "groove-state-legging-26-00-s-and-m",
+    "images": [
+      { "src": "/products/groove-state-legging-26-00-s-and-m/main.jpg", "isMain": true }
+    ]
+  },
+  {
+    "id": "groove-state-set",
+    "name": "Groove State Set",
+    "price": "$48.00",
+    "sizes": "S & M",
+    "folderName": "rally-queen-set-32-00-s-and-m",
+    "images": [
+      { "src": "/products/rally-queen-set-32-00-s-and-m/main.jpg", "isMain": true },
+      { "src": "/products/rally-queen-set-32-00-s-and-m/rally-queen-back.jpg", "isMain": false }
+    ]
+  },
+  {
+    "id": "noir-eclipse-set",
+    "name": "Noir Eclipse Set",
+    "price": "$50.00",
+    "sizes": "S & M",
+    "folderName": "noir-eclipse-set-42-00-s-and-m",
+    "images": [
+      { "src": "/products/noir-eclipse-set-42-00-s-and-m/main.jpg", "isMain": true },
+      { "src": "/products/noir-eclipse-set-42-00-s-and-m/noir-eclipse-black-back.jpg", "isMain": false },
+      { "src": "/products/noir-eclipse-set-42-00-s-and-m/noir-eclipse-pink-front.jpg", "isMain": false },
+      { "src": "/products/noir-eclipse-set-42-00-s-and-m/noir-eclipse-pink-back.jpg", "isMain": false }
+    ]
+  },
+  {
+    "id": "vibe-flux-jumpsuit",
+    "name": "Vibe Flux Jumpsuit",
+    "price": "$40.00",
+    "sizes": "S & M",
+    "folderName": "vibe-flux-jumpsuit-40-00-s-and-m",
+    "images": [
+      { "src": "/products/vibe-flux-jumpsuit-40-00-s-and-m/main.jpg", "isMain": true },
+      { "src": "/products/vibe-flux-jumpsuit-40-00-s-and-m/vibe-flux-jumpsuit-back.jpg", "isMain": false }
+    ]
+  },
+  {
+    "id": "solstice-sculpt-set",
     "name": "Solstice Sculpt Set",
     "price": "$27.20",
     "sizes": "S & M",
     "folderName": "solstice-sculpt-set-34-00-s-and-m",
     "images": [
-      {
-        "src": "/products/solstice-sculpt-set-34-00-s-and-m/main.jpg",
-        "isMain": true
-      },
-      {
-        "src": "/products/solstice-sculpt-set-34-00-s-and-m/solstice-sculpt-vest-back.jpg",
-        "isMain": false
-      }
+      { "src": "/products/solstice-sculpt-set-34-00-s-and-m/main.jpg", "isMain": true },
+      { "src": "/products/solstice-sculpt-set-34-00-s-and-m/solstice-sculpt-vest-back.jpg", "isMain": false }
     ]
   },
   {
-    "id": "v-neck-oversized-hoodie-50-00",
+    "id": "performance-set",
+    "name": "Performance Set",
+    "price": "$45.00",
+    "sizes": "L & M",
+    "folderName": "performance-set-60-00-l-and-m",
+    "images": [
+      { "src": "/products/performance-set-60-00-l-and-m/main.jpg", "isMain": true },
+      { "src": "/products/performance-set-60-00-l-and-m/blck-cross-back-set-back.jpg", "isMain": false },
+      { "src": "/products/performance-set-60-00-l-and-m/blck-cross-back-set-front-top.jpg", "isMain": false },
+      { "src": "/products/performance-set-60-00-l-and-m/charcoal-grey-set-back.jpg", "isMain": false },
+      { "src": "/products/performance-set-60-00-l-and-m/charcoal-grey-set-front.jpg", "isMain": false },
+      { "src": "/products/performance-set-60-00-l-and-m/cross-back-set-blk.jpg", "isMain": false },
+      { "src": "/products/performance-set-60-00-l-and-m/cross-back-set.jpg", "isMain": false },
+      { "src": "/products/performance-set-60-00-l-and-m/detail-shot-of-strappy-back-design.jpg", "isMain": false }
+    ]
+  },
+  {
+    "id": "performance-jacket",
+    "name": "Performance Jacket",
+    "price": "$40.00",
+    "sizes": "M",
+    "folderName": "performance-jacket-40-00-m",
+    "images": [
+      { "src": "/products/performance-jacket-40-00-m/main.jpg", "isMain": true },
+      { "src": "/products/performance-jacket-40-00-m/back-view-of-black-jacket.jpg", "isMain": false },
+      { "src": "/products/performance-jacket-40-00-m/cross-back-set-jacket.jpg", "isMain": false },
+      { "src": "/products/performance-jacket-40-00-m/crossbacksetjacket1.jpg", "isMain": false },
+      { "src": "/products/performance-jacket-40-00-m/detail-shot-of-black-jacket.jpg", "isMain": false },
+      { "src": "/products/performance-jacket-40-00-m/side-view-of-black-jacket.jpg", "isMain": false }
+    ]
+  },
+  {
+    "id": "baby-blue-luxe-set",
+    "name": "Baby Blue Luxe Set",
+    "price": "$48.00",
+    "sizes": "L & M",
+    "folderName": "baby-blue-luxe-set-85-00-l-and-m",
+    "images": [
+      { "src": "/products/baby-blue-luxe-set-85-00-l-and-m/main.jpg", "isMain": true },
+      { "src": "/products/baby-blue-luxe-set-85-00-l-and-m/babyblue-set-back-1.jpg", "isMain": false },
+      { "src": "/products/baby-blue-luxe-set-85-00-l-and-m/babyblueset-3.jpg", "isMain": false },
+      { "src": "/products/baby-blue-luxe-set-85-00-l-and-m/detail-shot-of-baby-blue-set.jpg", "isMain": false },
+      { "src": "/products/baby-blue-luxe-set-85-00-l-and-m/side-view-of-baby-blue-set-1.jpg", "isMain": false }
+    ]
+  },
+  {
+    "id": "cloud-comfort-lounge-set",
+    "name": "Cloud Comfort Lounge Set",
+    "price": "$48.00",
+    "sizes": "",
+    "folderName": "cloud-comfort-lounge-set-70-00",
+    "images": [
+      { "src": "/products/cloud-comfort-lounge-set-70-00/main.jpg", "isMain": true },
+      { "src": "/products/cloud-comfort-lounge-set-70-00/light-blue-lounge-set-back-view.jpg", "isMain": false },
+      { "src": "/products/cloud-comfort-lounge-set-70-00/light-blue-lounge-set-casual-pose.jpg", "isMain": false }
+    ]
+  },
+  {
+    "id": "confidence-set",
+    "name": "Confidence Set",
+    "price": "$48.00",
+    "sizes": "L & M",
+    "folderName": "confidence-set-50-00-l-and-m",
+    "images": [
+      { "src": "/products/confidence-set-50-00-l-and-m/main.jpg", "isMain": true },
+      { "src": "/products/confidence-set-50-00-l-and-m/back-view-maroon.jpg", "isMain": false },
+      { "src": "/products/confidence-set-50-00-l-and-m/blueleggingsSS-1.jpg", "isMain": false },
+      { "src": "/products/confidence-set-50-00-l-and-m/maroon-leggings-ss-2.jpg", "isMain": false },
+      { "src": "/products/confidence-set-50-00-l-and-m/maroon-top-ss-2-ecf7de17-8e93-4108-948d-fb2bb4d06a75.jpg", "isMain": false },
+      { "src": "/products/confidence-set-50-00-l-and-m/maroon-top-ss-2.jpg", "isMain": false },
+      { "src": "/products/confidence-set-50-00-l-and-m/stretch-pose-1.jpg", "isMain": false },
+      { "src": "/products/confidence-set-50-00-l-and-m/stretch-pose-maroon.jpg", "isMain": false },
+      { "src": "/products/confidence-set-50-00-l-and-m/waistband-detail.jpg", "isMain": false },
+      { "src": "/products/confidence-set-50-00-l-and-m/yoga-pose.jpg", "isMain": false }
+    ]
+  },
+  {
+    "id": "elevate-set",
+    "name": "Elevate Set",
+    "price": "$44.00",
+    "sizes": "L & M",
+    "folderName": "elevate-set-55-00-l-and-m",
+    "images": [
+      { "src": "/products/elevate-set-55-00-l-and-m/main.jpg", "isMain": true },
+      { "src": "/products/elevate-set-55-00-l-and-m/back-view-of-black-sculpting-set.jpg", "isMain": false },
+      { "src": "/products/elevate-set-55-00-l-and-m/black-set-with-butt-lift-set-top-front.jpg", "isMain": false },
+      { "src": "/products/elevate-set-55-00-l-and-m/detail-of-curved-contour-seams-1.jpg", "isMain": false },
+      { "src": "/products/elevate-set-55-00-l-and-m/side-view-of-black-sculpting-set.jpg", "isMain": false }
+    ]
+  },
+  {
+    "id": "power-set-mocha",
+    "name": "Power Set - Mocha",
+    "price": "$52.00",
+    "sizes": "L & M",
+    "folderName": "power-set-mocha-65-00-l-and-m",
+    "images": [
+      { "src": "/products/power-set-mocha-65-00-l-and-m/main.jpg", "isMain": true },
+      { "src": "/products/power-set-mocha-65-00-l-and-m/brown-with-v-back.jpg", "isMain": false },
+      { "src": "/products/power-set-mocha-65-00-l-and-m/brownwithVset.jpg", "isMain": false },
+      { "src": "/products/power-set-mocha-65-00-l-and-m/detail-shot.jpg", "isMain": false },
+      { "src": "/products/power-set-mocha-65-00-l-and-m/yoga-side-view.jpg", "isMain": false }
+    ]
+  },
+  {
+    "id": "v-neck-oversized-hoodie",
     "name": "V-Neck Oversized Hoodie",
-    "price": "$50.00",
+    "price": "$40.00",
     "sizes": "",
     "folderName": "v-neck-oversized-hoodie-50-00",
     "images": [
-      {
-        "src": "/products/v-neck-oversized-hoodie-50-00/main.jpg",
-        "isMain": true
-      },
-      {
-        "src": "/products/v-neck-oversized-hoodie-50-00/back-view-of-black-hoodie.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/v-neck-oversized-hoodie-50-00/detail-shot-of-v-neck-and-hood.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/v-neck-oversized-hoodie-50-00/pullover-hoodie.jpg",
-        "isMain": false
-      },
-      {
-        "src": "/products/v-neck-oversized-hoodie-50-00/side-view-of-black-hoodie.jpg",
-        "isMain": false
-      }
-    ]
-  },
-  {
-    "id": "vibe-flux-jumpsuit-40-00-s-and-m",
-    "name": "Vibe Flux Jumpsuit",
-    "price": "$32.00",
-    "sizes": "S & M",
-    "folderName": "vibe-flux-jumpsuit-40-00-s-and-m",
-    "images": [
-      {
-        "src": "/products/vibe-flux-jumpsuit-40-00-s-and-m/main.jpg",
-        "isMain": true
-      },
-      {
-        "src": "/products/vibe-flux-jumpsuit-40-00-s-and-m/vibe-flux-jumpsuit-back.jpg",
-        "isMain": false
-      }
+      { "src": "/products/v-neck-oversized-hoodie-50-00/main.jpg", "isMain": true },
+      { "src": "/products/v-neck-oversized-hoodie-50-00/back-view-of-black-hoodie.jpg", "isMain": false },
+      { "src": "/products/v-neck-oversized-hoodie-50-00/detail-shot-of-v-neck-and-hood.jpg", "isMain": false },
+      { "src": "/products/v-neck-oversized-hoodie-50-00/pullover-hoodie.jpg", "isMain": false },
+      { "src": "/products/v-neck-oversized-hoodie-50-00/side-view-of-black-hoodie.jpg", "isMain": false }
     ]
   }
 ]
