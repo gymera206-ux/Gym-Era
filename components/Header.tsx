@@ -62,6 +62,7 @@ export default function Header() {
             aria-label="Main navigation"
           >
             <Link href="/shop" onClick={closeNav}>Shop</Link>
+            <Link href="/fundraiser" onClick={closeNav}>Fundraiser</Link>
             <Link href="/cart" onClick={closeNav} className="header-cart-link">
               Cart
               {totalItems > 0 && <span className="header-cart-count" aria-label={`${totalItems} items in cart`}>{totalItems}</span>}

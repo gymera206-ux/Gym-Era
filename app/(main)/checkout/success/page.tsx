@@ -1,8 +1,16 @@
-import Link from 'next/link';
+'use client';
 
-export const metadata = { title: 'Order Confirmed – Gym Era' };
+import { useEffect } from 'react';
+import Link from 'next/link';
+import { useCart } from '@/context/CartContext';
 
 export default function CheckoutSuccessPage() {
+  const { clearCart } = useCart();
+
+  useEffect(() => {
+    clearCart();
+  }, [clearCart]);
+
   return (
     <main className="checkout-result">
       <div className="checkout-result__inner">

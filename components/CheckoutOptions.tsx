@@ -67,7 +67,7 @@ export default function CheckoutOptions() {
                 }
               : undefined,
             onApprove: async () => {
-              window.location.href = '/shop?payment=success';
+              window.location.href = '/checkout/success';
             },
           })
           .render(paypalRef.current)
