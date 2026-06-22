@@ -1267,6 +1267,9 @@ body.has-hero .site-header.header-dark:not(.scrolled) .nav-toggle span { backgro
 }
 
 /* ===== FUNDRAISER PAGE ===== */
+.hero-fundraiser.hero-sub-page .hero-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.65) 40%, rgba(0,0,0,0.5) 100%);
+}
 .fundraiser-details {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

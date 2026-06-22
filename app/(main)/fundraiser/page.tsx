@@ -21,12 +21,12 @@ export default function FundraiserPage() {
   return (
     <>
       {/* Hero */}
-      <HeroSubPage src="/fundraiser-flyer.jpg" ariaLabel="Dance to Show Love fundraiser">
+      <HeroSubPage src="/fundraiser-flyer.jpg" ariaLabel="Dance to Show Love fundraiser" className="hero-fundraiser">
         <div className="hero-badge">Fundraiser</div>
         <h1 style={{ fontSize: 'clamp(2.5rem,7vw,5rem)' }}>
           Dance to <span className="accent-text">Show Love</span>
         </h1>
-        <p className="hero-sub">
+        <p className="hero-sub" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.8)' }}>
           Gym Era partners with MFASCD Foundation to support families affected by Sickle Cell Disease &amp; Autism.
         </p>
         <a
