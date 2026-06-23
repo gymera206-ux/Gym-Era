@@ -4,6 +4,7 @@ import Link from 'next/link';
 import HeroSubPage from '@/components/HeroSubPage';
 import RevealOnScroll from '@/components/RevealOnScroll';
 import ArrowIcon from '@/components/ArrowIcon';
+import FundraiserCheckoutButton from '@/components/FundraiserCheckoutButton';
 
 export const metadata: Metadata = {
   title: 'Dance to Show Love Fundraiser | Gym Era x MFASCD Foundation',
@@ -122,25 +123,13 @@ export default function FundraiserPage() {
       <section id="register" className="section-pad" aria-label="Get your ticket">
         <div className="container">
           <RevealOnScroll>
-            <div style={{ textAlign: 'center', maxWidth: 600, margin: '0 auto' }}>
+            <div style={{ textAlign: 'center', maxWidth: 560, margin: '0 auto' }}>
               <span className="section-tag">Limited Spaces Available</span>
               <h2>Get Your <span className="accent-text">Ticket</span></h2>
-              <p style={{ color: 'var(--text-secondary)', maxWidth: 520, margin: '0 auto 2rem' }}>
-                Tickets are $25 per person. Payment details will be released soon.
-                Join the waitlist to be first in line when registration opens.
+              <p style={{ color: 'var(--text-secondary)', maxWidth: 480, margin: '0 auto 2rem' }}>
+                Tickets are $25 per person. Secure your spot now — limited spaces available.
               </p>
-              <div
-                className="fundraiser-price-badge"
-                aria-label="Ticket price: $25"
-              >
-                $25 <span>per ticket</span>
-              </div>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', margin: '1rem 0 1.5rem' }}>
-                Payment details coming soon — follow us on social media for updates.
-              </p>
-              <Link href="/shop" className="btn btn-primary">
-                Browse the Shop
-              </Link>
+              <FundraiserCheckoutButton />
             </div>
           </RevealOnScroll>
         </div>

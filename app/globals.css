@@ -1291,6 +1291,36 @@ body.has-hero .site-header.header-dark:not(.scrolled) .nav-toggle span { backgro
 .fundraiser-detail-card p {
   font-size: 1.1rem; font-weight: 600; color: var(--text-primary);
 }
+.fundraiser-checkout { display: flex; flex-direction: column; align-items: center; gap: 16px; margin-top: 8px; }
+.fundraiser-checkout__qty { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.fundraiser-checkout__qty-label {
+  font-size: 13px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--text-muted);
+}
+.fundraiser-checkout__qty-controls {
+  display: flex; align-items: center; gap: 0;
+  border: 2px solid var(--border-color); border-radius: var(--radius-sm); overflow: hidden;
+}
+.fundraiser-checkout__qty-controls button {
+  width: 40px; height: 40px; background: transparent;
+  border: none; font-size: 1.2rem; font-weight: 700;
+  color: var(--text-primary); cursor: pointer; transition: background 0.15s;
+}
+.fundraiser-checkout__qty-controls button:hover:not(:disabled) { background: var(--bg-card); }
+.fundraiser-checkout__qty-controls button:disabled { opacity: 0.35; cursor: not-allowed; }
+.fundraiser-checkout__qty-controls span {
+  width: 48px; text-align: center; font-size: 1.1rem; font-weight: 700;
+  border-left: 2px solid var(--border-color); border-right: 2px solid var(--border-color);
+  line-height: 40px;
+}
+.fundraiser-checkout__total {
+  font-size: 1rem; color: var(--text-secondary);
+}
+.fundraiser-checkout__total strong { font-size: 1.4rem; color: var(--text-primary); margin-right: 4px; }
+.fundraiser-checkout__total span { color: var(--text-muted); font-size: 0.875rem; }
+.fundraiser-checkout__error { color: #e05252; font-size: 0.9rem; }
+.fundraiser-checkout__trust { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
+
 .fundraiser-price-badge {
   display: inline-flex; align-items: baseline; gap: 8px;
   font-family: var(--font-display); font-size: 3.5rem; font-weight: 800;
