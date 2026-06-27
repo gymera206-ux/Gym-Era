@@ -25,6 +25,11 @@ export default function Footer() {
         </div>
         <div className="footer-bottom">
           <p>&copy; {new Date().getFullYear()} Gym Era. All Rights Reserved.</p>
+          <nav className="footer-legal" aria-label="Legal links">
+            <Link href="/terms-of-service">Terms of Service</Link>
+            <Link href="/privacy-policy">Privacy Policy</Link>
+            <Link href="/refund-policy">Refund Policy</Link>
+          </nav>
         </div>
       </div>
     </footer>

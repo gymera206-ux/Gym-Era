@@ -1163,6 +1163,9 @@ body.has-hero .site-header.header-dark:not(.scrolled) .nav-toggle span { backgro
 .footer-social a:hover { border-color: var(--accent); color: var(--accent); }
 .footer-social svg { width: 18px; height: 18px; fill: currentColor; }
 .footer-bottom { text-align: center; font-size: 13px; color: var(--text-muted); }
+.footer-legal { display: flex; gap: clamp(16px, 2.5vw, 32px); justify-content: center; margin-top: 10px; flex-wrap: wrap; }
+.footer-legal a { font-size: 12px; color: var(--text-muted); transition: color var(--transition-fast); }
+.footer-legal a:hover { color: var(--text-primary); }
 
 /* ===== SKIP LINK & ACCESSIBILITY ===== */
 .skip-link {
