@@ -7,7 +7,7 @@ import CheckoutOptions from '@/components/CheckoutOptions';
 import ArrowIcon from '@/components/ArrowIcon';
 
 export default function CartPage() {
-  const { items, removeItem, updateQuantity, totalItems } = useCart();
+  const { items, removeItem, updateQuantity, totalItems, coupon, removeCoupon } = useCart();
 
   const totalPrice = items.reduce((sum, i) => {
     const num = parseFloat((i.price || '').replace(/[^0-9.]/g, '')) || 0;
@@ -80,6 +80,20 @@ export default function CartPage() {
             ))}
           </ul>
           <div className="cart-summary">
+            {coupon && (
+              <div className="cart-coupon">
+                <span className="cart-coupon__label">Promo applied:</span>
+                <span className="cart-coupon__code">{coupon}</span>
+                <button
+                  type="button"
+                  className="cart-coupon__remove"
+                  onClick={removeCoupon}
+                  aria-label="Remove coupon"
+                >
+                  ✕
+                </button>
+              </div>
+            )}
             <p className="cart-summary__total">
               <span>Total</span>
               <strong>{totalFormatted}</strong>
