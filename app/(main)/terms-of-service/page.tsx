@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const sections = [
   {
     title: '1. Acceptance of Terms',
-    body: 'By accessing or using the Gym Era website (gymera.com) and purchasing our products, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our site or place an order.',
+    body: 'By accessing or using the Gym Era website (gymeraactive.com) and purchasing our products, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our site or place an order.',
   },
   {
     title: '2. Products and Availability',
@@ -54,7 +54,7 @@ const sections = [
   },
   {
     title: '12. Contact Us',
-    body: 'If you have any questions about these Terms of Service, please contact us at support@gymera.com. We are happy to help.',
+    body: 'If you have any questions about these Terms of Service, please contact us at support@gymeraactive.com. We are happy to help.',
   },
 ];
 

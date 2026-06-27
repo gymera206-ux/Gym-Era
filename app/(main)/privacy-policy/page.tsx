@@ -38,7 +38,7 @@ const sections = [
   },
   {
     title: '8. Your Rights',
-    body: 'You have the right to access, correct, or delete the personal information we hold about you. You may also object to certain processing activities or request data portability. To exercise any of these rights, please contact us at support@gymera.com.',
+    body: 'You have the right to access, correct, or delete the personal information we hold about you. You may also object to certain processing activities or request data portability. To exercise any of these rights, please contact us at support@gymeraactive.com.',
   },
   {
     title: '9. Third-Party Links',
@@ -54,7 +54,7 @@ const sections = [
   },
   {
     title: '12. Contact Us',
-    body: 'If you have any questions or concerns about this Privacy Policy, please reach out to us at support@gymera.com. Your privacy matters to us and we will respond as quickly as possible.',
+    body: 'If you have any questions or concerns about this Privacy Policy, please reach out to us at support@gymeraactive.com. Your privacy matters to us and we will respond as quickly as possible.',
   },
 ];
 

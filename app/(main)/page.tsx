@@ -46,7 +46,7 @@ export default function HomePage() {
       {
         '@type': 'Organization',
         name: 'Gym Era',
-        url: 'https://gymera.com',
+        url: 'https://gymeraactive.com',
         description: 'Performance gym apparel built for busy women and moms getting back to training.',
         sameAs: [
           'https://instagram.com/gymera',
@@ -54,7 +54,7 @@ export default function HomePage() {
           'https://youtube.com/@gymera',
         ],
       },
-      { '@type': 'WebSite', name: 'Gym Era', url: 'https://gymera.com' },
+      { '@type': 'WebSite', name: 'Gym Era', url: 'https://gymeraactive.com' },
     ],
   };
 

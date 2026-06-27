@@ -1,4 +1,4 @@
-export const SITE_URL = 'https://gymera.com';
+export const SITE_URL = 'https://gymeraactive.com';
 
 const LOCAL_IMAGES: Record<string, string> = {
   gymWoman: '/photos/hero-stretch.jpg',

@@ -34,7 +34,7 @@ export async function sendPurchaseEvent(data: PurchaseEvent): Promise<boolean> {
         event_name: 'Purchase',
         event_time: eventTime,
         event_id: data.orderId ?? `purchase_${eventTime}`,
-        event_source_url: data.sourceUrl ?? 'https://gymera.com/shop',
+        event_source_url: data.sourceUrl ?? 'https://gymeraactive.com/shop',
         action_source: 'website',
         user_data: {
           em: [sha256(data.email)],

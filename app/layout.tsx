@@ -17,7 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://gymera.com'),
+  metadataBase: new URL('https://gymeraactive.com'),
   robots: { index: true, follow: true },
 };
 

@@ -24,7 +24,7 @@ const sections = [
   },
   {
     title: '4. How to Start a Return',
-    body: 'To initiate a return, email us at support@gymera.com with your order number and the reason for your return. Our team will respond within 2 business days with a Return Merchandise Authorization (RMA) number and instructions. Please do not send items back without an approved RMA \u2014 they may not be processed.',
+    body: 'To initiate a return, email us at support@gymeraactive.com with your order number and the reason for your return. Our team will respond within 2 business days with a Return Merchandise Authorization (RMA) number and instructions. Please do not send items back without an approved RMA \u2014 they may not be processed.',
   },
   {
     title: '5. Return Shipping',
@@ -36,15 +36,15 @@ const sections = [
   },
   {
     title: '7. Exchanges',
-    body: 'We offer exchanges for a different size or color of the same item, subject to availability. To request an exchange, contact us at support@gymera.com with your order number and the item details. If the requested size or color is unavailable, we will issue a full refund instead.',
+    body: 'We offer exchanges for a different size or color of the same item, subject to availability. To request an exchange, contact us at support@gymeraactive.com with your order number and the item details. If the requested size or color is unavailable, we will issue a full refund instead.',
   },
   {
     title: '8. Damaged or Incorrect Orders',
-    body: 'If you receive a damaged item or the wrong product, please contact us within 7 days of delivery at support@gymera.com with a photo of the issue and your order number. We will arrange a replacement or full refund at no cost to you, including return shipping.',
+    body: 'If you receive a damaged item or the wrong product, please contact us within 7 days of delivery at support@gymeraactive.com with a photo of the issue and your order number. We will arrange a replacement or full refund at no cost to you, including return shipping.',
   },
   {
     title: '9. Late or Missing Refunds',
-    body: 'If you have not received your refund within 10 business days of our approval email, first check your bank account and then contact your credit card provider, as processing times vary. If you have done both and still have not received your refund, please contact us at support@gymera.com.',
+    body: 'If you have not received your refund within 10 business days of our approval email, first check your bank account and then contact your credit card provider, as processing times vary. If you have done both and still have not received your refund, please contact us at support@gymeraactive.com.',
   },
   {
     title: '10. Changes to This Policy',
@@ -52,7 +52,7 @@ const sections = [
   },
   {
     title: '11. Contact Us',
-    body: 'Have a question about a return or refund? We are happy to help. Reach out to our team at support@gymera.com and we will get back to you within 2 business days.',
+    body: 'Have a question about a return or refund? We are happy to help. Reach out to our team at support@gymeraactive.com and we will get back to you within 2 business days.',
   },
 ];
 
