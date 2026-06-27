@@ -4,7 +4,7 @@
  * Meta / Facebook & Instagram Shop — Checkout URL Handler
  *
  * Meta sends customers here with URL-encoded product IDs and quantities:
- *   /checkout?products=aura-lift-top%3A2%2Caura-lift-set%3A1&coupon=SUMMERSALE20
+ *   https://gymeraactive.com/checkout?products=aura-lift-top%3A2%2Caura-lift-set%3A1&coupon=SUMMERSALE20
  *
  * This page:
  *   1. Parses the `products` param  → productId:quantity pairs
